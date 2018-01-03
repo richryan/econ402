@@ -1,0 +1,1 @@
+Welcome to the Winter 2018 semester of Intermediate Macroeconomics, ECON 402.
