@@ -1,0 +1,21 @@
+---
+title: "ECON 402: Intermediate Macroeconomics"
+subtitle: "Winter 2018"
+author: "Rich Ryan"
+date: "January 3, 2018"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    theme: cerulean
+    highlight: tango
+---
+
+# Overview
+
+Welcome to the Friday-morning section of ECON 402.
+
+# Goals
+
+# Code
