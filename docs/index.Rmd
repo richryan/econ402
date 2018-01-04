@@ -12,6 +12,8 @@ output:
     highlight: tango
 ---
 
+# Overview
+
 Class logistics:
 - ECON 402, Section 004
 - Fridays, 9:00 am&mdash;10:00am
@@ -23,7 +25,6 @@ Instructor info:
 - Office: Lorch 119
 - Favorite Bruce 
 
-# Overview
 
 Welcome to the Friday-morning section of ECON 402.
 
