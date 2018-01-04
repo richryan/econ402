@@ -8,11 +8,9 @@ output:
     toc: true
     toc_depth: 2
     toc_float: true
-    theme: cerulean
+    theme: cosmo
     highlight: tango
 ---
-
-# Overview
 
 Class logistics:
 - ECON 402, Section 004
@@ -25,6 +23,7 @@ Instructor info:
 - Office: Lorch 119
 - Favorite Bruce 
 
+# Overview
 
 Welcome to the Friday-morning section of ECON 402.
 
