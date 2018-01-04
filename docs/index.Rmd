@@ -1,7 +1,7 @@
 ---
 title: "ECON 402: Intermediate Macroeconomics"
 subtitle: "University of Michigan, Winter 2018"
-author: ""
+author: "Section 004"
 date: ""
 output: 
   html_document:
@@ -15,23 +15,45 @@ output:
 Class logistics:
 
 * Class: ECON 402, Section 004
-* Times: Fridays, 9:00 am&mdash;10:00am
+* Times: Fridays, 9:00 am&ndash;10:00am
 * Location: Lorch 373
 
 Instructor info:
-* Name: Rich Ryan
+
+* Name: [Rich Ryan](https://richryan.github.io/)
 * E-mail: richryan@umich.edu
 * Office: Lorch 119
-* Favorite Bruce 
 
-# Overview
+# Basic course spiel
 
-Welcome to the Friday-morning section of ECON 402.
+The goal of this section is to help you earn a good grade in ECON 402.
+A large part of ECON 402's _raison d'&ecirc;tr_ is teaching you _actual_ economics,
+so I'll also try to incorporate a few topics (mostly nifty stuff you can do with computers) that will likely form the basis for your future research and/or what will come up in job interviews.
+But those topics will just be for fun.
 
-# Goals
+I encourage you to attend all sections and office hours.
+Please speak up if a topic needs more consideration.
+And please laugh at all my jokes.
 
 # Resources
 
-Professor House mentioned the 
+While the class is largely self-contained,
+Professor House mentioned that he may at times reference material from ECON 401.
+Occasionally I may want to reference 401-type material or finance-related material.
+I will do so, mostly, by referring to notes that I wrote as a GSI for ECON 401 and 435.
+These notes are available here:
 
-# Code
+* [ECON 401](https://richryan.github.io/notes/#intermediate-microeconomic-theory-econ-401)
+* [ECON 435](https://richryan.github.io/notes/#financial-economics-econ-435)
+
+The past year and a half I was a GSI for the first-year macro sequence in the PhD program.
+Those notes are also cataloged there.
+We'll be covering some of the same topics in this class, 
+in case you're interested in a more math-y presentation.
+
+# Warning
+
+In the interests of full and forthright disclosure,
+I really really really like macroeconomics.
+Any economic evangelism is only meant in jest or to signal what I think is useful to know (like for exams).
+We're going to learn a lot and have lots of fun this semester.
