@@ -2,7 +2,12 @@
 title: "Employment Report"
 subtitle: Happy Labor Market Friday!
 output:
-  html_document: default
+  html_document: 
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    theme: cosmo
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
