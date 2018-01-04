@@ -1,0 +1,40 @@
+---
+title: "Employment Report"
+subtitle: Happy Labor Market Friday!
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+Here are the latest data from the employment report.
+
+```{r}
+rm(list = ls())
+library(tidyverse)
+library(tidyquant)
+```
+
+```{r}
+ur <- tq_get("UNRATE", get = "economic.data")
+head(ur)
+tail(ur)
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+ggplot(data = ur) +
+  geom_line(aes(x = date, y = price))
+```
+
+
