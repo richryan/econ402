@@ -15,7 +15,7 @@ output:
 Class logistics:
 
 * Class: ECON 402, Section 004
-* Times: Fridays, 9:00 am&ndash;10:00am
+* Times: Fridays, 9:00 am&ndash;10:00 am
 * Location: Lorch 373
 
 Instructor info:
@@ -28,7 +28,7 @@ Instructor info:
 
 The goal of this section is to help you earn a good grade in ECON 402.
 A large part of ECON 402's _raison d'&ecirc;tr_ is teaching you _actual_ economics,
-so I'll also try to incorporate a few topics (mostly nifty stuff you can do with computers) that will likely form the basis for your future research and/or what will come up in job interviews.
+so I'll also try to incorporate a few topics (mostly nifty stuff you can do with computers) that will likely form the basis of your future research and/or what will come up in job interviews.
 But those topics will just be for fun.
 
 I encourage you to attend all sections and office hours.
