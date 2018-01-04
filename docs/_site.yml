@@ -1,0 +1,9 @@
+name: "ECON 402"
+output_dir: "."
+navbar: 
+  title: "ECON 402"
+  left: 
+    - text: "Overview"
+      href: index.html
+    - text: "Labor Market Friday"
+      href: labor_market_friday.html 
