@@ -14,14 +14,11 @@ output:
 
 Class logistics:
 
-* ECON 402, Section 004
-
-* Fridays, 9:00 am&mdash;10:00am
-
-* Lorch 373
+* Class: ECON 402, Section 004
+* Times: Fridays, 9:00 am&mdash;10:00am
+* Location: Lorch 373
 
 Instructor info:
-
 * Name: Rich Ryan
 * E-mail: richryan@umich.edu
 * Office: Lorch 119
