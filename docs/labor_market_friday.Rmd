@@ -10,28 +10,94 @@ output:
     highlight: tango
 ---
 
+## A just-for-fun example using R
+
+Professor House discussed several key time series in macroeconomics on the first day of class.
+This handout discusses how to access and manipulate those series in R,
+focusing on the [Employment Situation Summary](https://www.bls.gov/news.release/empsit.nr0.htm) published by the Bureau of Labor Statistics.
+
+It is important to know that doing R in ECON 402 is just for fun and has nothing to do officially with the class.
+That said, however, data visualization is increasingly part of everyday life:
+The NY Times increasingly features data visualizations on its website;
+"advanced metrics" is taking over sports;
+the [Nightly Business Report](http://nbr.com/) on Detroit Public TV always features charts.
+
+Or let me put it a different way:
+I was a GSI for ECON 401 and 
+I would be _shocked_ if the differences between Marshalian and Hicksian demand came up in a job interview;
+on the other hand,
+I would wager that most entry-level jobs in economics deal directly with data manipulation.[^1]
+
+I was actually in charge of the data work for Professor House's [handbook chapter on macroeconomics](https://www.sciencedirect.com/science/article/pii/S157400481630012X).
+Getting asked to write a handbook chapter is a huge, huge honor&mdash;for the author, not the person doing the data work&mdash;and when I would tell Professor House that I was "assistant professor" he would yell back: 
+"NO!!!! You are _assistant to_ the professor."
+
+## Getting R up and running 
+
+An introduction to R is beyond the scope of this presentation.
+On the off chance that someone is super interested in R, 
+just let me know and we'll get you going.
+
+I had no problem installing a working copy of R from the website for The R Project for Statistical Computing,
+which you can navigate to [here](https://www.r-project.org/).
+Perhaps the easiest way to interact with R code is through RStudio.
+You can get a copy of RStudio [here](https://www.rstudio.com/).
+Again, I had no problems installing R and using RStudio.
+
+Once in RStudio you can use the "Session" dropdown menu to set the working directory,
+which should be where you save the code that you write to go along with this handout.
+More on this below.
+
+You can install packages using `install.packages`.
+
+## R setup
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
-	echo = FALSE,
+	echo = TRUE,
 	message = FALSE,
 	warning = FALSE
 )
 ```
 
-Here are the latest data from the employment report.
+The following code removes all the objects from working environment
+in order to start with a clean slate:
 
 ```{r}
 rm(list = ls())
-library(tidyverse)
-library(tidyquant)
 ```
 
+Next we want to load libraries that R uses.
+The `tidyverse` package was written by R guru [Hadley Wickham](http://hadley.nz/).
+The `tidyquant` package allows us to access data from [FRED](https://fred.stlouisfed.org/).
+Most macroeconomic time series are available in the FRED database.
 ```{r}
-ur <- tq_get("UNRATE", get = "economic.data")
+library(tidyverse)
+library(tidyquant)
+library(ggplot2)
+```
+
+## Retrieving data from FRED
+
+Here's R code that retrives data from the FRED database.
+It gets the series `UNRATE`.
+
+```{r}
+ur <- tq_get("UNRATE", get = "economic.data", from = "1940-01-01")
 head(ur)
 tail(ur)
 ```
+Note that the data start in 1948m1.
 
+To get series different series,
+go to FRED and search for whatever series you want.
+For example, I typed in "inflation", which generated several series.
+Then I picked "Consumer Price Index for All Urban Consumers: All Items".
+Clicking on that series reveals the mnemonic `CPIAUCSL`.
+Replacing `UNRATE` with `CPIAUCSL` will download the CPI price index.
+This is the "headline" index;
+the "core" index is `CPILFESL`,
+which is less food and energy prices.
 
 ## Including Plots
 
@@ -39,7 +105,60 @@ You can also embed plots, for example:
 
 ```{r}
 ggplot(data = ur) +
-  geom_line(aes(x = date, y = price))
+  geom_line(aes(x = date, y = price)) +
+  xlab("") + 
+  ylab("Percent")
+```
+
+## A subset of the series mentioned in the Employment Situation Summary
+
+The Employment Situation Summary draws on a few sources of data to generate the series that we're going to plot.
+The employment series comes from the Establishment Survey,
+which is a survey answered by firms or establishments.[^2]
+
+Of course firms cannot answer questions about the unemployed.
+Unemployment data is collected through the Household Survey.
+This survey calls up a household and asks questions about members of the household.
+(A high point of my time in Ann Arbor was when I got to answer questions about me and my roommates for a related survey, the [American Community Survey](https://www.census.gov/programs-surveys/acs/).)
+Respondents also answer questions about household members not in the labor force,
+the NILFs.
+
+```{r}
+dat <- tq_get(c("UNRATE", "PAYEMS", "CIVPART"), 
+              get = "economic.data", from = "1940-01-01")
+head(dat)
+tail(dat)
+```
+You can see that the data are in "long" form.
+At this point you could reshape the data into "wide" form,
+but we'll skip that and simply plot the different series.
+
+```{r}
+
+ggplot(data = subset(dat, symbol == "PAYEMS")) +
+  geom_line(aes(x = date, y = price)) +
+  xlab("") + 
+  ylab("Thousands of persons") + 
+  ggtitle("All employees: Total nonfarm payrolls")
+
+ggplot(data = subset(dat, symbol == "CIVPART")) +
+  geom_line(aes(x = date, y = price)) +
+  xlab("") +
+  ylab("Percent") +
+  ggtitle("Civilian labor force participation rate")
+
+ggplot(data = subset(dat, symbol == "UNRATE")) +
+  geom_line(aes(x = date, y = price)) +
+  xlab("") +
+  ylab("Percent") +
+  ggtitle("Civilian unemployment rate")
 ```
 
 
+
+[^1]: Authorial conjecture: You'll be hiring _me_ in a couple of year after you get a job making R markdown reports based on the Employment Situation Summary. 
+
+[^2]: Which is a creative name.
+No, but, a firm can be made up of several establishments,
+so there's an important distinction.
+The takeaway is that _firms_ are responding to the survey.
