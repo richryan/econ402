@@ -155,6 +155,37 @@ ggplot(data = subset(dat, symbol == "UNRATE")) +
 ```
 
 
+## A million-dollar policy question
+
+I'll leave you with a million-dollar policy question:
+Why is the labor-force participation rate of men declining so much?
+
+```{r}
+dat <- tq_get(c("LNS11300002", "LNS11300001"), 
+              get = "economic.data",
+              from = "1940-01-01")
+dat <- dat %>% 
+  mutate(series = case_when(
+    symbol == "LNS11300001" ~ "Men",
+    symbol == "LNS11300002" ~ "Women"
+  )) %>% 
+  mutate(index = )
+
+ggplot(data = dat) +
+  geom_line(mapping = aes(x = date, y = price, color = series)) +
+  xlab("") +
+  ylab("") +
+  ggtitle("Labor force participation rates of men and women") +
+  labs(color = "")
+```
+
+First, this is one of the most striking figures in labor&ndash;macro.
+Just think about this figure in the context of the TV show _Mad Men_.
+Second, of late, the participation rates of men and women have been declining.
+This coincides with the drop-off in the growth rate of output that Professor House was commenting on yesterday in class.
+Are these patterns linked?
+Why?
+This is what policy-oriented economists are trying to figure out.
 
 [^1]: Authorial conjecture: You'll be hiring _me_ in a couple of year after you get a job making R markdown reports based on the Employment Situation Summary. 
 
