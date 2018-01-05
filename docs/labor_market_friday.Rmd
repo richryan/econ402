@@ -50,6 +50,9 @@ More on this below.
 
 You can install packages using `install.packages`.
 
+A site that has been mentioned on [R-bloggers](https://www.r-bloggers.com/),
+an aggregator of R blogs, that may be useful in getting R up and running is found [here](http://stat545.com/index.html).
+
 ## R setup
 
 ```{r setup, include=FALSE}
@@ -172,7 +175,7 @@ dat <- dat %>%
   mutate(index = )
 
 ggplot(data = dat) +
-  geom_line(mapping = aes(x = date, y = price, color = series)) +
+  geom_line(mapping = aes(x = date, y = price, color = series), size = 1.5) +
   xlab("") +
   ylab("") +
   ggtitle("Labor force participation rates of men and women") +
