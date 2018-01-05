@@ -63,7 +63,7 @@ I really really really like macroeconomics.
 Any economic evangelism is only meant in jest or to signal what I think is useful to know (like for exams).
 We're going to learn a lot and have lots of fun this semester.
 
-[^1] And because it seems like good policy to inflict the absolute minimum amount of pain on anyone,
+[^1]: And because it seems like good policy to inflict the absolute minimum amount of pain on anyone,
 you will not be penalized if something comes up for you.
 E.g., you are in Chicago for a job interview on a given Friday.
 Please just notify me well in advance so we can work out a solution.
