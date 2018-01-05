@@ -63,13 +63,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-The following code removes all the objects from working environment
-in order to start with a clean slate:
-
-```{r}
-rm(list = ls())
-```
-
+It's a good idea to begin by restarting the R session.
+This can be done, for example, in RStudio by issuing the command `Ctrl+Shift+F10`.
 Next we want to load libraries that R uses.
 The `tidyverse` package was written by R guru [Hadley Wickham](http://hadley.nz/).
 The `tidyquant` package allows us to access data from [FRED](https://fred.stlouisfed.org/).

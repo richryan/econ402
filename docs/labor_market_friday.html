@@ -342,9 +342,7 @@ div.tocify {
 </div>
 <div id="r-setup" class="section level2">
 <h2>R setup</h2>
-<p>The following code removes all the objects from working environment in order to start with a clean slate:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())</code></pre></div>
-<p>Next we want to load libraries that R uses. The <code>tidyverse</code> package was written by R guru <a href="http://hadley.nz/">Hadley Wickham</a>. The <code>tidyquant</code> package allows us to access data from <a href="https://fred.stlouisfed.org/">FRED</a>. Most macroeconomic time series are available in the FRED database.</p>
+<p>It’s a good idea to begin by restarting the R session. This can be done, for example, in RStudio by issuing the command <code>Ctrl+Shift+F10</code>. Next we want to load libraries that R uses. The <code>tidyverse</code> package was written by R guru <a href="http://hadley.nz/">Hadley Wickham</a>. The <code>tidyquant</code> package allows us to access data from <a href="https://fred.stlouisfed.org/">FRED</a>. Most macroeconomic time series are available in the FRED database.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(tidyquant)
 <span class="kw">library</span>(ggplot2)</code></pre></div>
