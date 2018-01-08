@@ -73,6 +73,7 @@ Most macroeconomic time series are available in the FRED database.
 library(tidyverse)
 library(tidyquant)
 library(ggplot2)
+library(emo)
 ```
 
 ## Retrieving data from FRED
@@ -97,7 +98,7 @@ This is the "headline" index;
 the "core" index is `CPILFESL`,
 which is less food and energy prices.
 
-## Including Plots
+## Including Plots: Macroeconometric time series data is `r emo::ji("hot")`
 
 You can also embed plots, for example:
 
