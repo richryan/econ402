@@ -100,7 +100,7 @@ which is less food and energy prices.
 
 ## Including Plots: Macroeconometric time series data is 
 
-Rich Ryan `r emo::ji("banana")`
+Rich W. Ryan `r emo::ji("banana")`
 
 You can also embed plots, for example:
 
