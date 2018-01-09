@@ -88,7 +88,7 @@ tail(ur)
 ```
 Note that the data start in 1948m1.
 
-To get series different series,
+To get different series,
 go to FRED and search for whatever series you want.
 For example, I typed in "inflation", which generated several series.
 Then I picked "Consumer Price Index for All Urban Consumers: All Items".
@@ -98,9 +98,10 @@ This is the "headline" index;
 the "core" index is `CPILFESL`,
 which is less food and energy prices.
 
-## Including Plots: Macroeconometric time series data is `r emo::ji("fire")` 
+## Including Plots: Macroeconomic time-series data are `r emo::ji("fire")` 
 
-You can also embed plots, for example:
+Plotting the data is easy. 
+For example:
 
 ```{r}
 ggplot(data = ur) +
