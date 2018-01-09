@@ -2,12 +2,12 @@
 title: "Employment Report"
 subtitle: Happy Labor Market Friday!
 output:
-  html_document: 
-    toc: true
-    toc_depth: 2
-    toc_float: true
-    theme: cosmo
+  html_document:
     highlight: tango
+    theme: cosmo
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
 ---
 
 ## A just-for-fun example using R
@@ -100,11 +100,7 @@ which is less food and energy prices.
 
 ## Including Plots: Macroeconometric time series data is 
 
-Rich Ryan 
-
-```{r}
-emo::ji("poop")
-```
+Rich Ryan `r emo::ji("banana")`
 
 You can also embed plots, for example:
 
