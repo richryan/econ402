@@ -98,9 +98,7 @@ This is the "headline" index;
 the "core" index is `CPILFESL`,
 which is less food and energy prices.
 
-## Including Plots: Macroeconometric time series data is 
-
-Rich W. Ryan `r emo::ji("banana")`
+## Including Plots: Macroeconometric time series data is `r emo::ji("fire")` 
 
 You can also embed plots, for example:
 
