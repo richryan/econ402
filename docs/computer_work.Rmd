@@ -89,6 +89,7 @@ ggplot(data = dat) +
   ylab("Percentage change in real GDP") +
   ggtitle("Okun's law")
 ```
+
 Just fyi:
 you can add a regression line in R without having to run the regression using R's built-in commands.
 I did these calculations by hand just for practice.
