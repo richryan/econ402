@@ -10,4 +10,5 @@ Here are a few useful remarks for creating the project page:
 - To have the project page read from the `docs` directory, from [GitHub pages](https://github.com/richryan) navigate to the **Settings** tab and select **master branch/docs folder**
 - Render the **.Rmd** file with the command `rmarkdown::render("my-file.Rmd", encoding = "UTF-8")`, the `encoding` option allows for the inclusion of emojis
 - **_ALL_** **.Rmd** files need to be rendered
-- To convert a `.Rmd` file to pdf use the command `rmarkdown::render("my-file.Rmd", pdf_document())`
+- To convert a `.Rmd` file to pdf use the command `rmarkdown::render("my-file.Rmd", pdf_document())`.
+See the documentation for the R package "rmarkdown".
