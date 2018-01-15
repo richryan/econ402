@@ -1,0 +1,174 @@
+---
+title: "Computer Work"
+subtitle: null
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+  html_document:
+    highlight: tango
+    theme: cosmo
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+# Okun's law
+
+Professor House mentioned the "statistical pattern" known as Okun's law in class.
+From the "Lecture_2_handouts":
+$$
+\% \Delta \text{GDP} \approx 3 \% - 2 \% \times \Delta \text{unemployment rate}.
+$$
+Plotting this relationship involves two steps.
+We first need to grab the data from FRED.
+Second, we need to regress the percent change in GDP against the change in the unemployment rate to uncover estimates of the two above parameters that define the linear relationship.
+
+## Getting the data from FRED
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(tidyquant)
+dat <- tq_get(c("UNRATE", "GDPC1"), get = "economic.data")
+# "Spread" the data
+dat <- dat %>% 
+  spread(key = symbol, value = price) %>% 
+  mutate(year = year(date)) %>% 
+  select(-date)
+# Get annual averages
+by_year <- group_by(dat, year)
+dat <- summarise_all(by_year, mean, na.rm = TRUE)
+head(dat)
+tail(dat)
+```
+
+
+## Estimating the pattern
+
+# Real interest rates from homework 1
+
+Read in the data that is provided on Canvas:
+```{r}
+library(tidyverse)
+library(lubridate)
+dat <- readxl::read_excel("../PS1-data_2018.xlsx")
+head(dat)
+tail(dat)
+```
+Next we want to compute the inflation rate as a percent change at an annual rate.
+The formula for computing a compounded annual rate of change is 
+$$
+\left[ \left( \frac{x_t}{x_{t-1}} \right)^{\text{number obs per year}} - 1 \right] \times 100,
+$$
+where $x_t$ is the value of the series at time $t$.
+For monthly data the number of observations per year is $12$.
+A useful overview of similar transformations is available at the FRED [website](https://fredhelp.stlouisfed.org/fred/data/understanding-the-data/formulas-calculate-growth-rates/).
+To accomplish this in R we can use the `lag` command:
+
+```{r}
+dat <- dat %>% 
+  mutate(LCPIU = lag(CPIU))
+head(dat)
+tail(dat)
+dat <- dat %>% 
+  mutate(infl = 100*((CPIU / LCPIU)^12 - 1),
+         datem = ymd(paste0(Year, "-", Month, "-01")))
+
+dat <- dat %>%
+  filter(datem <= ymd("2015-11-01"),
+         datem >= ymd("1960-01-01"))
+ggplot(data = dat) +
+  geom_line(mapping = aes(x = datem, y = infl)) +
+  xlab("") + ylab("Percent per year") + ggtitle("Inflation")
+```
+
+Now we can compute the _ex post_ real interest rate:
+$$
+r = FEDFUNDS - infl.
+$$
+```{r}
+dat <- dat %>% 
+  mutate(r = FEDFUNDS - infl)
+```
+And plot the resulting series:
+```{r}
+ggplot(data = dat) +
+  geom_line(mapping = aes(x = datem, y = r)) +
+  xlab("") + ylab("Percent per year") + ggtitle("Real interest rates")
+```
+
+```{r}
+avg <- mean(dat$r, na.rm = TRUE)
+```
+
+The real interest rate in `r max(dat$datem)` is `r dat$r[[which(dat$datem == max(dat$datem))]]`.
+The average real interest rate over the sample is `r avg`.
+
+Ideally you'd like to list those numbers using R code.
+Here's the code I used: `max(dat$datem)` and `dat$r[[which(dat$datem == max(dat$datem))]]`.
+Putting an `r` in from of those commands lists the output within the R markdown,
+resulting in the output you see above.
+
+
+We can add recession shading and the sample avarage:
+```{r}
+recessions_df <- read.table(textConnection(
+"Peak, Trough
+1857-06-01, 1858-12-01
+1860-10-01, 1861-06-01
+1865-04-01, 1867-12-01
+1869-06-01, 1870-12-01
+1873-10-01, 1879-03-01
+1882-03-01, 1885-05-01
+1887-03-01, 1888-04-01
+1890-07-01, 1891-05-01
+1893-01-01, 1894-06-01
+1895-12-01, 1897-06-01
+1899-06-01, 1900-12-01
+1902-09-01, 1904-08-01
+1907-05-01, 1908-06-01
+1910-01-01, 1912-01-01
+1913-01-01, 1914-12-01
+1918-08-01, 1919-03-01
+1920-01-01, 1921-07-01
+1923-05-01, 1924-07-01
+1926-10-01, 1927-11-01
+1929-08-01, 1933-03-01
+1937-05-01, 1938-06-01
+1945-02-01, 1945-10-01
+1948-11-01, 1949-10-01
+1953-07-01, 1954-05-01
+1957-08-01, 1958-04-01
+1960-04-01, 1961-02-01
+1969-12-01, 1970-11-01
+1973-11-01, 1975-03-01
+1980-01-01, 1980-07-01
+1981-07-01, 1982-11-01
+1990-07-01, 1991-03-01
+2001-03-01, 2001-11-01
+2007-12-01, 2009-06-01"), sep=',', 
+colClasses=c('Date', 'Date'), 
+header=TRUE)
+
+recessions_trim <- subset(recessions_df, Peak >= min(dat$datem))
+ggplot(data = dat) +
+  geom_line(mapping = aes(x = datem, y = r)) +
+  geom_hline(yintercept = avg, color = "red") +
+  geom_rect(data = recessions_trim, 
+            aes(xmin = Peak, xmax = Trough,
+                ymin = -Inf, ymax = +Inf),
+            fill = "pink", alpha = 0.3) +
+  xlab("") + ylab("Percent per year") + 
+  ggtitle("Real interest rates", subtitle = "with recession shading")
+```
+ 
+ 
