@@ -31,14 +31,19 @@ $$
 Plotting this relationship involves two steps.
 We first need to grab the data from FRED.
 Second, we need to regress the percent change in GDP against the change in the unemployment rate to uncover estimates of the two above parameters that define the linear relationship.
+The R code replicates figure 10-4 in Mankiw, 9e, p 286.
 
 ## Getting the data from FRED
 
+The first step is getting the data from FRED and
+creating annual averages of the data.
 ```{r}
 library(tidyverse)
 library(lubridate)
 library(tidyquant)
-dat <- tq_get(c("UNRATE", "GDPC1"), get = "economic.data")
+dat <- tq_get(c("UNRATE", "GDPC1"), 
+              get = "economic.data",
+              from = "1940-01-01")
 # "Spread" the data
 dat <- dat %>% 
   spread(key = symbol, value = price) %>% 
@@ -50,9 +55,46 @@ dat <- summarise_all(by_year, mean, na.rm = TRUE)
 head(dat)
 tail(dat)
 ```
+We're interested in the percent change in real GDP and the difference in the unemployment rates:
+```{r}
+# Calculate percent change in rGDP and the difference in the unemployment rate
+dat <- dat %>% 
+  mutate(gdp = 100*(GDPC1 / lag(GDPC1) - 1),
+         ur = UNRATE - lag(UNRATE))
+```
 
 
 ## Estimating the pattern
+
+At this point we're ready to estimate the relationship between the percentage change in real GDP and the change in the unemployment rate posited by Okun:
+```{r}
+# Run the regression
+okun <- lm(gdp ~ ur, data = dat)
+print(okun)
+```
+With rounding, we're at the coefficients mentioned in class,
+which is a minor victory.
+
+The last step is plotting the data.
+To do so, we need to add the regression line:
+```{r}
+xur <- seq(-2, 3)
+reg_line <- okun$coefficients[[1]] + okun$coefficients[[2]]*xur
+fit <- tibble(xur, reg_line)
+
+ggplot(data = dat) +
+  geom_point(mapping = aes(x = ur, y = gdp)) +
+  geom_line(mapping = aes(x = xur, y = reg_line), 
+            data = fit,
+            color = "blue", 
+            size = 1.2) +
+  xlab("Change in the unemployment rate") + 
+  ylab("Percentage change in real GDP") +
+  ggtitle("Okun's law")
+```
+Just fyi:
+you can add a regression line in R without having to run the regression using R's built-in commands.
+I did these calculations by hand just for practice.
 
 # Real interest rates from homework 1
 
