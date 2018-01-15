@@ -305,6 +305,9 @@ div.tocify {
   <a href="index.html">Overview</a>
 </li>
 <li>
+  <a href="notes.html">Notes</a>
+</li>
+<li>
   <a href="labor_market_friday.html">Labor Market Friday in R</a>
 </li>
       </ul>
@@ -376,7 +379,7 @@ div.tocify {
 <p>To get different series, go to FRED and search for whatever series you want. For example, I typed in “inflation”, which generated several series. Then I picked “Consumer Price Index for All Urban Consumers: All Items”. Clicking on that series reveals the mnemonic <code>CPIAUCSL</code>. Replacing <code>UNRATE</code> with <code>CPIAUCSL</code> will download the CPI price index. This is the “headline” index; the “core” index is <code>CPILFESL</code>, which is less food and energy prices.</p>
 </div>
 <div id="including-plots-macroeconomic-time-series-data-are" class="section level2">
-<h2>Including Plots: Macroeconomic time-series data are 🔥</h2>
+<h2>Including Plots: Macroeconomic time-series data are <f0><U+009F><U+0094><U+00A5></h2>
 <p>Plotting the data is easy. For example:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> ur) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price)) <span class="op">+</span>
