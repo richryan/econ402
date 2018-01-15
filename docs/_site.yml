@@ -9,3 +9,5 @@ navbar:
       href: notes.html
     - text: "Labor Market Friday in R"
       href: labor_market_friday.html 
+    - text: "Computer Work"
+      href: computer_work.html
