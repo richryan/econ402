@@ -1,0 +1,16 @@
+---
+title: "Notes"
+subtitle: 
+output:
+  html_document:
+    highlight: tango
+    theme: cosmo
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+---
+
+Section notes for ECON 402, Intermediate Macroeconomics, with Professor [Chris House](http://www-personal.umich.edu/~chouse/)
+
+1. Plotting, two-period budget constraints, comparative statics with the intertemporal budget constraint, agents can always consume their endowment, indifference curves, derivatives, [optimization](https://umich.box.com/s/t3pnjnvzwyiz861fgoabc5glg91vgw1y)
+2. 

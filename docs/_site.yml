@@ -5,5 +5,7 @@ navbar:
   left: 
     - text: "Overview"
       href: index.html
+    - text: "Notes"
+      href: notes.html
     - text: "Labor Market Friday in R"
       href: labor_market_friday.html 
