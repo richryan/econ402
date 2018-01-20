@@ -21,8 +21,7 @@ Here are the notes for [section 2](https://umich.box.com/s/03fuxxit457y7lfas2ti7
 A few take-aways:
 
 + Intertemporal choice lead to the consumption Euler equation: $\text{MU}(c_1) = (1+r) \text{MU}(c_2)$.
-+ The saving supply function: $s_1(r,y) := y_1 - c_1(r,y)$,
-where $c_1(r,y)$ represents the (Marshallian) demand function in the first period.
++ The saving supply function: $s_1(r,y) := y_1 - c_1(r,y)$.
 We plotted the saving supply function for both 
     * log utility and 
     * linear utility.
