@@ -10,13 +10,13 @@ output:
     toc_float: yes
 ---
 
-## Section notes
+<!-- ## Section notes -->
 Section notes for ECON 402, Intermediate Macroeconomics, with Professor [Chris House](http://www-personal.umich.edu/~chouse/)
 
-### 1 A too short introduction
+## 1 A too short introduction
 Plotting, two-period budget constraints, comparative statics with the intertemporal budget constraint, agents can always consume their endowment, not being allowed to borrow, indifference curves, derivatives, [optimization](https://umich.box.com/s/t3pnjnvzwyiz861fgoabc5glg91vgw1y)
 
-### 2 Intertemporal choice, the saving supply function, dynamic general equilibrium
+## 2 Intertemporal choice, the saving supply function, dynamic general equilibrium
 Here are the notes for [section 2](https://umich.box.com/s/03fuxxit457y7lfas2ti79u5lobmzzye).
 A few take-aways:
 
