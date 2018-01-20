@@ -159,7 +159,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2",
+      selectors: "h1,h2,h3",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -290,9 +290,28 @@ div.tocify {
 <div id="section-notes" class="section level2">
 <h2>Section notes</h2>
 <p>Section notes for ECON 402, Intermediate Macroeconomics, with Professor <a href="http://www-personal.umich.edu/~chouse/">Chris House</a></p>
+<div id="a-too-short-introduction" class="section level3">
+<h3>1 A too short introduction</h3>
+<p>Plotting, two-period budget constraints, comparative statics with the intertemporal budget constraint, agents can always consume their endowment, not being allowed to borrow, indifference curves, derivatives, <a href="https://umich.box.com/s/t3pnjnvzwyiz861fgoabc5glg91vgw1y">optimization</a></p>
+</div>
+<div id="intertemporal-choice-the-saving-supply-function-dynamic-general-equilibrium" class="section level3">
+<h3>2 Intertemporal choice, the saving supply function, dynamic general equilibrium</h3>
+<p>Here are the notes for <a href="https://umich.box.com/s/03fuxxit457y7lfas2ti79u5lobmzzye">section 2</a>. A few take-aways:</p>
+<ul>
+<li>Intertemporal choice lead to the consumption Euler equation: <span class="math inline">\(\text{MU}(c_1) = (1+r) \text{MU}(c_2)\)</span>.</li>
+<li>The saving supply function: <span class="math inline">\(s_1(r,y) := y_1 - c_1(r,y)\)</span>, where <span class="math inline">\(c_1(r,y)\)</span> represents the (Marshallian) demand function in the first period. We plotted the saving supply function for both
+<ul>
+<li>log utility and</li>
+<li>linear utility.</li>
+</ul></li>
+<li>Dynamic general equilibrium. Definition 2.2 defines our notation of equilibrium, which is important—see slide 17 of <em>Lecture 4_handouts</em>. From national accounting, we saw that <span class="math inline">\(Y = C\)</span> for the endowment economies we explored. Therefore aggregate saving was <span class="math inline">\(0\)</span>. This equilibrium market-clearing condition provides a procedure for computing equilibrium levels of consumption and the equilibrium interest rate:
 <ol style="list-style-type: decimal">
-<li>Plotting, two-period budget constraints, comparative statics with the intertemporal budget constraint, agents can always consume their endowment, not being allowed to borrow, indifference curves, derivatives, <a href="https://umich.box.com/s/t3pnjnvzwyiz861fgoabc5glg91vgw1y">optimization</a></li>
-</ol>
+<li>Compute the demand functions, <span class="math inline">\(c(r,y)\)</span>. Since income is exogenous, these are simply functions of the interest rate.</li>
+<li>Using the demand functions, calculate the saving functions.</li>
+<li>In equilibrium, the interest rate (price) must adjust so that aggregate saving is <span class="math inline">\(0\)</span>. With the interest rate in hand, equilibrium levels of consumption and saving can be read off of items 1. and 2.</li>
+</ol></li>
+</ul>
+</div>
 </div>
 
 

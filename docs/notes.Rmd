@@ -6,11 +6,32 @@ output:
     highlight: tango
     theme: cosmo
     toc: yes
-    toc_depth: 2
+    toc_depth: 3
     toc_float: yes
 ---
 
 ## Section notes
 Section notes for ECON 402, Intermediate Macroeconomics, with Professor [Chris House](http://www-personal.umich.edu/~chouse/)
 
-1. Plotting, two-period budget constraints, comparative statics with the intertemporal budget constraint, agents can always consume their endowment, not being allowed to borrow, indifference curves, derivatives, [optimization](https://umich.box.com/s/t3pnjnvzwyiz861fgoabc5glg91vgw1y)
+### 1 A too short introduction
+Plotting, two-period budget constraints, comparative statics with the intertemporal budget constraint, agents can always consume their endowment, not being allowed to borrow, indifference curves, derivatives, [optimization](https://umich.box.com/s/t3pnjnvzwyiz861fgoabc5glg91vgw1y)
+
+### 2 Intertemporal choice, the saving supply function, dynamic general equilibrium
+Here are the notes for [section 2](https://umich.box.com/s/03fuxxit457y7lfas2ti79u5lobmzzye).
+A few take-aways:
+
++ Intertemporal choice lead to the consumption Euler equation: $\text{MU}(c_1) = (1+r) \text{MU}(c_2)$.
++ The saving supply function: $s_1(r,y) := y_1 - c_1(r,y)$,
+where $c_1(r,y)$ represents the (Marshallian) demand function in the first period.
+We plotted the saving supply function for both 
+    * log utility and 
+    * linear utility.
++ Dynamic general equilibrium.
+Definition 2.2 defines our notation of equilibrium, which is important&mdash;see slide 17 of _Lecture 4\_handouts_.
+From national accounting, we saw that $Y = C$ for the endowment economies we explored.
+Therefore aggregate saving was $0$.
+This equilibrium market-clearing condition provides a procedure for computing equilibrium levels of consumption and the equilibrium interest rate:
+    1. Compute the demand functions, $c(r,y)$. Since income is exogenous, these are simply functions of the interest rate.
+    2. Using the demand functions, calculate the saving functions.
+    3. In equilibrium, the interest rate (price) must adjust so that aggregate saving is $0$. With the interest rate in hand, equilibrium levels of consumption and saving can be read off of items 1. and 2.
+
