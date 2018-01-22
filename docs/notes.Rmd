@@ -34,3 +34,6 @@ This equilibrium market-clearing condition provides a procedure for computing eq
     2. Using the demand functions, calculate the saving functions.
     3. In equilibrium, the interest rate (price) must adjust so that aggregate saving is $0$. With the interest rate in hand, equilibrium levels of consumption and saving can be read off of items 1. and 2.
 
+## Answers to questions people ahve asked
+
++ The difference between _ex ante_ and _ex post_ interest [rates](https://richryan.github.io/2018/01/22/ex-ante-ex-post.html)
