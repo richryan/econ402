@@ -225,7 +225,7 @@ So you can imagine the shock economists experienced when they saw this picture a
 
 dat <- tq_get("PCECC96", get = "economic.data", 
               from = "2005-01-01",
-              to = "2013-01-01")
+              to = "2012-01-01")
 
 recessions_trim <- subset(recessions_df, Peak >= min(dat$date))
 ggplot(data = dat) +
