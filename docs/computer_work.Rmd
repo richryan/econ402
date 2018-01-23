@@ -211,4 +211,29 @@ ggplot(data = dat) +
   ggtitle("Real interest rates", subtitle = "with recession shading")
 ```
  
+# Consumption around the Great Recession
+
+You explored the motive for smoothing consumption in class.
+So you can imagine the shock economists experienced when they saw this picture as the Great Recession unfolded:
+
+```{r}
+# Real Personal Consumption Expenditures (PCECC96)	DOWNLOAD 
+# Observation: Q3 2017: 11,916.576 (+ more)  
+# Updated: Dec 21, 2017
+# Units: Billions of Chained 2009 Dollars, Seasonally Adjusted Annual Rate
+# Frequency: Quarterly
+
+dat <- tq_get("PCECC96", get = "economic.data", from = "2005-01-01")
+
+recessions_trim <- subset(recessions_df, Peak >= min(dat$date))
+ggplot(data = dat) +
+  geom_line(mapping = aes(x = date, y = price)) +
+  geom_rect(data = recessions_trim, 
+            aes(xmin = Peak, xmax = Trough,
+                ymin = -Inf, ymax = +Inf),
+            fill = "pink", alpha = 0.4) +
+  xlab("") + ylab("Real 2009 dollars") + 
+  ggtitle("Real personal consumption expenditures")
+```
+
  
