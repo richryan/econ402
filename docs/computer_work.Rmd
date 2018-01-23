@@ -234,7 +234,7 @@ ggplot(data = dat) +
             aes(xmin = Peak, xmax = Trough,
                 ymin = -Inf, ymax = +Inf),
             fill = "pink", alpha = 0.4) +
-  xlab("") + ylab("Real 2009 dollars") + 
+  xlab("") + ylab("Billions of real 2009 dollars") + 
   ggtitle("Real personal consumption expenditures")
 ```
 
