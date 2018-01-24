@@ -216,6 +216,7 @@ ggplot(data = dat) +
   xlab("") + ylab("Percent per year") + 
   ggtitle("Real interest rates", subtitle = "with recession shading")
 ```
+ The red line shows the sample average.
  
 # Consumption around the Great Recession
 
