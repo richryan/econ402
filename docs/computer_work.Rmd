@@ -131,13 +131,19 @@ ggplot(data = dat) +
   xlab("") + ylab("Percent per year") + ggtitle("Inflation")
 ```
 
-Now we can compute the _ex post_ real interest rate:
+Now we can compute the _ex post_ real interest rate 
+(see the post [here](https://richryan.github.io/2018/01/22/ex-ante-ex-post.html)).
+The Fisher equation is better expressed as $r_t = i_t - \mathbb{E}_t \pi_{t+1}$.
+At time $t$ we don't know expected inflation.
+There are a couple of ways you could imagine proceeding.
+The _ex post_ real interest rate is constructed by putting actual inflation:
 $$
-r = FEDFUNDS - infl.
+r_t = \text{Fed Funds Rate}_t - \text{inflation}_{t+1}.
 $$
 ```{r}
 dat <- dat %>% 
-  mutate(r = FEDFUNDS - infl)
+  mutate(r = FEDFUNDS - lead(infl)) %>% 
+  filter(!is.na(r))
 ```
 And plot the resulting series:
 ```{r}
@@ -229,12 +235,12 @@ dat <- tq_get("PCECC96", get = "economic.data",
 
 recessions_trim <- subset(recessions_df, Peak >= min(dat$date))
 ggplot(data = dat) +
-  geom_line(mapping = aes(x = date, y = price)) +
+  geom_line(mapping = aes(x = date, y = log(price))) +
   geom_rect(data = recessions_trim, 
             aes(xmin = Peak, xmax = Trough,
                 ymin = -Inf, ymax = +Inf),
             fill = "pink", alpha = 0.4) +
-  xlab("") + ylab("Billions of real 2009 dollars") + 
+  xlab("") + ylab("Log(Billions of real 2009 dollars)") + 
   ggtitle("Real personal consumption expenditures")
 ```
 
