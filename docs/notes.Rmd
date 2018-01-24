@@ -36,7 +36,7 @@ This equilibrium market-clearing condition provides a procedure for computing eq
     
 ## Selected suggested homework solutions
 
-+ H1.2: A proportional increase to all prices means the implicit price deflator and CPI are the [same](https://umich.box.com/s/zgqslxkgjlxj82p6a086idm592okocv9).
++ H1.2: A proportional increase to all prices means the implicit price deflator and CPI are the [same](https://umich.box.com/s/zgqslxkgjlxj82p6a086idm592okocv9). The algebra is on the last page.
 
 ## Answers to questions people have asked
 
