@@ -34,6 +34,10 @@ This equilibrium market-clearing condition provides a procedure for computing eq
     2. Using the demand functions, calculate the saving functions.
     3. In equilibrium, the interest rate (price) must adjust so that aggregate saving is $0$. With the interest rate in hand, equilibrium levels of consumption and saving can be read off of items 1. and 2.
     
+## 3 Saving supply and saving demand    
+Saving supply and saving demand determine the equilibrium [rate of interest](https://umich.box.com/s/e2cb48p3z66ywgh7spcgqpr9zhy12k8y).
+Shifters of supply and demand are discussed. 
+    
 ## Selected suggested solutions to homeworks
 
 + H1.2: A proportional increase to all prices means the implicit price deflator and CPI are the [same](https://umich.box.com/s/zgqslxkgjlxj82p6a086idm592okocv9). The algebra is on the last page.
