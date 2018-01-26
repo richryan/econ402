@@ -37,6 +37,7 @@ This equilibrium market-clearing condition provides a procedure for computing eq
 ## 3 Saving supply and saving demand    
 Saving supply and saving demand determine the equilibrium [rate of interest](https://umich.box.com/s/e2cb48p3z66ywgh7spcgqpr9zhy12k8y).
 Shifters of supply and demand are discussed. 
+National accounting requires that $Y_1 = C_1 + I_1$, so $S_1 > 0$.
     
 ## Selected suggested solutions to homeworks
 
