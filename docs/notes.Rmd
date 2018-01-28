@@ -46,3 +46,4 @@ National accounting requires that $Y_1 = C_1 + I_1$, so $S_1 > 0$.
 ## Answers to questions people have asked
 
 + The difference between _ex ante_ and _ex post_ interest [rates](https://richryan.github.io/2018/01/22/ex-ante-ex-post.html)
++ Interpreting differences in logs as a [percentage change](https://umich.box.com/s/b55x084x4dg52s0csoqzmj6n8bqin9xe)
