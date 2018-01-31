@@ -26,7 +26,7 @@ We plotted the saving supply function for both
     * log utility and 
     * linear utility.
 + Dynamic general equilibrium.
-Definition 2.2 defines our notation of equilibrium, which is important&mdash;see slide 17 of _Lecture 4\_handouts_.
+Definition 2.2 defines our notion of equilibrium, which is important&mdash;see slide 17 of _Lecture 4\_handouts_.
 From national accounting, we saw that $Y = C$ for the endowment economies we explored.
 Therefore aggregate saving was $0$.
 This equilibrium market-clearing condition provides a procedure for computing equilibrium levels of consumption and the equilibrium interest rate:
