@@ -39,6 +39,9 @@ Saving supply and saving demand determine the equilibrium [rate of interest](htt
 Shifters of supply and demand are discussed. 
 National accounting requires that $Y_1 = C_1 + I_1$, so $S_1 > 0$.
     
+## 4 Summing up
+Valuing a job, valuing a job with wage growth, valuing a job with a finite work horizon, PIH with permanent and transitory fluctuations, neoclassical production, [valuing a unit of capitl](https://umich.box.com/s/dlnc24jda0xu9sqifl2uicc4cdmzit4l).
+    
 ## Selected suggested solutions to homeworks
 
 + H1.2: A proportional increase to all prices means the implicit price deflator and CPI are the [same](https://umich.box.com/s/zgqslxkgjlxj82p6a086idm592okocv9). The algebra is on the last page.
