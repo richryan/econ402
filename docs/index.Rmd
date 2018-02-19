@@ -20,7 +20,7 @@ output:
 
 #### Office hours:
 
-* Mondays: 5:30 pm&ndash;7:30 pm, Lorch 142
+* Mondays: 5:30 pm&ndash;7:00 pm, Lorch 142
 * Fridays: 8:30 am&ndash;9:00 am, Lorch 373
 * Fridays: 10:00 am&ndash;12:00 pm, Shapiro Library 2144
 
