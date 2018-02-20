@@ -13,10 +13,11 @@ output:
 <!-- ## Section notes -->
 Section notes for ECON 402, Intermediate Macroeconomics, with Professor [Chris House](http://www-personal.umich.edu/~chouse/)
 
-## 1 A too short introduction
+## Material up to Midterm Exam 1
+### 1 A too short introduction
 Plotting, two-period budget constraints, comparative statics with the intertemporal budget constraint, agents can always consume their endowment, not being allowed to borrow, indifference curves, derivatives, [optimization](https://umich.box.com/s/t3pnjnvzwyiz861fgoabc5glg91vgw1y)
 
-## 2 Intertemporal choice, the saving supply function, dynamic general equilibrium
+### 2 Intertemporal choice, the saving supply function, dynamic general equilibrium
 Here are the notes for [section 2](https://umich.box.com/s/03fuxxit457y7lfas2ti79u5lobmzzye).
 A few take-aways:
 
@@ -34,13 +35,19 @@ This equilibrium market-clearing condition provides a procedure for computing eq
     2. Using the demand functions, calculate the saving functions.
     3. In equilibrium, the interest rate (price) must adjust so that aggregate saving is $0$. With the interest rate in hand, equilibrium levels of consumption and saving can be read off of items 1. and 2.
     
-## 3 Saving supply and saving demand    
+### 3 Saving supply and saving demand    
 Saving supply and saving demand determine the equilibrium [rate of interest](https://umich.box.com/s/e2cb48p3z66ywgh7spcgqpr9zhy12k8y).
 Shifters of supply and demand are discussed. 
 National accounting requires that $Y_1 = C_1 + I_1$, so $S_1 > 0$.
     
-## 4 Summing up
+### 4 Summing up
 Valuing a job, valuing a job with wage growth, valuing a job with a finite work horizon, PIH with permanent and transitory fluctuations, neoclassical production, [valuing a unit of capitl](https://umich.box.com/s/dlnc24jda0xu9sqifl2uicc4cdmzit4l).
+   
+## Material between Midterm Exam 1 and Midterm Exam 2   
+
+### 5 Choice under Uncertainty
+Precautionary saving in the face of uncertainty, computing expected values, expection, St. Petersburg paradox, concavity and risk aversion, an expanded answer to [problem 5 on Midterm Exam 1](https://umich.box.com/s/ntytbawgba1vpqb2unapnfzls5c3sjzz)
+
     
 ## Selected suggested solutions to homeworks
 
@@ -53,3 +60,4 @@ Valuing a job, valuing a job with wage growth, valuing a job with a finite work 
 + The difference between _ex ante_ and _ex post_ interest [rates](https://richryan.github.io/2018/01/22/ex-ante-ex-post.html)
 + Interpreting differences in logs as a [percentage change](https://umich.box.com/s/b55x084x4dg52s0csoqzmj6n8bqin9xe)
 + Are the 10 people who run their own business counted in the establishment survey? [It depends](https://richryan.github.io/2018/02/04/establishment-survey.html).
++ A cool figure that illustrates the effects of [economic growth](https://richryan.github.io/update/2017/08/14/a-gif.html). (I made that with R Shiny.)
