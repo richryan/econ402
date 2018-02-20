@@ -6,14 +6,14 @@ output:
     highlight: tango
     theme: cosmo
     toc: yes
-    toc_depth: 2
+    toc_depth: 3
     toc_float: yes
 ---
 
 <!-- ## Section notes -->
 Section notes for ECON 402, Intermediate Macroeconomics, with Professor [Chris House](http://www-personal.umich.edu/~chouse/)
 
-## Material up to Midterm Exam 1
+## Part I
 ### 1 A too short introduction
 Plotting, two-period budget constraints, comparative statics with the intertemporal budget constraint, agents can always consume their endowment, not being allowed to borrow, indifference curves, derivatives, [optimization](https://umich.box.com/s/t3pnjnvzwyiz861fgoabc5glg91vgw1y)
 
@@ -43,7 +43,7 @@ National accounting requires that $Y_1 = C_1 + I_1$, so $S_1 > 0$.
 ### 4 Summing up
 Valuing a job, valuing a job with wage growth, valuing a job with a finite work horizon, PIH with permanent and transitory fluctuations, neoclassical production, [valuing a unit of capitl](https://umich.box.com/s/dlnc24jda0xu9sqifl2uicc4cdmzit4l).
    
-## Material between Midterm Exam 1 and Midterm Exam 2   
+## Part II
 
 ### 5 Choice under Uncertainty
 Precautionary saving in the face of uncertainty, computing expected values, expection, St. Petersburg paradox, concavity and risk aversion, an expanded answer to [problem 5 on Midterm Exam 1](https://umich.box.com/s/ntytbawgba1vpqb2unapnfzls5c3sjzz)
