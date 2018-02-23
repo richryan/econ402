@@ -1,0 +1,175 @@
+% Created 2017-12-15 Fri 09:25
+\documentclass[presentation]{beamer}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+% \usepackage{color}
+\usepackage{listings}
+\usepackage{xfrac}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{siunitx}
+\usepackage{tgpagella}
+\usepackage[T1]{fontenc}
+\usefonttheme{serif}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{section in sidebar}{fg=black}
+\setbeamercolor{titlelike}{fg=black}
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{subsection in toc}{fg=black}
+\setbeamercolor{block title}{fg=black}
+\setbeamercolor{alerted text}{fg=blue}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{subsubsection in toc}[subsubsections numbered]
+\setbeamercolor*{item}{fg=black}
+\setbeamertemplate{itemize items}[circle]
+\usetheme{default}
+\addtobeamertemplate{navigation symbols}{}{%
+\usebeamerfont{footline}%
+\usebeamercolor[fg]{footline}%
+\hspace{1em}%
+\insertframenumber/\inserttotalframenumber
+}
+% \setbeamerfont{footline}{gray}
+\usetheme{default}
+\author{Rich Ryan \\ richryan@umich.edu}
+\date{23 February 2018}
+\title{Thinking about \\ fundamentals of asset pricing}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.5.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+% \frametitle{A very long chain of logic}
+\begin{figure}[htbp]
+\centerline{\includegraphics[]{mice.pdf}}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exotic dimensions}
+
+What are the units of
+\begin{align*}
+\frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})}?
+\end{align*}
+\begin{itemize}
+\item Let $\left[ \cdot \right]$ be the symbol for units
+\item $\left[ u^{\prime} \right] \approx \left[ \frac{\Delta \text{utils}}{\Delta c} \right] = \frac{\text{utils}}{\text{bananas}}$
+\item $\beta = \frac{\text{utils}_{t}}{\text{utils}_{t+1}}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exotic dimensions}
+Therefore
+\begin{align*}
+\left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] &= \frac{\beta \frac{\text{utils}_{t+1}}{\text{ba}_{t+1}}}{\frac{\text{utils}_{t}}{\text{ba$_{t}$}}} \\
+&= \frac{\frac{\text{utils}_{t}}{\text{ba}_{t+1}}}{\frac{\text{utils}_{t}}{\text{ba$_{t}$}}} \\
+&= \frac{\text{ba$_{t}$}}{\text{ba}_{t+1}},
+\end{align*}
+in other words: The stochastic discount factor converts bananas from the future into today's bananas---so you can add bananas to bananas.
+\end{frame}
+
+
+\begin{frame}[label=sec-4-2]{Asset prices in an endowment economy}
+Euler equation with price and dividend in terms of banans:
+\begin{align*}
+p_{t} = \beta \mathbb{E} \left[ \frac{u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} (y_{t+1}+p_{t+1}) \right].
+\end{align*}
+Asset-pricing equation:
+\begin{align*}
+1 = \mathbb{E} \left[ R_{t+1} \frac{\beta u^{\prime}(c_{t+1})}{c^{\prime}(c_{t})} \right],
+\end{align*}
+where $R_{t+1} = (y_{t+1} + p_{t+1})/p_{t}$.
+\alert{Alert}: The return $R_{t+1}$ is inversely related to the price, $p_{t}$.
+\end{frame}
+
+\begin{frame}[label=sec-4-3]{Asset prices in an endowment economy}
+Expanding the expectation: 
+\begin{align*}
+1 = \mathbb{E} \left[ R_{t+1} \right] \mathbb{E} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] + \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right].
+\end{align*}
+Solving for $R_{t+1}$ yields
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] = \frac{1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{ \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}
+\end{align*}
+\end{frame}
+\begin{frame}[label=sec-4-4]{Asset prices in an endowment economy}
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] &= \frac{1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{ \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]} \\
+&= R^{f}_{t} \left( 1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] \right)
+\end{align*}
+where
+\begin{align*}
+R^{f}_{t} = \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]^{-1} 
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{The riskfree rate of return}
+This is the risk-free rate of return in the endowment economy:
+\begin{align*}
+R^{f}_{t} &= \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]^{-1} \\
+\iff 1 &= \mathbb{E}_{t} \left[ R^{f}_{t} \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] \\
+&= \mathbb{E}_{t} \left[ \frac{1 + 0}{p_{t}} \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right].
+\end{align*}
+In other words, the asset pays off $1$ the following period and that's it---no $p_{t+1}$ because there is nothing to sell.
+\end{frame}
+
+\begin{frame}[label=sec-4-5]{Interpreting asset prices in an endowment economy}
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] = R^{f}_{t} \left( 1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] \right)
+\end{align*}
+
+\begin{itemize}
+\item ``The expected return on any asset is the riskless return times an adjustment factor for the covariance of the return with the SDF'' (Campbell/2017, p 94)
+\item Sps consumption is growing [$u^{\prime}(c_{t+1})$ falling] and the asset returns are high (neg cov)
+\item Valuable assets pay off in bad states (car insurace) and this isn't that
+\item Drives down demand (price), making the return higher
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-4-6]{Interpreting asset prices in an endowment economy\dots{} \\ \dots{} again}
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] = R^{f}_{t} \left( 1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] \right)
+\end{align*}
+
+\begin{itemize}
+\item When the covariance term is high, the asset pays off in high marginal-utility states, which is desirable
+\item Drives up the price and down the return
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Same as what House has}
+Indeed:
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] &=
+\frac{1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{
+  \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]} \\
+\mathbb{E}_{t} \left[ R_{t+1} \right] - \frac{1}{\mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]} &=
+\frac{- \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{
+  \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]} \\
+\mathbb{E}_{t} \left[ R_{t+1} \right] - (1+r_{t}^{f}) &= \frac{- \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{
+  \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]},
+\end{align*}
+which is the expression from \texttt{Lecture 9 Handouts}.
+\end{frame}
+
+\end{document}
