@@ -50,8 +50,9 @@ Precautionary saving in the face of uncertainty, computing expected values, expe
 
 ### 6 Introduction to the Solow model of economic growth
 Neoclassical production, returns to scale, the final-good-producing firm makes no profits in equilibrium, the Solow model as a dynamic general-equilibrium model,
-Solow dynamics with population growth, growth rates of capital per worker.
+Solow dynamics with population growth, growth rates of [capital per worker](https://umich.box.com/s/zlyddmutecbi4kapcvjlz1e9tl6l7jl1).
 
+You may also find this slidedeck on the fundamentals of asset pricing [helpful](https://umich.box.com/s/e56gn79e2pkw58h6nb3l40mlp6h99sjw).
     
 ## Selected suggested solutions to homeworks
 
