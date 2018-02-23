@@ -48,6 +48,10 @@ Valuing a job, valuing a job with wage growth, valuing a job with a finite work 
 ### 5 Choice under Uncertainty
 Precautionary saving in the face of uncertainty, computing expected values, expection, St. Petersburg paradox, concavity and risk aversion, an expanded answer to [problem 5 on Midterm Exam 1](https://umich.box.com/s/ntytbawgba1vpqb2unapnfzls5c3sjzz)
 
+### 6 Introduction to the Solow model of economic growth
+Neoclassical production, returns to scale, the final-good-producing firm makes no profits in equilibrium, the Solow model as a dynamic general-equilibrium model,
+Solow dynamics with population growth, growth rates of capital per worker.
+
     
 ## Selected suggested solutions to homeworks
 
