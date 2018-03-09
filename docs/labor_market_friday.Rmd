@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-Here are the latest figures from the Employment Situation:
+Here is the latest unemployment rate from the Employment Situation:
 ```{r}
 library(tidyquant)
 library(ggplot2)
