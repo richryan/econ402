@@ -247,3 +247,155 @@ ggplot(data = dat) +
 ```
 
  
+# Solow convergence
+
+Recall the Solow model described in the [section 6 notes](https://
+umich.box.com/s/zlyddmutecbi4kapcvjlz1e9tl6l7jl1):
+$$
+\begin{align*}
+K_{t+1} &= (1-\delta)K_t + I_t \\
+&= (1-\delta)K_t + sY_t \\
+&= (1-\delta)K_t + sA^{1-\alpha}K_t^{\alpha}{N_t}^{1-\alpha}.
+\end{align*}
+$$
+Consider an economy with no population growth: $N_t = 1$ for all $t$.
+The steady-state level of capital is defined by $K_t = K_{t+1} = K_{\star}$:
+$$
+\begin{align*}
+K_{\star} &= (1-\delta)K_{\star} + sA^{1-\alpha}K_{\star}^{\alpha} \\
+\therefore 1 &= (1-\delta) + sA^{1-\alpha}K_{\star}^{\alpha - 1} \\
+\therefore K_{\star}^{\alpha - 1} &= \frac{\delta}{s A^{1-\alpha}}
+\end{align*}
+$$
+Simplifying the latter yields
+
+$$
+\begin{align*}
+K_{\star} &= \left( \frac{\delta}{s A^{1-\alpha}} \right)^{\frac{1}{\alpha - 1}} \\
+\therefore K_{\star} &= \left( \frac{s A^{1-\alpha}}{\delta} \right)^{\frac{1}{1-\alpha}}.
+\end{align*}
+ $$ 
+Or
+$$
+K_{\star} = A \left( \frac{s}{\delta} \right)^{\frac{1}{1-\alpha}}.
+$$
+
+Define parameters:
+```{r}
+s <- 0.15
+del <- 0.1
+alph <- 0.35
+N <- 1.0
+A <- 1.0
+```
+The steady-state level of capital is
+```{r}
+Kstar <- A*(s / del)^(1 / (1-alph))
+```
+
+## Paths of capital stock for different starting levels of capital
+Now we're interested in starting the economy from the steady-state level of capital and then observing how the sequence of capital stocks unfolds.
+We want to initialize the capital stocks and then iterate the capital stocks using a for loop with:
+$$
+K_{t+1} = (1-\delta)K_t + sA^{1-\alpha}K_t^{\alpha}.
+$$
+```{r}
+horizon <- 100 # like the 100 spreadsheet rows
+K <- rep(NaN, horizon)
+# Now make the first period
+K[[1]] <- Kstar
+for (ii in 2:horizon) {
+  K[[ii]] <- (1 - del)*K[[ii-1]] + s*A^(1-alph)*K[[ii-1]]^alph
+}
+```
+Now we can start the capital 25 percent above and below the steady-state level and check for convergence:
+```{r}
+Khi <- rep(NaN, horizon)
+Klo <- Khi
+# Now make the first period
+Khi[[1]] <- Kstar*(1 + 0.25)
+Klo[[1]] <- Kstar*(1 - 0.25)
+for (ii in 2:horizon) {
+  Khi[[ii]] <- (1 - del)*Khi[[ii-1]] + s*A^(1-alph)*Khi[[ii-1]]^alph
+  Klo[[ii]] <- (1 - del)*Klo[[ii-1]] + s*A^(1-alph)*Klo[[ii-1]]^alph
+}
+```
+Now we can plot the sequences of capital stocks:
+```{r}
+toplot <- cbind(1:horizon, K, Klo, Khi)
+toplot <- as_tibble(toplot) %>% 
+  rename(ind = V1)
+toplot
+
+# Reshape the data to plot using ggplot
+toplot_K <- toplot %>% 
+  gather(K, Klo, Khi, key = "series", value = "lvl")
+toplot_K
+
+# Now plot the sequences
+ggplot(data = toplot_K) +
+  geom_line(mapping = aes(x = ind, y= lvl, 
+                          color = series, 
+                          linetype = series), size = 2) +
+  xlab("Index") + ylab("Capital stock") +
+  scale_color_brewer(palette = "Set2")
+```
+
+## Changing the saving rate
+Now starting in period 51 the saving rate changes to .25.
+We're also interested in plotting the series for 125 periods.
+Let's start the problem over and make the saving rates a vector.
+```{r}
+horizon <- 125
+K <- rep(NA, horizon)
+s <- append(rep(0.15, 50), rep(0.25, horizon - 50))
+# Check
+s[[50]]
+s[[51]]
+length(s)
+```
+Now we want to calculate the capital stock just like before&mdash;making suring that we index `s` appropriately:
+```{r}
+K[[1]] <- Kstar
+for (ii in 2:horizon) {
+  K[[ii]] <- (1 - del)*K[[ii-1]] + s[[ii]]*A^(1-alph)*K[[ii-1]]^alph
+}
+```
+Calculating $C$, $Y$, and $I$ is easy.
+We want to create a data frame:
+```{r}
+dat <- as_tibble(cbind(1:horizon, K, s)) %>% 
+  rename(ind = V1)
+# Calculate the macroeconomic series
+dat <- dat %>% 
+  mutate(Y = A*K^alph,
+         I = s*Y,
+         C = (1-s)*Y)
+head(dat)
+tail(dat)
+```
+We can also add in the steady-state level of capital when `s_end = .25`.
+```{r}
+s_end <- .25
+Kstar_end <- A*(s_end / del)^(1 / (1-alph))
+dat <- dat %>% 
+  mutate(`New steady-state K` = Kstar_end)
+```
+Now we can plot everything:
+```{r}
+Kplot <- dat %>% 
+  gather(K, `New steady-state K`, key = "Series", value = "lvl")
+ggplot(data = Kplot) +
+  geom_line(mapping = aes(x = ind, y = lvl, color = Series)) +
+  scale_color_brewer(palette = "Set1") +
+  xlab("Index") + ylab("Capital stock")
+```
+```{r}
+macro <- dat %>% 
+  gather(Y, I, C, key = "Series", value = "lvl")
+ggplot(data = macro) +
+  geom_line(mapping = aes(x = ind, y = lvl, color = Series)) +
+  xlab("Index") + ylab("Real levels")
+```
+
+
