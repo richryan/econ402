@@ -358,7 +358,7 @@ Now we want to calculate the capital stock just like before&mdash;making suring 
 ```{r}
 K[[1]] <- Kstar
 for (ii in 2:horizon) {
-  K[[ii]] <- (1 - del)*K[[ii-1]] + s[[ii-i]]*A^(1-alph)*K[[ii-1]]^alph
+  K[[ii]] <- (1 - del)*K[[ii-1]] + s[[ii-1]]*A^(1-alph)*K[[ii-1]]^alph
 }
 ```
 Calculating $C$, $Y$, and $I$ is easy.
