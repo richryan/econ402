@@ -10,6 +10,40 @@ output:
     toc_float: yes
 ---
 
+## Latest unemployment-rate numbers
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+Here are the latest figures from the Employment Situation:
+```{r}
+library(tidyquant)
+library(ggplot2)
+library(ggthemes)
+
+ur <- tq_get("UNRATE", get = "economic.data", from = "2010-01-01")
+ur <- ur %>% 
+  mutate(series = "Unemployment rate")
+last_date <- max(ur$date)
+last_lvl <- ur$price[[which(ur$date == max(ur$date))]]
+ggplot(data = ur) +
+  geom_line(mapping = aes(x = date, y = price, color = series)) +
+  xlab("") + ylab("Percent") +
+  guides(color = FALSE) + ggtitle("Civilian unemployment rate") +
+  annotate("text", x = last_date, y = 6.5, label = paste0(last_lvl), color = "white") +
+  annotate("segment", 
+           x = last_date, xend = last_date, 
+           y = last_lvl, yend = 6.25, 
+           color = "white") +
+  theme_hc(bgcolor = "darkunica") 
+```
+
+
 ## A just-for-fun example using R
 
 Professor House discussed several key time series in macroeconomics on the first day of class.
@@ -55,13 +89,13 @@ an aggregator of R blogs, that may be useful in getting R up and running is foun
 
 ## R setup
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-	echo = TRUE,
-	message = FALSE,
-	warning = FALSE
-)
-```
+# ```{r setup, include=FALSE}
+# knitr::opts_chunk$set(
+# 	echo = TRUE,
+# 	message = FALSE,
+# 	warning = FALSE
+# )
+# ```
 
 It's a good idea to begin by restarting the R session.
 This can be done, for example, in RStudio by issuing the command `Ctrl+Shift+F10`.
