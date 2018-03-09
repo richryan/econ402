@@ -53,6 +53,22 @@ Neoclassical production, returns to scale, the final-good-producing firm makes n
 Solow dynamics with population growth, growth rates of [capital per worker](https://umich.box.com/s/zlyddmutecbi4kapcvjlz1e9tl6l7jl1).
 
 You may also find this slidedeck on the fundamentals of asset pricing [helpful](https://umich.box.com/s/e56gn79e2pkw58h6nb3l40mlp6h99sjw).
+
+### 7 Economic growth continued
+The AK model, the AK model with diminishing returns: each new unit of capital added to the economy is slightly less productive than the last&mdash;eventually investment falls to the level of depreciation, the Solow model with population growth and technological change: 
+$$
+\begin{align*}
+g_K = g_Y = g_C = g_I = (1+g_A)(1+n),
+\end{align*}$$ 
+enter through the narrow gate; for the gate is wide and the road is easy that leads to destruction&mdash;the golden rule: in steady state where $K_t+1 = K_t = K$,
+$$
+\begin{align*}
+K &= (1-\delta)K + I = (1-\delta)K + Y - C = (1-\delta)K + AK^{\alpha} - C \\
+\therefore C &= \delta K + AK^{\alpha} \\
+\therefore \frac{\partial C}{\partial K} &= 0 \implies \delta = \text{MPK},
+\end{align*}
+$$
+Solow with human capital from section 12.2 of the House Lecture [notes](https://umich.box.com/s/lf8h7jqhodc0gcyq3gqblbcw2s7wlao0)    
     
 ## Selected suggested solutions to homeworks
 
