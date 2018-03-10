@@ -60,7 +60,7 @@ $$
 \begin{align*}
 g_K = g_Y = g_C = g_I = (1+g_A)(1+n),
 \end{align*}$$ 
-enter through the narrow gate; for the gate is wide and the road is easy that leads to destruction&mdash;the golden rule: in steady state where $K_t+1 = K_t = K$,
+enter through the narrow gate; for the gate is wide and the road is easy that leads to destruction&mdash;the golden rule: in steady state where $K_{t+1} = K_t = K$,
 $$
 \begin{align*}
 K &= (1-\delta)K + I = (1-\delta)K + Y - C = (1-\delta)K + AK^{\alpha} - C \\
