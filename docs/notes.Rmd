@@ -78,6 +78,7 @@ Steady-state $K^{\star}$ with taxes, potential for tax policy to explain cross-c
 + H1.2: A proportional increase to all prices means the implicit price deflator and CPI are the [same](https://umich.box.com/s/zgqslxkgjlxj82p6a086idm592okocv9). The algebra is on the last page.
 + H2: Impatient consumers and the interest rate, the elasticity of intertemporal substitution, and capital taxation and the [user cost](https://umich.box.com/s/gzugioph33wzzt2sydzamvei23roz75q)
 + E1: Extra credit: A cool example of [intertemporal choice](https://umich.box.com/s/k9ogh1w56zarx7rw3itkz4wfdj8n6i9o)
++ E2: Extra credit: Time-varying [prices of capital](https://umich.box.com/s/v1wkuwte4b0psw2jmi9y4ddqoenssvdt)
 
 ## Answers to questions people have asked
 
