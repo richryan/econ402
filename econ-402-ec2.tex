@@ -1,0 +1,315 @@
+% =====================================================================
+% Program: econ-402-ec2.tex
+% Purpose: Suggested solutions to the second extra credit.
+%
+% E-mail: RichRyan@umich.edu
+% =====================================================================
+\documentclass[12pt]{pracjourn_rwr}
+% \documentclass[12pt]{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{url}
+\urlstyle{same}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{amsxtra}
+\usepackage{natbib}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{alltt}
+\input{ee.sty}
+\usepackage{listings}
+% \usepackage[inline]{showlabels}
+\usepackage{paralist} % inline lists (enumeration)
+\usepackage{mathabx} % widebar
+
+% Set new counter to start everything off with a "2" for section 2
+\newcounter{rich}
+\setcounter{rich}{2}
+\newcounter{ryan}
+\setcounter{ryan}{5}
+\renewcommand{\theryan}{\Alph{ryan}\arabic{rich}}
+
+% Change figure numbering
+\usepackage{chngcntr}
+\counterwithin{figure}{ryan}
+
+% \newtheorem{theorem}{Theorem}[chapter]
+% \newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{theorem}{Theorem}[rich]
+\newtheorem{lemma}{Lemma}[rich]
+
+% \newtheoremstyle{definition}% Name
+% {3pt}% Space above
+% {3pt}% Space below
+% {}% Body font
+% {}% Indent amount
+% {\bfseries}% Theorem head font
+% {:}% Punctuation after theorem head
+% {.5em}% Space after theorem head
+% {}% Theorem head spec (can be left empty, meaning "normal")
+
+% \setcounter{chapter}{2}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[rich]
+\newtheorem{example}{Example}[rich]
+\newtheorem{exercise}{Exercise}[rich]
+\newtheorem{prop}{Proposition}[rich]
+\newtheorem{assumption}{Assumption}[rich]
+\newtheorem{fact}{Fact}[rich]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[ryan]
+% \newtheorem{remark}{Remark}[chapter]
+% \newtheorem{fact}{Fact}[chapter]
+
+% === Change to homework numbering ===
+\renewcommand{\thesection}{E\arabic{rich}.\arabic{section}}
+
+\title{Suggested solution for the second Extra Credit}
+% \author{Rich Ryan}
+\email{RichRyan@umich.edu}
+%% \TPJrevision{2013}{08}{03} % The editors ask you to update this for each %% revision submitted
+% \TPrevision{3}{1}{2015}
+\license{\texttt{econ-402-ec2.tex}} % May be used if you want a copyright notice at the bottom right of the first page
+\abstract{Time-varying prices of capital.}
+\newinfo\datestart{Date Started}
+\newinfo\daterevised{Date Revised} % See the pracjourn class for how to do this
+\datestart{March 7, 2018}
+\daterevised{March 17, 2018}
+
+
+% === Spacing in the table of contents
+\usepackage{tocloft}
+\renewcommand{\cftsecnumwidth}{3em}
+\renewcommand{\cftsubsecnumwidth}{5em}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+% Set TOC depth
+\setcounter{tocdepth}{2}
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Economic environment}
+
+Time is discrete and indexed by $t = 0,1,2,\dots$
+Two types of firms populate the economic environment.\footnote{At least this is one motivation for the user-cost-of-capital formula.}
+The first type produces the final consumption good using labor and capital as inputs.
+The second type optimally accumulates capital that is rented out to final-good firms.
+
+Consider a capital-leasing firm's decision to purchase a unit of capital.
+How much would the firm be willing to pay for the unit of capital?
+When a capital-leasing firm purchases a unit of capital, the capital comes online the following period.
+The firm is able to rent this out to a final-good firm \emph{and} sell the undepreciated portion of capital.
+Because those payments come the following period they need to be discounted to the present using the interest rate $r$.
+In other words,
+\begin{equation}
+\label{eq:1}
+p_{t} = \frac{R_{t+1} + (1-\delta)p_{t+1}}{1+r},
+\end{equation}
+where $p_{t}$ is the price of new capital, $R_{t+1}$ is the rental rates, $\delta$ is the depreciation rates, and
+$r$ is the interest rate.
+See example 4.7 in the \href{https://umich.app.box.com/s/dlnc24jda0xu9sqifl2uicc4cdmzit4l}{notes}.
+
+Final-good-producing firms have access to a neoclassical production technology defined in definition 4.1.
+Final-good-producing firms face a tax on their profits $\tau_{t}$, which varies through time.
+At any point $t$ the final-good-producing firms maximize profits by solving
+\begin{align*}
+\max_{K,N} \; (1-\tau_{t}) \left[ F(K,N) - w_{t}N \right] - R_{t}K .
+\end{align*}
+The firm's first-order conditions with respect $K$ and $N$ are
+\begin{align*}
+0 &= (1-\tau_{t})F_{K} - R_{t} \\
+0 &= (1-\tau_{t})\left[ F_{N} - w_{t} \right].
+\end{align*}
+Rearranging the first yields
+\begin{equation}
+\label{eq:2}
+R_{t} = (1-\tau_{t}) \text{MPK}_{t},
+\end{equation}
+where $\text{MPK}_{t} := F_{K}$ is the marginal product of capital.
+Equation \eqref{eq:2} holds for all $t$.
+See example 4.6.\footnote{In reality, the corporate tax code allows firms to write off debt and depreciation among other items,
+  not just the wage bill.}
+
+\begin{remark}
+\label{remark:1}
+Just fyi, the first-order condition for labor is
+\begin{equation}
+\label{eq:7}
+F_{n} = w_{t}.
+\end{equation}
+If capital is fixed in the short run,
+then equation \eqref{eq:7} says that a firm's choice of labor in unaffected by the tax change.
+This idea is expressed on page 3 of the \texttt{Lecture 16\_handouts} in the slide titled
+``Capital Taxation---Short Run.''
+\end{remark}
+
+Combining \eqref{eq:1} with \eqref{eq:2} leads to the optimality condition for capital
+\begin{equation}
+\label{eq:3}
+p_{t} = \frac{(1-\tau_{t+1}) \text{MPK}_{t+1} + (1-\delta)p_{t+1}}{1+r}.
+\end{equation}
+Equation \eqref{eq:3} holds for all $t$.
+
+\section{Part a) The price of new capital equals the stream of marginal products produced}
+
+Installing a unit of capital entitles the owner to the stream of marginal products produced by the installed unit of capital.
+To see this use equation \eqref{eq:3} to recursively substitute in for $p_{t+1}$:
+\begin{align*}
+p_{t} &= \frac{(1-\tau_{t+1}) \text{MPK}_{t+1} + (1-\delta)p_{t+1}}{1+r} \\
+&= \frac{(1-\tau_{t+1}) \text{MPK}_{t+1}}{1+r} + \frac{1-\delta}{1+r}
+\left[ \frac{(1-\tau_{t+2}) \text{MPK}_{t+2} + (1-\delta)p_{t+2}}{1+r} \right] \\
+&= \frac{(1-\tau_{t+1}) \text{MPK}_{t+1}}{1+r} + \frac{1-\delta}{1+r} \frac{(1-\tau_{t+2}) \text{MPK}_{t+2}}{1+r} +
+\left( \frac{1-\delta}{1+r}  \right)^{2} p_{t+2}.
+\end{align*}
+where the second equality iterates equation \eqref{eq:3} one period forward.
+Once more for good measure:
+\begin{align*}
+p_{t} &= \frac{(1-\tau_{t+1}) \text{MPK}_{t+1}}{1+r} + \frac{1-\delta}{1+r} \frac{(1-\tau_{t+2}) \text{MPK}_{t+2}}{1+r} \\
+&\quad + \left( \frac{1-\delta}{1+r}  \right)^{2} p_{t+2} \\
+&= \frac{(1-\tau_{t+1}) \text{MPK}_{t+1}}{1+r} + \frac{1-\delta}{1+r} \frac{(1-\tau_{t+2}) \text{MPK}_{t+2}}{1+r} \\
+&\quad + \left( \frac{1-\delta}{1+r}  \right)^{2} \left[ \frac{(1-\tau_{t+3}) \text{MPK}_{t+3} + (1-\delta)p_{t+3}}{1+r} \right] \\
+&= \frac{(1-\tau_{t+1}) \text{MPK}_{t+1}}{1+r} + \frac{1-\delta}{1+r} \frac{(1-\tau_{t+2}) \text{MPK}_{t+2}}{1+r} \\
+&\quad + \left( \frac{1-\delta}{1+r}  \right)^{2} \frac{(1-\tau_{t+3}) \text{MPK}_{t+3}}{1+r}
++ \left( \frac{1-\delta}{1+r}  \right)^{2} \frac{(1-\delta)p_{t+3}}{1+r}.
+\end{align*}
+
+This is a pattern.
+In general
+\begin{align}
+\label{eq:4}
+\begin{split}
+p_{t} &= \frac{(1-\tau_{t+1}) \text{MPK}_{t+1}}{1+r} + \frac{1-\delta}{1+r} \frac{(1-\tau_{t+2}) \text{MPK}_{t+2}}{1+r} \\
+&\quad + \left( \frac{1-\delta}{1+r}  \right)^{2} \frac{(1-\tau_{t+3}) \text{MPK}_{t+3}}{1+r}
++ \left( \frac{1-\delta}{1+r}  \right)^{3} \frac{(1-\tau_{t+4}) \text{MPK}_{t+4}}{1+r} + \cdots
+\end{split}
+\end{align}
+Equation \eqref{eq:4} says that the value of installing the capital equals the discounted sum of after-tax incomes generated by installing the unit of capital.
+The income earned equals what the firm can rent the capital out for.
+The future is discounted by both the interest rate and the decay rate $1-\delta$ (there's less capital to rent out in the future).
+
+\section{Part b) When the marginal product of capital is constant}
+
+When the marginal product of capital is constant equation \eqref{eq:4} becomes:\footnote{Kind Professor House is letting us check our result---how generous.}
+\begin{align*}
+p_{t} &= \frac{(1-\tau_{t+1}) m}{1+r} + \frac{1-\delta}{1+r} \frac{(1-\tau_{t+2}) m}{1+r} \\
+&\quad + \left( \frac{1-\delta}{1+r}  \right)^{2} \frac{(1-\tau_{t+3}) m}{1+r}
++ \left( \frac{1-\delta}{1+r}  \right)^{3} \frac{(1-\tau_{t+4}) m}{1+r} + \cdots
+\end{align*}
+Simplifying yields
+\begin{equation}
+\label{eq:5}
+p_{t} = \frac{1}{1+r} \left\{
+(1-\tau_{t+1})m + \left( \frac{1-\delta}{1+r} \right) (1-\tau_{t+2})m + \left( \frac{1-\delta}{1+r} \right)^{2}(1-\delta) m + \cdots
+\right\},
+\end{equation}
+which is what we were asked to show.
+
+\subsection{Part c) The price of short-lived vs long-lived capital}
+
+Suppose $\tau$ is constant.
+The relationship in \eqref{eq:5} becomes
+\begin{align*}
+p_{t} &= \frac{1}{1+r} \left\{
+(1-\tau)m + \left( \frac{1-\delta}{1+r} \right) (1-\tau)m + \left( \frac{1-\delta}{1+r} \right)^{2}(1-\delta) m + \cdots
+\right\} \\
+&= \frac{(1-\tau)m}{1+r} \left\{
+1 + \left( \frac{1-\delta}{1+r} \right) + \left( \frac{1-\delta}{1+r} \right)^{2} + \cdots
+\right\} \\
+&= \frac{(1-\tau)m}{1+r} \frac{1}{1 - \gamma},
+\end{align*}
+where the last line uses proposition 4.1 with $\gamma := (1-\delta)/(1+r)$
+[and assuming $-1 < (1-\delta) / (1+r) < 1$].
+Simplifying this relationship by multiplying the top and bottom by $1+r$ yields
+\begin{align}
+\label{eq:6}
+\begin{split}
+p_{t} &= \frac{(1-\tau)m}{1+r} \frac{1+r}{1+r - (1-\delta)} =
+\frac{(1-\tau)m}{1+r} \frac{1+r}{r + \delta} \\
+&= \frac{(1-\tau)m}{r+\delta}.
+\end{split}
+\end{align}
+
+Now suppose $\tau = .35$, $r = .05$, and $m = 1$.
+We're interested in computing $p_{t}$ when $\delta = .05$ (type I) and $\delta = .25$ (type II).
+Plug these numbers in \eqref{eq:6} [in both cases $-1 < (1-\delta) / (1+r) < 1$]:
+\begin{align*}
+p^{I}_{t} &= \frac{1-.35}{.05 + .05} = \frac{.65}{.1} = 6.5 \\
+p^{II}_{t} &= \frac{1-.35}{.05 + .25} = \frac{.65}{.3} = \frac{.65}{.1} \frac{1}{3} = \frac{6.5}{3} = 2 + 1/6.
+\end{align*}
+
+The only difference between $p_{t}^{I}$ and $p_{t}^{II}$ is the depreciation rate associated with the capital.
+Both types of capital generate the same income stream ($m = 1$).
+It is not surprising then that $p_{t}^{I} > p_{t}^{II}$ since type-II capital lasts longer.
+
+\section{Part d) Phased-in tax cut}
+
+Suppose that at time $t$ the tax rate is $\tau_{t} = .3$.
+And it is announced that taxes will be cut in the future.
+The tax cut will take effect $10$ years from now and the tax rate will drop from $.35$ to $.2$.
+The tax cut is permanent.
+
+To value the price of capital, use propositions 4.1 and 4.2.
+I'm going to skip to part (iii.), which is different from Professor House's proposed solutions.
+But this way is quicker.
+
+The hardest part about this question is timing.
+The sequence of tax rates faced by firms is
+\begin{align*}
+\left\{ \underbrace{\tau_{t+1},\tau_{t+2},\dots,\tau_{t+9}}_{\text{9 of them}},\tau_{t+10},\dots \right\} =
+\left\{ \underbrace{.35, .35, \dots, .35}_{\text{9 of them}},.2, .2,\dots \right\}.
+\end{align*}
+
+Using equation \eqref{eq:5}, the value of a unit of capital is
+\begin{align*}
+p_{t} &= \frac{1}{1+r} \Bigg\{ (1-\tau_{t+1})m + \left( \frac{1-\delta}{1+r} \right)(1-\tau_{t+2})m + \cdots  +
+\left( \frac{1-\delta}{1+r} \right)^{8} (1-\tau_{t+9}) m \\
+&\quad + \left( \frac{1-\delta}{1+r} \right)^{9} (1-\tau_{t+10}) m + \cdots \Bigg\} \\
+&= \frac{1}{1+r} (1-\tau_{1})m \Bigg\{ 1 + \left( \frac{1-\delta}{1+r} \right) + \cdots  +
+\left( \frac{1-\delta}{1+r} \right)^{8} \Bigg\} \\
+&\quad + \frac{1}{1+r} \left( \frac{1-\delta}{1+r} \right)^{9}(1-\tau_{2})m
+\Bigg\{
+1 + \left( \frac{1-\delta}{1+r} \right) + \left( \frac{1-\delta}{1+r} \right)^{2} + \left( \frac{1-\delta}{1+r} \right)^{3} + \cdots
+\Bigg\},
+\end{align*}
+where $\tau_{1} = .35$ and $\tau_{2} = .20$.
+Proposition 4.2 provides a formula for the sum contained in the first curly bracket.
+Proposition 4.1 provides a formula for the sum contained in the second curly bracket.
+Using those formula:
+\begin{align*}
+p_{t} &= \frac{m}{1+r} (1-\tau_{1}) \frac{1 - \left( \frac{1-\delta}{1+r} \right)^{9}}{1 - \frac{1-\delta}{1+r}} +
+\frac{1}{1+r}\left( \frac{1-\delta}{1+r} \right)^{9}(1-\tau_{2})m \frac{1}{1 - \frac{1-\delta}{1+r}} \\
+&= \frac{m}{1+r} (1-\tau_{1}) \frac{1 - \left( \frac{1-\delta}{1+r} \right)^{9}}{1 - \frac{1-\delta}{1+r}} +
+\frac{1}{1+r} \left( \frac{1-\delta}{1+r} \right)^{9}(1-\tau_{2})m \frac{1+r}{r + \delta} \\
+&= m (1-\tau_{1}) \frac{1 - \left( \frac{1-\delta}{1+r} \right)^{9}}{r+\delta} +
+\left( \frac{1-\delta}{1+r} \right)^{9}(1-\tau_{2})m \frac{1}{r + \delta},
+\end{align*}
+where the last two lines multiply by one in the form of $(1+r) / (1+r)$.
+
+Plugging in values for the two cases leads to the values:
+\begin{itemize}
+\item $p^{I}_{t} = 7.1094$ with $\delta = .05$;
+\item $p^{II}_{t} = 2.1909$ with $\delta = .25$.
+\end{itemize}
+
+Now you can answer part (iii.) of the question:
+\begin{itemize}
+\item $p_{t}^{I}$ moves from $6.5$ [from part c)] to $7.1094$, a 9.38 percent increase; and
+\item $p_{t}^{II}$ moves from $2.1667$ [from part c)] to $2.1909$, a 1.12 percent increase.
+\end{itemize}
+
+(You may have calculated the increasing from the period-$t+1$ prices.
+This is only a matter a timing.)
+
+% \bibliography{c:/Users/rwr/bibliography/bibliography}
+% \bibliographystyle{c:/Users/rwr/bibliography/bostonfed}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End:
