@@ -16,6 +16,8 @@
 \usepackage{amsxtra}
 \usepackage{natbib}
 \usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{alltt}
 \input{ee.sty}
 \usepackage{listings}
@@ -133,7 +135,12 @@ R_{t} = (1-\tau_{t}) \text{MPK}_{t},
 where $\text{MPK}_{t} := F_{K}$ is the marginal product of capital.
 Equation \eqref{eq:2} holds for all $t$.
 See example 4.6.\footnote{In reality, the corporate tax code allows firms to write off debt and depreciation among other items,
-  not just the wage bill.}
+  not just the wage bill.
+  After-tax profit is closer to
+  \begin{multline*}
+  F(K,N) - WN - p^{K}I - \tau \left[ F(K,N) - WN - \delta K - i \times \text{debt} \right] \\
+  = (1-\tau)\left[ F(K,N) - WN \right] - p^{K}I + \tau \left[ \delta K + i \times \text{debt} \right].
+  \end{multline*}}
 
 \begin{remark}
 \label{remark:1}
@@ -246,7 +253,8 @@ The only difference between $p_{t}^{I}$ and $p_{t}^{II}$ is the depreciation rat
 Both types of capital generate the same income stream ($m = 1$).
 It is not surprising then that $p_{t}^{I} > p_{t}^{II}$ since type-II capital lasts longer.
 
-\section{Part d) Phased-in tax cut}
+\section{Part d) Phased-in tax cut---the partial-geometric-sum way}
+\label{sec:part-d-geometric-sum}
 
 Suppose that at time $t$ the tax rate is $\tau_{t} = .3$.
 And it is announced that taxes will be cut in the future.
@@ -304,6 +312,53 @@ Now you can answer part (iii.) of the question:
 
 (You may have calculated the increasing from the period-$t+1$ prices.
 This is only a matter a timing.)
+
+\section{Part d) Phased-in tax cut---building up prices}
+
+Suppose that there is a phased-in tax cut to $\tau = .2$,
+which goes into effect 10 years from now:
+\begin{align*}
+\left\{ \underbrace{\tau_{t+1},\tau_{t+2},\dots,\tau_{t+9}}_{\text{9 of them}},\tau_{t+10},\dots \right\} =
+\left\{ \underbrace{.35, .35, \dots, .35}_{\text{9 of them}},.2, .2,\dots \right\}.
+\end{align*}
+
+To price a unit of capital in period $t$,
+we can build up prices using equation \eqref{eq:3}.
+\begin{enumerate}[i.)]
+\item\label{item:1} Assuming that there will be no change in $m$,
+what are $p_{t+9}^{I}$ and $p_{t+9}^{II}$?
+Using equation \eqref{eq:6} these values are easy to compute.
+The two values are listed in the last row of table \ref{tab:prices}.
+\item\label{item:2} With $p_{t+9}^{I}$ computed in \ref{item:1},
+computing $p_{t+8}^{I}$ is done through equation \eqref{eq:3}.
+Then $p_{t+7}^{I}$ is easy to compute once $p_{t+8}^{I}$ is computed.
+The result of this sequence of computations is listed in table \ref{tab:prices}.
+Figure \ref{fig:prices} depicts the sequences of prices.
+Panel \ref{fig:price-hi} depicts the sequence of prices for the high depreciation rate.
+Panel \ref{fig:price-low} depicts the sequence of prices for the low depreciation rate. 
+\item\label{item:3} The prices $p_{t}^{I}$ and $p_{t}^{II}$ are listed in the first row of table \ref{tab:prices}.
+These are the same prices as computed in section \ref{sec:part-d-geometric-sum} using partial geometric sums.
+\end{enumerate}
+
+\input{./docs/phased_in_tax_cuts.tex}
+
+\begin{figure}
+\centering
+\begin{subfigure}{\textwidth}
+\centering
+\includegraphics[width=\linewidth]{./docs/fig_phased_in_tax_cuts_hi.pdf}
+\caption{High depreciation rate}
+\label{fig:price-hi}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+\centering
+\includegraphics[width=\linewidth]{./docs/fig_phased_in_tax_cuts_lo.pdf}
+\caption{Low depreciation rate}
+\label{fig:price-low}
+\end{subfigure}
+\caption{Prices of capital}
+\label{fig:prices}
+\end{figure}
 
 % \bibliography{c:/Users/rwr/bibliography/bibliography}
 % \bibliographystyle{c:/Users/rwr/bibliography/bostonfed}
