@@ -70,15 +70,15 @@
 
 \title{Suggested solution for the second Extra Credit}
 % \author{Rich Ryan}
-\email{RichRyan@umich.edu}
+% \email{RichRyan@umich.edu}
 %% \TPJrevision{2013}{08}{03} % The editors ask you to update this for each %% revision submitted
 % \TPrevision{3}{1}{2015}
-\license{\texttt{econ-402-ec2.tex}} % May be used if you want a copyright notice at the bottom right of the first page
+% \license{\texttt{econ-402-ec2.tex}} % May be used if you want a copyright notice at the bottom right of the first page
 \abstract{Time-varying prices of capital.}
-\newinfo\datestart{Date Started}
-\newinfo\daterevised{Date Revised} % See the pracjourn class for how to do this
-\datestart{March 7, 2018}
-\daterevised{March 17, 2018}
+% \newinfo\datestart{Date Started}
+% \newinfo\daterevised{Date Revised} % See the pracjourn class for how to do this
+% \datestart{March 7, 2018}
+% \daterevised{March 17, 2018}
 
 
 % === Spacing in the table of contents
@@ -93,76 +93,16 @@
 \begin{document}
 \maketitle
 
-\tableofcontents
+% \tableofcontents
 
-\section{Economic environment}
+\section{Part a) The price of new capital equals the stream of marginal products produced}
 
-Time is discrete and indexed by $t = 0,1,2,\dots$
-Two types of firms populate the economic environment.\footnote{At least this is one motivation for the user-cost-of-capital formula.}
-The first type produces the final consumption good using labor and capital as inputs.
-The second type optimally accumulates capital that is rented out to final-good firms.
-
-Consider a capital-leasing firm's decision to purchase a unit of capital.
-How much would the firm be willing to pay for the unit of capital?
-When a capital-leasing firm purchases a unit of capital, the capital comes online the following period.
-The firm is able to rent this out to a final-good firm \emph{and} sell the undepreciated portion of capital.
-Because those payments come the following period they need to be discounted to the present using the interest rate $r$.
-In other words,
-\begin{equation}
-\label{eq:1}
-p_{t} = \frac{R_{t+1} + (1-\delta)p_{t+1}}{1+r},
-\end{equation}
-where $p_{t}$ is the price of new capital, $R_{t+1}$ is the rental rates, $\delta$ is the depreciation rates, and
-$r$ is the interest rate.
-See example 4.7 in the \href{https://umich.app.box.com/s/dlnc24jda0xu9sqifl2uicc4cdmzit4l}{notes}.
-
-Final-good-producing firms have access to a neoclassical production technology defined in definition 4.1.
-Final-good-producing firms face a tax on their profits $\tau_{t}$, which varies through time.
-At any point $t$ the final-good-producing firms maximize profits by solving
-\begin{align*}
-\max_{K,N} \; (1-\tau_{t}) \left[ F(K,N) - w_{t}N \right] - R_{t}K .
-\end{align*}
-The firm's first-order conditions with respect $K$ and $N$ are
-\begin{align*}
-0 &= (1-\tau_{t})F_{K} - R_{t} \\
-0 &= (1-\tau_{t})\left[ F_{N} - w_{t} \right].
-\end{align*}
-Rearranging the first yields
-\begin{equation}
-\label{eq:2}
-R_{t} = (1-\tau_{t}) \text{MPK}_{t},
-\end{equation}
-where $\text{MPK}_{t} := F_{K}$ is the marginal product of capital.
-Equation \eqref{eq:2} holds for all $t$.
-See example 4.6.\footnote{In reality, the corporate tax code allows firms to write off debt and depreciation among other items,
-  not just the wage bill.
-  After-tax profit is closer to
-  \begin{multline*}
-  F(K,N) - WN - p^{K}I - \tau \left[ F(K,N) - WN - \delta K - i \times \text{debt} \right] \\
-  = (1-\tau)\left[ F(K,N) - WN \right] - p^{K}I + \tau \left[ \delta K + i \times \text{debt} \right].
-  \end{multline*}}
-
-\begin{remark}
-\label{remark:1}
-Just fyi, the first-order condition for labor is
-\begin{equation}
-\label{eq:7}
-F_{n} = w_{t}.
-\end{equation}
-If capital is fixed in the short run,
-then equation \eqref{eq:7} says that a firm's choice of labor in unaffected by the tax change.
-This idea is expressed on page 3 of the \texttt{Lecture 16\_handouts} in the slide titled
-``Capital Taxation---Short Run.''
-\end{remark}
-
-Combining \eqref{eq:1} with \eqref{eq:2} leads to the optimality condition for capital
+The optimality condition for capital is given by
 \begin{equation}
 \label{eq:3}
 p_{t} = \frac{(1-\tau_{t+1}) \text{MPK}_{t+1} + (1-\delta)p_{t+1}}{1+r}.
 \end{equation}
 Equation \eqref{eq:3} holds for all $t$.
-
-\section{Part a) The price of new capital equals the stream of marginal products produced}
 
 Installing a unit of capital entitles the owner to the stream of marginal products produced by the installed unit of capital.
 To see this use equation \eqref{eq:3} to recursively substitute in for $p_{t+1}$:
@@ -216,7 +156,7 @@ p_{t} = \frac{1}{1+r} \left\{
 \end{equation}
 which is what we were asked to show.
 
-\subsection{Part c) The price of short-lived vs long-lived capital}
+\section{Part c) The price of short-lived vs long-lived capital}
 
 Suppose $\tau$ is constant.
 The relationship in \eqref{eq:5} becomes
@@ -261,10 +201,6 @@ And it is announced that taxes will be cut in the future.
 The tax cut will take effect $10$ years from now and the tax rate will drop from $.35$ to $.2$.
 The tax cut is permanent.
 
-To value the price of capital, use propositions 4.1 and 4.2.
-I'm going to skip to part (iii.), which is different from Professor House's proposed solutions.
-But this way is quicker.
-
 The hardest part about this question is timing.
 The sequence of tax rates faced by firms is
 \begin{align*}
@@ -285,8 +221,8 @@ p_{t} &= \frac{1}{1+r} \Bigg\{ (1-\tau_{t+1})m + \left( \frac{1-\delta}{1+r} \ri
 \Bigg\},
 \end{align*}
 where $\tau_{1} = .35$ and $\tau_{2} = .20$.
-Proposition 4.2 provides a formula for the sum contained in the first curly bracket.
-Proposition 4.1 provides a formula for the sum contained in the second curly bracket.
+The formula for the partial geometric sum provides a formula for the term contained in the first curly bracket.
+The geometric series provides a formula for the sum contained in the second curly bracket.
 Using those formula:
 \begin{align*}
 p_{t} &= \frac{m}{1+r} (1-\tau_{1}) \frac{1 - \left( \frac{1-\delta}{1+r} \right)^{9}}{1 - \frac{1-\delta}{1+r}} +
