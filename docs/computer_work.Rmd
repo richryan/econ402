@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 	message = FALSE,
 	warning = FALSE
 )
+library(reticulate)
 ```
 
 # Okun's law
@@ -398,4 +399,123 @@ ggplot(data = macro) +
   xlab("Index") + ylab("Real levels")
 ```
 
+# Changes in government spending and interest rates
+
+## Solow assumptions
+
+Consider a Solow economy where a representative household saves a constant fraction of after-tax income and a government the levies lump-sum taxes to finanace government consumption, while running a balanced budget.
+Government consumption is a constant fraction, $\phi$, of output.
+
+The system of equations that describes the economy is given by
+$$
+\begin{align*}
+Y_t &= A^{1-\alpha}K_{t}^{\alpha}N_t^{1-\alpha} \\
+N_t &= 1 \\
+Y_t &= C_{t} + I_{t} + G_{t} \\
+I_t &= s (Y_{t} - T_{t}) \\
+T_t &= G_t = \phi Y_t \\
+K_{t+1} &= (1-\delta)K_t + I_t.
+\end{align*}
+$$
+
+The steady state of this model is given by $K_{t+1} = K_{t} = K_{\star}$.
+Developing the equation that governs the evolution of capital yields
+$$
+\begin{align*}
+K_{t+1} &= (1-\delta) K_{t} + I_t \\
+&= (1-\delta) K_{t} + s (Y_t - T_t) \\
+&= (1-\delta) K_{t} + s (Y_t - G_t) \\
+&= (1-\delta) K_{t} + s (Y_t - \phi Y_t) \\
+&= (1-\delta) K_{t} + s (1-\phi)Y_t \\
+&= (1-\delta) K_{t} + s (1-\phi)A^{1-\alpha}K_t^{\alpha}.
+\end{align*}
+$$
+In steady state, the latter evaluates to
+$$
+\begin{align*}
+K_{\star} &= (1-\delta) K_{\star} + s (1-\phi)A^{1-\alpha}K_{\star}^{\alpha} \\
+\therefore \delta K_{\star} &= s (1-\phi)A^{1-\alpha}K_{\star}^{\alpha} \\
+\therefore \delta &= s (1-\phi)A^{1-\alpha}K_{\star}^{\alpha-1} \\
+\therefore K_{\star}^{\alpha-1} &= \frac{\delta}{s (1-\phi)A^{1-\alpha}} \\
+\therefore K_{\star} &= \left( \frac{\delta}{s (1-\phi)A^{1-\alpha}} \right)^{\frac{1}{\alpha - 1}}
+\end{align*}
+$$
+or
+$$
+\begin{equation}
+K_{\star} = A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{1}{1-\alpha}}.
+\end{equation}
+$$
+The latter is an expression for steady-state capital using the Solow assumption.
+When $\phi = 0$, then we are back to the expression for $K_{\star}$ in the section on Solow convergence. 
+
+Steady-state output is
+$$
+\begin{align*}
+Y_{\star} &= A^{1-\alpha}K_{\star}^{\alpha} \\
+&= A^{1-\alpha} A^{\alpha} \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}} \\
+&= A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}}.
+\end{align*}
+$$
+Consumption is given by
+$$
+\begin{align*}
+Y_t &= C_t + I_t + G_t \\
+\therefore C_t &= Y_t - I_t - G_t \\
+&= Y_t - s(Y_t - T_t) - G_t = Y_t - s(Y_t - G_t) - G_t \\
+&= Y_t - s(Y_t - \phi Y_t) - \phi Y_t \\
+&= Y_t - s(1-\phi)(Y_t - \phi Y_t) - \phi Y_t \\
+&= (1-s) Y_t.
+\end{align*}
+$$
+Steady-state consumption is given by
+$$
+\begin{equation}
+C_{\star} = (1-s) A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}}.
+\end{equation}
+$$
+
+## "Standard preferences" with a behavioral rule for expectations
+
+### A behavioral rule for expectations
+With "standard preference" the consumption Euler equation would be (with $\beta = 1$ and log preferences)
+$$
+\begin{align*}
+\frac{1}{C_t} = (1+r_t) \mathbb{E}_t \left[ \frac{1}{C_{t+1}} \right].
+\end{align*}
+$$
+We are going to posit that consumers expect $C_{t+1}$ to equal $C_{\star}$,
+making the interest rate
+$$
+\begin{align*}
+1+r_t = \frac{C_{\star}}{C_t}.
+\end{align*}
+$$
+## Computer simulation
+
+The following simulation is done in Python,
+which can be used in R Markdown through the `reticulate` package.
+
+Suppose that $\phi_{t}$ is uniformly distributed between .17 and .23.
+We're going to simulate the economy, using $\phi_{t}$ as the driving force.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter values
+s = 0.2
+delta = 0.1
+alpha = 0.35
+A = 10.0
+phi_steady_state = 0.2
+```
+
+Calculate and display steady-state levels:
+```{python}
+Kstar = A*(s*(1-phi_steady_state)/delta)**(1/(1-alpha))
+Ystar = (A**(1-alpha))*(Kstar**alpha)
+print("Steady-state capital is", Kstar)
+print("Steady-state output is", Ystar)
+```
 
