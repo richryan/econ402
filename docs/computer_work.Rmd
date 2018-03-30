@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 	warning = FALSE
 )
 library(reticulate)
+knitr::knit_engines$set(python = reticulate::eng_python)
 ```
 
 # Okun's law
@@ -477,6 +478,7 @@ $$
 
 ## "Standard preferences" with a behavioral rule for expectations
 
+
 ### A behavioral rule for expectations
 With "standard preference" the consumption Euler equation would be (with $\beta = 1$ and log preferences)
 $$
@@ -491,6 +493,8 @@ $$
 1+r_t = \frac{C_{\star}}{C_t}.
 \end{align*}
 $$
+
+
 ### Computer simulation
 
 The following simulation is done in Python,
@@ -509,7 +513,9 @@ s = 0.2
 delta = 0.1
 alpha = 0.35
 A = 10.0
-phi_steady_state = 0.2
+phi_ss = 0.2
+
+random.seed(402)
 ```
 
 Calculate and display steady-state levels:
@@ -540,13 +546,14 @@ for ii in range(25, horizon):
     Csim[ii] = (1-s)*Ysim[ii]
     rsim[ii] = Cstar/Csim[ii] - 1
 
-    
-plt.plot(Ksim)
-plt.title("K")
-plt.show()
-
-plt.plot(rsim)
-plt.title("r")
-plt.show()
 ```
+Go back to `R` to plot in R Markdown:
+```{r}
+plot(py$Ksim, type = "o", col = "blue")
+title("K simulation")
+
+plot(py$rsim, type = "o", col = "blue")
+title("r simulation")
+```
+
 The figures show the economy is bouncing around the steady state. 
