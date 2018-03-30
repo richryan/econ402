@@ -558,3 +558,5 @@ title("r simulation")
 
 The figures show the economy is bouncing around the steady state. 
 This was a quick overview into something you can do for the homework.
+
+
