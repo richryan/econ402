@@ -11,8 +11,8 @@ navbar:
     href: labor_market_friday.html
   - text: Computer Work
     href: computer_work.html
-output:
-  html_document:
-    lib_dir: site_libs
-    self_contained: no
+# output:
+#  html_document:
+#    lib_dir: site_libs
+#    self_contained: no
 
