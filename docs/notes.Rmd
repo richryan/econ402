@@ -72,6 +72,19 @@ Solow with human capital from section 12.2 of the House Lecture [notes](https://
 
 ### 8 Midterm Exam II Review
 Steady-state $K^{\star}$ with taxes, potential for tax policy to explain cross-country differences in output, wages when $N_t  = 1$, wages after a tax cut, [influx of immigrants](https://umich.box.com/s/4rh0y52xtifhaq1caypp0wr4mlunfxm9)
+
+## Part III
+
+### IS&ndash;LM
+Investment function, $I(r)$;
+deriving the IS curve;
+how fiscal policy shifts the IS curve;
+supply and demand of real balances;
+deriving the LM curve;
+how monetary policy shifts the LM curve;
+IS&ndash;LM as a theory of aggregate demand;
+expansionary monetary policy;
+[expansionary fiscal policy](https://umich.box.com/s/5wu7gnkd0ojn23wgk6e4oc85ofb1my4r)
     
 ## Selected suggested solutions to homeworks
 
