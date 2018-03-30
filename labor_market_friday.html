@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Employment Report</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ECON 402</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Overview</a>
+</li>
+<li>
+  <a href="notes.html">Notes</a>
+</li>
+<li>
+  <a href="labor_market_friday.html">Labor Market Friday in R</a>
+</li>
+<li>
+  <a href="computer_work.html">Computer Work</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Employment Report</h1>
+<h3 class="subtitle"><em>Happy Labor Market Friday!</em></h3>
+
+</div>
+
+
+<div id="latest-unemployment-rate-numbers" class="section level2">
+<h2>Latest unemployment-rate numbers</h2>
+<p>Here is the latest unemployment rate from the Employment Situation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyquant)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(ggthemes)
+
+ur &lt;-<span class="st"> </span><span class="kw">tq_get</span>(<span class="st">&quot;UNRATE&quot;</span>, <span class="dt">get =</span> <span class="st">&quot;economic.data&quot;</span>, <span class="dt">from =</span> <span class="st">&quot;2010-01-01&quot;</span>)
+ur &lt;-<span class="st"> </span>ur <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">series =</span> <span class="st">&quot;Unemployment rate&quot;</span>)
+last_date &lt;-<span class="st"> </span><span class="kw">max</span>(ur<span class="op">$</span>date)
+last_lvl &lt;-<span class="st"> </span>ur<span class="op">$</span>price[[<span class="kw">which</span>(ur<span class="op">$</span>date <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(ur<span class="op">$</span>date))]]
+<span class="kw">ggplot</span>(<span class="dt">data =</span> ur) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price, <span class="dt">color =</span> series)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Percent&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Civilian unemployment rate&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="dt">x =</span> last_date, <span class="dt">y =</span> <span class="fl">6.5</span>, <span class="dt">label =</span> <span class="kw">paste0</span>(last_lvl), <span class="dt">color =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;segment&quot;</span>, 
+           <span class="dt">x =</span> last_date, <span class="dt">xend =</span> last_date, 
+           <span class="dt">y =</span> last_lvl, <span class="dt">yend =</span> <span class="fl">6.25</span>, 
+           <span class="dt">color =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_hc</span>(<span class="dt">bgcolor =</span> <span class="st">&quot;darkunica&quot;</span>) </code></pre></div>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="a-just-for-fun-example-using-r" class="section level2">
+<h2>A just-for-fun example using R</h2>
+<p>Professor House discussed several key time series in macroeconomics on the first day of class. This handout discusses how to access and manipulate those series in R, focusing on the <a href="https://www.bls.gov/news.release/empsit.nr0.htm">Employment Situation Summary</a> published by the Bureau of Labor Statistics.</p>
+<p>It is important to know that doing R in ECON 402 is just for fun and has nothing to do officially with the class. That said, however, data visualization is increasingly part of everyday life: The NY Times increasingly features data visualizations on its website; “advanced metrics” is taking over sports; the <a href="http://nbr.com/">Nightly Business Report</a> on Detroit Public TV always features charts.</p>
+<p>Or let me put it a different way: I was a GSI for ECON 401 and I would be <em>shocked</em> if the differences between Marshalian and Hicksian demand came up in a job interview; on the other hand, I would wager that most entry-level jobs in economics deal directly with data manipulation.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>I was actually in charge of the data work for Professor House’s <a href="https://www.sciencedirect.com/science/article/pii/S157400481630012X">handbook chapter on macroeconomics</a>. Getting asked to write a handbook chapter is a huge, huge honor—for the author, not the person doing the data work—and when I would tell Professor House that I was “assistant professor” he would yell back: “NO!!!! You are <em>assistant to</em> the professor.”</p>
+</div>
+<div id="getting-r-up-and-running" class="section level2">
+<h2>Getting R up and running</h2>
+<p>An introduction to R is beyond the scope of this presentation. On the off chance that someone is super interested in R, just let me know and we’ll get you going.</p>
+<p>I had no problem installing a working copy of R from the website for The R Project for Statistical Computing, which you can navigate to <a href="https://www.r-project.org/">here</a>. Perhaps the easiest way to interact with R code is through RStudio. You can get a copy of RStudio <a href="https://www.rstudio.com/">here</a>. Again, I had no problems installing R and using RStudio.</p>
+<p>Once in RStudio you can use the “Session” dropdown menu to set the working directory, which should be where you save the code that you write to go along with this handout. More on this below.</p>
+<p>You can install packages using <code>install.packages</code>.</p>
+<p>A site that has been mentioned on <a href="https://www.r-bloggers.com/">R-bloggers</a>, an aggregator of R blogs, that may be useful in getting R up and running is found <a href="http://stat545.com/index.html">here</a>.</p>
+</div>
+<div id="r-setup" class="section level2">
+<h2>R setup</h2>
+<p>It’s a good idea to begin by restarting the R session. This can be done, for example, in RStudio by issuing the command <code>Ctrl+Shift+F10</code>. Next we want to load libraries that R uses. The <code>tidyverse</code> package was written by R guru <a href="http://hadley.nz/">Hadley Wickham</a>. The <code>tidyquant</code> package allows us to access data from <a href="https://fred.stlouisfed.org/">FRED</a>. Most macroeconomic time series are available in the FRED database.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(tidyquant)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(emo)</code></pre></div>
+</div>
+<div id="retrieving-data-from-fred" class="section level2">
+<h2>Retrieving data from FRED</h2>
+<p>Here’s R code that retrives data from the FRED database. It gets the series <code>UNRATE</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ur &lt;-<span class="st"> </span><span class="kw">tq_get</span>(<span class="st">&quot;UNRATE&quot;</span>, <span class="dt">get =</span> <span class="st">&quot;economic.data&quot;</span>, <span class="dt">from =</span> <span class="st">&quot;1940-01-01&quot;</span>)
+<span class="kw">head</span>(ur)</code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##   date       price
+##   &lt;date&gt;     &lt;dbl&gt;
+## 1 1948-01-01  3.40
+## 2 1948-02-01  3.80
+## 3 1948-03-01  4.00
+## 4 1948-04-01  3.90
+## 5 1948-05-01  3.50
+## 6 1948-06-01  3.60</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(ur)</code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##   date       price
+##   &lt;date&gt;     &lt;dbl&gt;
+## 1 2017-09-01  4.20
+## 2 2017-10-01  4.10
+## 3 2017-11-01  4.10
+## 4 2017-12-01  4.10
+## 5 2018-01-01  4.10
+## 6 2018-02-01  4.10</code></pre>
+<p>Note that the data start in 1948m1.</p>
+<p>To get different series, go to FRED and search for whatever series you want. For example, I typed in “inflation”, which generated several series. Then I picked “Consumer Price Index for All Urban Consumers: All Items”. Clicking on that series reveals the mnemonic <code>CPIAUCSL</code>. Replacing <code>UNRATE</code> with <code>CPIAUCSL</code> will download the CPI price index. This is the “headline” index; the “core” index is <code>CPILFESL</code>, which is less food and energy prices.</p>
+</div>
+<div id="including-plots-macroeconomic-time-series-data-are" class="section level2">
+<h2>Including Plots: Macroeconomic time-series data are <f0><U+009F><U+0094><U+00A5></h2>
+<p>Plotting the data is easy. For example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> ur) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Percent&quot;</span>)</code></pre></div>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="a-subset-of-the-series-mentioned-in-the-employment-situation-summary" class="section level2">
+<h2>A subset of the series mentioned in the Employment Situation Summary</h2>
+<p>The Employment Situation Summary draws on a few sources of data to generate the series that we’re going to plot. The employment series comes from the Establishment Survey, which is a survey answered by firms or establishments.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p>Of course firms cannot answer questions about the unemployed. Unemployment data is collected through the Household Survey. This survey calls up a household and asks questions about members of the household. (A high point of my time in Ann Arbor was when I got to answer questions about me and my roommates for a related survey, the <a href="https://www.census.gov/programs-surveys/acs/">American Community Survey</a>.) Respondents also answer questions about household members not in the labor force, the NILFs.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">tq_get</span>(<span class="kw">c</span>(<span class="st">&quot;UNRATE&quot;</span>, <span class="st">&quot;PAYEMS&quot;</span>, <span class="st">&quot;CIVPART&quot;</span>), 
+              <span class="dt">get =</span> <span class="st">&quot;economic.data&quot;</span>, <span class="dt">from =</span> <span class="st">&quot;1940-01-01&quot;</span>)
+<span class="kw">head</span>(dat)</code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##   symbol date       price
+##   &lt;chr&gt;  &lt;date&gt;     &lt;dbl&gt;
+## 1 UNRATE 1948-01-01  3.40
+## 2 UNRATE 1948-02-01  3.80
+## 3 UNRATE 1948-03-01  4.00
+## 4 UNRATE 1948-04-01  3.90
+## 5 UNRATE 1948-05-01  3.50
+## 6 UNRATE 1948-06-01  3.60</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(dat)</code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##   symbol  date       price
+##   &lt;chr&gt;   &lt;date&gt;     &lt;dbl&gt;
+## 1 CIVPART 2017-09-01  63.0
+## 2 CIVPART 2017-10-01  62.7
+## 3 CIVPART 2017-11-01  62.7
+## 4 CIVPART 2017-12-01  62.7
+## 5 CIVPART 2018-01-01  62.7
+## 6 CIVPART 2018-02-01  63.0</code></pre>
+<p>You can see that the data are in “long” form. At this point you could reshape the data into “wide” form, but we’ll skip that and simply plot the different series.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">subset</span>(dat, symbol <span class="op">==</span><span class="st"> &quot;PAYEMS&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Thousands of persons&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;All employees: Total nonfarm payrolls&quot;</span>)</code></pre></div>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">subset</span>(dat, symbol <span class="op">==</span><span class="st"> &quot;CIVPART&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Percent&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Civilian labor force participation rate&quot;</span>)</code></pre></div>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">subset</span>(dat, symbol <span class="op">==</span><span class="st"> &quot;UNRATE&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Percent&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Civilian unemployment rate&quot;</span>)</code></pre></div>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-6-3.png" width="672" /></p>
+</div>
+<div id="a-million-dollar-policy-question" class="section level2">
+<h2>A million-dollar policy question</h2>
+<p>I’ll leave you with a million-dollar policy question: Why is the labor-force participation rate of men declining so much?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">tq_get</span>(<span class="kw">c</span>(<span class="st">&quot;LNS11300002&quot;</span>, <span class="st">&quot;LNS11300001&quot;</span>), 
+              <span class="dt">get =</span> <span class="st">&quot;economic.data&quot;</span>,
+              <span class="dt">from =</span> <span class="st">&quot;1940-01-01&quot;</span>)
+dat &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">series =</span> <span class="kw">case_when</span>(
+    symbol <span class="op">==</span><span class="st"> &quot;LNS11300001&quot;</span> <span class="op">~</span><span class="st"> &quot;Men&quot;</span>,
+    symbol <span class="op">==</span><span class="st"> &quot;LNS11300002&quot;</span> <span class="op">~</span><span class="st"> &quot;Women&quot;</span>
+  )) 
+
+<span class="kw">ggplot</span>(<span class="dt">data =</span> dat) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price, <span class="dt">color =</span> series), <span class="dt">size =</span> <span class="fl">1.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Labor force participation rates of men and women&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">color =</span> <span class="st">&quot;&quot;</span>)</code></pre></div>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>First, this is one of the most striking figures in labor–macro. Just think about this figure in the context of the TV show <em>Mad Men</em>. Second, of late, the participation rates of men and women have been declining. This coincides with the drop-off in the growth rate of output that Professor House was commenting on yesterday in class. Are these patterns linked? Why? This is what policy-oriented economists are trying to figure out.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Authorial conjecture: You’ll be hiring <em>me</em> in a couple of year after you get a job making R markdown reports based on the Employment Situation Summary.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Which is a creative name. No, but, a firm can be made up of several establishments, so there’s an important distinction. The takeaway is that <em>firms</em> are responding to the survey.<a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
