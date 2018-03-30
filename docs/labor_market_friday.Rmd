@@ -193,8 +193,7 @@ dat <- dat %>%
   mutate(series = case_when(
     symbol == "LNS11300001" ~ "Men",
     symbol == "LNS11300002" ~ "Women"
-  )) %>% 
-  mutate(index = )
+  )) 
 
 ggplot(data = dat) +
   geom_line(mapping = aes(x = date, y = price, color = series), size = 1.5) +
