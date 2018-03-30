@@ -353,7 +353,7 @@ last_lvl &lt;-<span class="st"> </span>ur<span class="op">$</span>price[[<span c
            <span class="dt">y =</span> last_lvl, <span class="dt">yend =</span> <span class="fl">6.25</span>, 
            <span class="dt">color =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_hc</span>(<span class="dt">bgcolor =</span> <span class="st">&quot;darkunica&quot;</span>) </code></pre></div>
-<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 </div>
 <div id="a-just-for-fun-example-using-r" class="section level2">
 <h2>A just-for-fun example using R</h2>
@@ -412,7 +412,7 @@ last_lvl &lt;-<span class="st"> </span>ur<span class="op">$</span>price[[<span c
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Percent&quot;</span>)</code></pre></div>
-<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="a-subset-of-the-series-mentioned-in-the-employment-situation-summary" class="section level2">
 <h2>A subset of the series mentioned in the Employment Situation Summary</h2>
@@ -446,19 +446,19 @@ last_lvl &lt;-<span class="st"> </span>ur<span class="op">$</span>price[[<span c
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Thousands of persons&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;All employees: Total nonfarm payrolls&quot;</span>)</code></pre></div>
-<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">subset</span>(dat, symbol <span class="op">==</span><span class="st"> &quot;CIVPART&quot;</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Percent&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Civilian labor force participation rate&quot;</span>)</code></pre></div>
-<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">subset</span>(dat, symbol <span class="op">==</span><span class="st"> &quot;UNRATE&quot;</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Percent&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Civilian unemployment rate&quot;</span>)</code></pre></div>
-<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-10-3.png" width="672" /></p>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-6-3.png" width="672" /></p>
 </div>
 <div id="a-million-dollar-policy-question" class="section level2">
 <h2>A million-dollar policy question</h2>
@@ -478,7 +478,7 @@ dat &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class=
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Labor force participation rates of men and women&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">color =</span> <span class="st">&quot;&quot;</span>)</code></pre></div>
-<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="labor_market_friday_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>First, this is one of the most striking figures in labor–macro. Just think about this figure in the context of the TV show <em>Mad Men</em>. Second, of late, the participation rates of men and women have been declining. This coincides with the drop-off in the growth rate of output that Professor House was commenting on yesterday in class. Are these patterns linked? Why? This is what policy-oriented economists are trying to figure out.</p>
 </div>
 <div class="footnotes">
