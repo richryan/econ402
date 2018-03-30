@@ -399,163 +399,163 @@ ggplot(data = macro) +
   xlab("Index") + ylab("Real levels")
 ```
 
-<!-- # Changes in government spending and interest rates -->
+# Changes in government spending and interest rates
 
-<!-- ## Solow assumptions -->
+## Solow assumptions
 
-<!-- Consider a Solow economy where a representative household saves a constant fraction of after-tax income and a government the levies lump-sum taxes to finanace government consumption, while running a balanced budget. -->
-<!-- Government consumption is a constant fraction, $\phi$, of output. -->
+Consider a Solow economy where a representative household saves a constant fraction of after-tax income and a government the levies lump-sum taxes to finanace government consumption, while running a balanced budget.
+Government consumption is a constant fraction, $\phi$, of output.
 
-<!-- The system of equations that describes the economy is given by -->
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- Y_t &= A^{1-\alpha}K_{t}^{\alpha}N_t^{1-\alpha} \\ -->
-<!-- N_t &= 1 \\ -->
-<!-- Y_t &= C_{t} + I_{t} + G_{t} \\ -->
-<!-- I_t &= s (Y_{t} - T_{t}) \\ -->
-<!-- T_t &= G_t = \phi Y_t \\ -->
-<!-- K_{t+1} &= (1-\delta)K_t + I_t. -->
-<!-- \end{align*} -->
-<!-- $$ -->
+The system of equations that describes the economy is given by
+$$
+\begin{align*}
+Y_t &= A^{1-\alpha}K_{t}^{\alpha}N_t^{1-\alpha} \\
+N_t &= 1 \\
+Y_t &= C_{t} + I_{t} + G_{t} \\
+I_t &= s (Y_{t} - T_{t}) \\
+T_t &= G_t = \phi Y_t \\
+K_{t+1} &= (1-\delta)K_t + I_t.
+\end{align*}
+$$
 
-<!-- The steady state of this model is given by $K_{t+1} = K_{t} = K_{\star}$. -->
-<!-- Developing the equation that governs the evolution of capital yields -->
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- K_{t+1} &= (1-\delta) K_{t} + I_t \\ -->
-<!-- &= (1-\delta) K_{t} + s (Y_t - T_t) \\ -->
-<!-- &= (1-\delta) K_{t} + s (Y_t - G_t) \\ -->
-<!-- &= (1-\delta) K_{t} + s (Y_t - \phi Y_t) \\ -->
-<!-- &= (1-\delta) K_{t} + s (1-\phi)Y_t \\ -->
-<!-- &= (1-\delta) K_{t} + s (1-\phi)A^{1-\alpha}K_t^{\alpha}. -->
-<!-- \end{align*} -->
-<!-- $$ -->
-<!-- In steady state, the latter evaluates to -->
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- K_{\star} &= (1-\delta) K_{\star} + s (1-\phi)A^{1-\alpha}K_{\star}^{\alpha} \\ -->
-<!-- \therefore \delta K_{\star} &= s (1-\phi)A^{1-\alpha}K_{\star}^{\alpha} \\ -->
-<!-- \therefore \delta &= s (1-\phi)A^{1-\alpha}K_{\star}^{\alpha-1} \\ -->
-<!-- \therefore K_{\star}^{\alpha-1} &= \frac{\delta}{s (1-\phi)A^{1-\alpha}} \\ -->
-<!-- \therefore K_{\star} &= \left( \frac{\delta}{s (1-\phi)A^{1-\alpha}} \right)^{\frac{1}{\alpha - 1}} -->
-<!-- \end{align*} -->
-<!-- $$ -->
-<!-- or -->
-<!-- $$ -->
-<!-- \begin{equation} -->
-<!-- K_{\star} = A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{1}{1-\alpha}}. -->
-<!-- \end{equation} -->
-<!-- $$ -->
-<!-- The latter is an expression for steady-state capital using the Solow assumption. -->
-<!-- When $\phi = 0$, then we are back to the expression for $K_{\star}$ in the section on Solow convergence.  -->
+The steady state of this model is given by $K_{t+1} = K_{t} = K_{\star}$.
+Developing the equation that governs the evolution of capital yields
+$$
+\begin{align*}
+K_{t+1} &= (1-\delta) K_{t} + I_t \\
+&= (1-\delta) K_{t} + s (Y_t - T_t) \\
+&= (1-\delta) K_{t} + s (Y_t - G_t) \\
+&= (1-\delta) K_{t} + s (Y_t - \phi Y_t) \\
+&= (1-\delta) K_{t} + s (1-\phi)Y_t \\
+&= (1-\delta) K_{t} + s (1-\phi)A^{1-\alpha}K_t^{\alpha}.
+\end{align*}
+$$
+In steady state, the latter evaluates to
+$$
+\begin{align*}
+K_{\star} &= (1-\delta) K_{\star} + s (1-\phi)A^{1-\alpha}K_{\star}^{\alpha} \\
+\therefore \delta K_{\star} &= s (1-\phi)A^{1-\alpha}K_{\star}^{\alpha} \\
+\therefore \delta &= s (1-\phi)A^{1-\alpha}K_{\star}^{\alpha-1} \\
+\therefore K_{\star}^{\alpha-1} &= \frac{\delta}{s (1-\phi)A^{1-\alpha}} \\
+\therefore K_{\star} &= \left( \frac{\delta}{s (1-\phi)A^{1-\alpha}} \right)^{\frac{1}{\alpha - 1}}
+\end{align*}
+$$
+or
+$$
+\begin{equation}
+K_{\star} = A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{1}{1-\alpha}}.
+\end{equation}
+$$
+The latter is an expression for steady-state capital using the Solow assumption.
+When $\phi = 0$, then we are back to the expression for $K_{\star}$ in the section on Solow convergence.
 
-<!-- Steady-state output is -->
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- Y_{\star} &= A^{1-\alpha}K_{\star}^{\alpha} \\ -->
-<!-- &= A^{1-\alpha} A^{\alpha} \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}} \\ -->
-<!-- &= A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}}. -->
-<!-- \end{align*} -->
-<!-- $$ -->
-<!-- Consumption is given by -->
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- Y_t &= C_t + I_t + G_t \\ -->
-<!-- \therefore C_t &= Y_t - I_t - G_t \\ -->
-<!-- &= Y_t - s(Y_t - T_t) - G_t = Y_t - s(Y_t - G_t) - G_t \\ -->
-<!-- &= Y_t - s(Y_t - \phi Y_t) - \phi Y_t \\ -->
-<!-- &= Y_t - s(1-\phi)(Y_t - \phi Y_t) - \phi Y_t \\ -->
-<!-- &= (1-s) Y_t. -->
-<!-- \end{align*} -->
-<!-- $$ -->
-<!-- Steady-state consumption is given by -->
-<!-- $$ -->
-<!-- \begin{equation} -->
-<!-- C_{\star} = (1-s) A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}}. -->
-<!-- \end{equation} -->
-<!-- $$ -->
+Steady-state output is
+$$
+\begin{align*}
+Y_{\star} &= A^{1-\alpha}K_{\star}^{\alpha} \\
+&= A^{1-\alpha} A^{\alpha} \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}} \\
+&= A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}}.
+\end{align*}
+$$
+Consumption is given by
+$$
+\begin{align*}
+Y_t &= C_t + I_t + G_t \\
+\therefore C_t &= Y_t - I_t - G_t \\
+&= Y_t - s(Y_t - T_t) - G_t = Y_t - s(Y_t - G_t) - G_t \\
+&= Y_t - s(Y_t - \phi Y_t) - \phi Y_t \\
+&= Y_t - s(1-\phi)(Y_t - \phi Y_t) - \phi Y_t \\
+&= (1-s) Y_t.
+\end{align*}
+$$
+Steady-state consumption is given by
+$$
+\begin{equation}
+C_{\star} = (1-s) A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}}.
+\end{equation}
+$$
 
-<!-- ## "Standard preferences" with a behavioral rule for expectations -->
-
-
-<!-- ### A behavioral rule for expectations -->
-<!-- With "standard preference" the consumption Euler equation would be (with $\beta = 1$ and log preferences) -->
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- \frac{1}{C_t} = (1+r_t) \mathbb{E}_t \left[ \frac{1}{C_{t+1}} \right]. -->
-<!-- \end{align*} -->
-<!-- $$ -->
-<!-- We are going to posit that consumers expect $C_{t+1}$ to equal $C_{\star}$, -->
-<!-- making the interest rate -->
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- 1+r_t = \frac{C_{\star}}{C_t}. -->
-<!-- \end{align*} -->
-<!-- $$ -->
+## "Standard preferences" with a behavioral rule for expectations
 
 
-<!-- ### Computer simulation -->
+### A behavioral rule for expectations
+With "standard preference" the consumption Euler equation would be (with $\beta = 1$ and log preferences)
+$$
+\begin{align*}
+\frac{1}{C_t} = (1+r_t) \mathbb{E}_t \left[ \frac{1}{C_{t+1}} \right].
+\end{align*}
+$$
+We are going to posit that consumers expect $C_{t+1}$ to equal $C_{\star}$,
+making the interest rate
+$$
+\begin{align*}
+1+r_t = \frac{C_{\star}}{C_t}.
+\end{align*}
+$$
 
-<!-- The following simulation is done in Python, -->
-<!-- which can be used in R Markdown through the `reticulate` package. -->
 
-<!-- Suppose that $\phi_{t}$ is uniformly distributed between .17 and .23. -->
-<!-- We're going to simulate the economy, using $\phi_{t}$ as the driving force. -->
+### Computer simulation
 
-<!-- ```{python} -->
-<!-- import numpy as np -->
-<!-- import matplotlib.pyplot as plt -->
-<!-- import random  -->
+The following simulation is done in Python,
+which can be used in R Markdown through the `reticulate` package.
 
-<!-- # Parameter values -->
-<!-- s = 0.2 -->
-<!-- delta = 0.1 -->
-<!-- alpha = 0.35 -->
-<!-- A = 10.0 -->
-<!-- phi_ss = 0.2 -->
+Suppose that $\phi_{t}$ is uniformly distributed between .17 and .23.
+We're going to simulate the economy, using $\phi_{t}$ as the driving force.
 
-<!-- random.seed(402) -->
-<!-- ``` -->
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import random
 
-<!-- Calculate and display steady-state levels: -->
-<!-- ```{python} -->
-<!-- Kstar = A*(s*(1-phi_ss)/delta)**(1/(1-alpha)) -->
-<!-- Ystar = (A**(1-alpha))*Kstar**(alpha) -->
-<!-- Cstar = (1-s)*Ystar -->
-<!-- Istar = s*Ystar -->
-<!-- print("Steady-state capital is", Kstar) -->
-<!-- print("Steady-state output is", Ystar) -->
-<!-- ``` -->
-<!-- The experiment: -->
+# Parameter values
+s = 0.2
+delta = 0.1
+alpha = 0.35
+A = 10.0
+phi_ss = 0.2
 
-<!-- ```{python} -->
-<!-- horizon = 125 -->
-<!-- Ksim = Kstar*np.ones((horizon, 1)) -->
-<!-- Ysim = Ystar*np.ones((horizon, 1)) -->
-<!-- Isim = Istar*np.ones((horizon, 1)) -->
-<!-- Csim = Cstar*np.ones((horizon, 1)) -->
-<!-- rsim = 0.0*np.ones((horizon, 1)) -->
+random.seed(402)
+```
 
-<!-- phi_sim = 0.17 + 0.06*np.random.rand(horizon,1) -->
+Calculate and display steady-state levels:
+```{python}
+Kstar = A*(s*(1-phi_ss)/delta)**(1/(1-alpha))
+Ystar = (A**(1-alpha))*Kstar**(alpha)
+Cstar = (1-s)*Ystar
+Istar = s*Ystar
+print("Steady-state capital is", Kstar)
+print("Steady-state output is", Ystar)
+```
+The experiment:
 
-<!-- for ii in range(25, horizon): -->
-<!--     Ksim[ii] = (1-delta)*Ksim[ii-1] + Isim[ii-1] -->
-<!--     Ysim[ii] = A**(1-alpha)*(Ksim[ii])**alpha -->
-<!--     Isim[ii] = s*(1-phi_sim[ii])*Ysim[ii] -->
-<!--     Csim[ii] = (1-s)*Ysim[ii] -->
-<!--     rsim[ii] = Cstar/Csim[ii] - 1 -->
+```{python}
+horizon = 125
+Ksim = Kstar*np.ones((horizon, 1))
+Ysim = Ystar*np.ones((horizon, 1))
+Isim = Istar*np.ones((horizon, 1))
+Csim = Cstar*np.ones((horizon, 1))
+rsim = 0.0*np.ones((horizon, 1))
 
-<!-- ``` -->
-<!-- Go back to `R` to plot in R Markdown: -->
-<!-- ```{r} -->
-<!-- plot(py$Ksim, type = "o", col = "blue") -->
-<!-- title("K simulation") -->
+phi_sim = 0.17 + 0.06*np.random.rand(horizon,1)
 
-<!-- plot(py$rsim, type = "o", col = "blue") -->
-<!-- title("r simulation") -->
-<!-- ``` -->
+for ii in range(25, horizon):
+    Ksim[ii] = (1-delta)*Ksim[ii-1] + Isim[ii-1]
+    Ysim[ii] = A**(1-alpha)*(Ksim[ii])**alpha
+    Isim[ii] = s*(1-phi_sim[ii])*Ysim[ii]
+    Csim[ii] = (1-s)*Ysim[ii]
+    rsim[ii] = Cstar/Csim[ii] - 1
 
-<!-- The figures show the economy is bouncing around the steady state.  -->
-<!-- This was a quick overview into something you can do for the homework. -->
-<!-- The code starts from a steady state and then considers the effect of fluctuations in the investment share.  -->
+```
+Go back to `R` to plot in R Markdown:
+```{r}
+plot(py$Ksim, type = "o", col = "blue")
+title("K simulation")
+
+plot(py$rsim, type = "o", col = "blue")
+title("r simulation")
+```
+
+The figures show the economy is bouncing around the steady state.
+This was a quick overview into something you can do for the homework.
+The code starts from a steady state and then considers the effect of fluctuations in the investment share.
 
