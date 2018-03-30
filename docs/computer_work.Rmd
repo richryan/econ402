@@ -518,4 +518,4 @@ Ystar = (A**(1-alpha))*(Kstar**alpha)
 print("Steady-state capital is", Kstar)
 print("Steady-state output is", Ystar)
 ```
-
+The experiment
