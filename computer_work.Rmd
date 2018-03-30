@@ -101,7 +101,7 @@ Read in the data that is provided on Canvas:
 ```{r}
 library(tidyverse)
 library(lubridate)
-dat <- readxl::read_excel("../PS1-data_2018.xlsx")
+dat <- readxl::read_excel("./PS1-data_2018.xlsx")
 head(dat)
 tail(dat)
 ```
