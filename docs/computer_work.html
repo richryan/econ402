@@ -406,7 +406,7 @@ fit &lt;-<span class="st"> </span><span class="kw">tibble</span>(xur, reg_line)
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Change in the unemployment rate&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Percentage change in real GDP&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Okun&#39;s law&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Just fyi: you can add a regression line in R without having to run the regression using R’s built-in commands. I did these calculations by hand just for practice.</p>
 </div>
 </div>
@@ -471,7 +471,7 @@ dat &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span>
 <span class="kw">ggplot</span>(<span class="dt">data =</span> dat) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> datem, <span class="dt">y =</span> infl)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Percent per year&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Inflation&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Now we can compute the <em>ex post</em> real interest rate (see the post <a href="https://richryan.github.io/2018/01/22/ex-ante-ex-post.html">here</a>). The Fisher equation is better expressed as <span class="math inline">\(r_t = i_t - \mathbb{E}_t \pi_{t+1}\)</span>. At time <span class="math inline">\(t\)</span> we don’t know expected inflation. There are a couple of ways you could imagine proceeding. The <em>ex post</em> real interest rate is constructed by putting actual inflation: <span class="math display">\[
 r_t = \text{Fed Funds Rate}_t - \text{inflation}_{t+1}.
 \]</span></p>
@@ -482,7 +482,7 @@ r_t = \text{Fed Funds Rate}_t - \text{inflation}_{t+1}.
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> dat) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> datem, <span class="dt">y =</span> r)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Percent per year&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Real interest rates&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">avg &lt;-<span class="st"> </span><span class="kw">mean</span>(dat<span class="op">$</span>r, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p>The real interest rate in 2015-10-01 is -1.7170486. The average real interest rate over the sample is 1.3743401.</p>
 <p>Ideally you’d like to list those numbers using R code. Here’s the code I used: <code>max(dat$datem)</code> and <code>dat$r[[which(dat$datem == max(dat$datem))]]</code>. Putting an <code>r</code> in from of those commands lists the output within the R markdown, resulting in the output you see above.</p>
@@ -535,7 +535,7 @@ recessions_trim &lt;-<span class="st"> </span><span class="kw">subset</span>(rec
             <span class="dt">fill =</span> <span class="st">&quot;pink&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Percent per year&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Real interest rates&quot;</span>, <span class="dt">subtitle =</span> <span class="st">&quot;with recession shading&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>The red line shows the sample average.</p>
 </div>
 <div id="consumption-around-the-great-recession" class="section level1">
@@ -560,7 +560,7 @@ recessions_trim &lt;-<span class="st"> </span><span class="kw">subset</span>(rec
             <span class="dt">fill =</span> <span class="st">&quot;pink&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Log(Billions of real 2009 dollars)&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Real personal consumption expenditures&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="solow-convergence" class="section level1">
 <h1>Solow convergence</h1>
@@ -659,7 +659,7 @@ toplot_K</code></pre></div>
                           <span class="dt">linetype =</span> series), <span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Index&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Capital stock&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set2&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <div id="changing-the-saving-rate" class="section level2">
 <h2>Changing the saving rate</h2>
@@ -719,13 +719,13 @@ dat &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class=
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> ind, <span class="dt">y =</span> lvl, <span class="dt">color =</span> Series)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Index&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Capital stock&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">macro &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">gather</span>(Y, I, C, <span class="dt">key =</span> <span class="st">&quot;Series&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;lvl&quot;</span>)
 <span class="kw">ggplot</span>(<span class="dt">data =</span> macro) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> ind, <span class="dt">y =</span> lvl, <span class="dt">color =</span> Series)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Index&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Real levels&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 </div>
 </div>
 <div id="changes-in-government-spending-and-interest-rates" class="section level1">
@@ -840,10 +840,10 @@ phi_sim <span class="op">=</span> <span class="fl">0.17</span> <span class="op">
 <p>Go back to <code>R</code> to plot in R Markdown:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(py<span class="op">$</span>Ksim, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)
 <span class="kw">title</span>(<span class="st">&quot;K simulation&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(py<span class="op">$</span>rsim, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)
 <span class="kw">title</span>(<span class="st">&quot;r simulation&quot;</span>)</code></pre></div>
-<p><img src="computer_work_files/figure-html/unnamed-chunk-26-2.png" width="672" /></p>
+<p><img src="computer_work_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
 <p>The figures show the economy is bouncing around the steady state. This was a quick overview into something you can do for the homework.</p>
 </div>
 </div>
