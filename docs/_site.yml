@@ -1,4 +1,4 @@
-name: ECON 402
+name: "econ402"
 output_dir: '.'
 navbar:
   title: ECON 402
