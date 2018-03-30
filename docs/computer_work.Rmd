@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
 	warning = FALSE
 )
 library(reticulate)
-knitr::knit_engines$set(python = reticulate::eng_python)
 ```
 
 # Okun's law
