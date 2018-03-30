@@ -1,5 +1,5 @@
 name: "econ402"
-output_dir: '.'
+output_dir: "."
 navbar:
   title: ECON 402
   left:
