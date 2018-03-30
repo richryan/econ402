@@ -401,6 +401,8 @@ ggplot(data = macro) +
 
 # Changes in government spending and interest rates
 
+This section uses Python code to study an extension to the basic Solow model.
+
 ## Solow assumptions
 
 Consider a Solow economy where a representative household saves a constant fraction of after-tax income and a government the levies lump-sum taxes to finanace government consumption, while running a balanced budget.
@@ -526,7 +528,7 @@ Istar = s*Ystar
 print("Steady-state capital is", Kstar)
 print("Steady-state output is", Ystar)
 ```
-The experiment:
+The experiment starts the economy out at steady state and the investigates what happens when $\phi_t$ bounces around.
 
 ```{python}
 horizon = 125
@@ -556,6 +558,6 @@ title("r simulation")
 ```
 
 The figures show the economy is bouncing around the steady state.
-This was a quick overview into something you can do for the homework.
+This was a very quick overview into something you can do for the homework.
 The code starts from a steady state and then considers the effect of fluctuations in the investment share.
-
+Python is both powerful and fun. 
