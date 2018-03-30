@@ -491,7 +491,7 @@ $$
 1+r_t = \frac{C_{\star}}{C_t}.
 \end{align*}
 $$
-## Computer simulation
+### Computer simulation
 
 The following simulation is done in Python,
 which can be used in R Markdown through the `reticulate` package.
@@ -502,6 +502,7 @@ We're going to simulate the economy, using $\phi_{t}$ as the driving force.
 ```{python}
 import numpy as np
 import matplotlib.pyplot as plt
+import random 
 
 # Parameter values
 s = 0.2
@@ -513,9 +514,39 @@ phi_steady_state = 0.2
 
 Calculate and display steady-state levels:
 ```{python}
-Kstar = A*(s*(1-phi_steady_state)/delta)**(1/(1-alpha))
-Ystar = (A**(1-alpha))*(Kstar**alpha)
+Kstar = A*(s*(1-phi_ss)/delta)**(1/(1-alpha))
+Ystar = (A**(1-alpha))*Kstar**(alpha)
+Cstar = (1-s)*Ystar
+Istar = s*Ystar
 print("Steady-state capital is", Kstar)
 print("Steady-state output is", Ystar)
 ```
-The experiment
+The experiment:
+
+```{python}
+horizon = 125
+Ksim = Kstar*np.ones((horizon, 1))
+Ysim = Ystar*np.ones((horizon, 1))
+Isim = Istar*np.ones((horizon, 1))
+Csim = Cstar*np.ones((horizon, 1))
+rsim = 0.0*np.ones((horizon, 1))
+
+phi_sim = 0.17 + 0.06*np.random.rand(horizon,1)
+
+for ii in range(25, horizon):
+    Ksim[ii] = (1-delta)*Ksim[ii-1] + Isim[ii-1]
+    Ysim[ii] = A**(1-alpha)*(Ksim[ii])**alpha
+    Isim[ii] = s*(1-phi_sim[ii])*Ysim[ii]
+    Csim[ii] = (1-s)*Ysim[ii]
+    rsim[ii] = Cstar/Csim[ii] - 1
+
+    
+plt.plot(Ksim)
+plt.title("K")
+plt.show()
+
+plt.plot(rsim)
+plt.title("r")
+plt.show()
+```
+The figures show the economy is bouncing around the steady state. 
