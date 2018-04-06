@@ -526,8 +526,12 @@ Kstar = A*(s*(1-phi_ss)/delta)**(1/(1-alpha))
 Ystar = (A**(1-alpha))*Kstar**(alpha)
 Cstar = (1-s)*(1-phi_ss)*Ystar
 Istar = s*(1-phi_ss)*Ystar
+Gstar = phi_ss*Ystar
 print("Steady-state capital is", Kstar)
 print("Steady-state output is", Ystar)
+
+check = Ystar - Cstar - Istar - Gstar
+print("Check!", check)
 ```
 The experiment starts the economy out at steady state and the investigates what happens when $\phi_t$ bounces around.
 
@@ -537,6 +541,7 @@ Ksim = Kstar*np.ones((horizon, 1))
 Ysim = Ystar*np.ones((horizon, 1))
 Isim = Istar*np.ones((horizon, 1))
 Csim = Cstar*np.ones((horizon, 1))
+Gsim = Gstar*np.ones((horizon, 1))
 rsim = 0.0*np.ones((horizon, 1))
 
 phi_sim = 0.17 + 0.06*np.random.rand(horizon,1)
@@ -547,8 +552,16 @@ for ii in range(25, horizon):
     Isim[ii] = s*(1-phi_sim[ii])*Ysim[ii]
     Csim[ii] = (1-s)*(1-phi_sim[ii])*Ysim[ii]
     rsim[ii] = Cstar/Csim[ii] - 1
+    Gsim[ii] = phi_sim[ii]*Ysim[ii]
 
 ```
+
+Now calculate the percent differences from steady state:
+```{python}
+Gtilde = (Gsim - Gstar)/Gstar
+```
+
+
 Go back to `R` to plot in R Markdown:
 ```{r}
 plot(py$Ksim, type = "o", col = "blue")
@@ -557,6 +570,13 @@ title("K simulation")
 plot(py$rsim, type = "o", col = "blue")
 title("r simulation")
 ```
+
+How do fluctuations in $G$ relate to $r$?
+Is this the relationship predicted by the IS$ndash;LM framework?
+```{r}
+plot(py$Gtilde, py$rsim)
+```
+
 
 The figures show the economy is bouncing around the steady state.
 This was a very quick overview into something you can do for the homework.
