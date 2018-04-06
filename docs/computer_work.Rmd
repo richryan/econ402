@@ -524,7 +524,7 @@ Calculate and display steady-state levels:
 ```{python}
 Kstar = A*(s*(1-phi_ss)/delta)**(1/(1-alpha))
 Ystar = (A**(1-alpha))*Kstar**(alpha)
-Cstar = (1-s)(1-phi_ss)*Ystar
+Cstar = (1-s)*(1-phi_ss)*Ystar
 Istar = s*(1-phi_ss)*Ystar
 print("Steady-state capital is", Kstar)
 print("Steady-state output is", Ystar)
@@ -545,7 +545,7 @@ for ii in range(25, horizon):
     Ksim[ii] = (1-delta)*Ksim[ii-1] + Isim[ii-1]
     Ysim[ii] = A**(1-alpha)*(Ksim[ii])**alpha
     Isim[ii] = s*(1-phi_sim[ii])*Ysim[ii]
-    Csim[ii] = (1-s)(1-phi_sim[ii])*Ysim[ii]
+    Csim[ii] = (1-s)*(1-phi_sim[ii])*Ysim[ii]
     rsim[ii] = Cstar/Csim[ii] - 1
 
 ```
