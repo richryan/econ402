@@ -466,8 +466,7 @@ Y_t &= C_t + I_t + G_t \\
 \therefore C_t &= Y_t - I_t - G_t \\
 &= Y_t - s(Y_t - T_t) - G_t = Y_t - s(Y_t - G_t) - G_t \\
 &= Y_t - s(Y_t - \phi Y_t) - \phi Y_t \\
-&= Y_t - s(1-\phi)(Y_t - \phi Y_t) - \phi Y_t \\
-&= (1-s) Y_t.
+&= Y_t - s(1-\phi)(Y_t - \phi Y_t) - \phi Y_t.
 \end{align*}
 $$
 Steady-state consumption is given by
