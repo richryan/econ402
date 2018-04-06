@@ -85,7 +85,19 @@ how monetary policy shifts the LM curve;
 IS&ndash;LM as a theory of aggregate demand;
 expansionary monetary policy;
 [expansionary fiscal policy](https://umich.box.com/s/5wu7gnkd0ojn23wgk6e4oc85ofb1my4r)
-    
+
+### IS&ndash;LM continued, Open Economy Macroeconomics
+Updward-sloping short-run aggregate supply,
+adjustment of output via the short-run aggregate supply function,
+the effects of a monetary expansion in the IS&ndash;LM/AD&ndash;AS framework,
+the effects of an increase in $G$ in the IS&ndash;LM/AD&ndash;AS framework,
+$Y = C + I + G + NX$,
+$S = I + NX$,
+opening trade with an economy featuring low $K$,
+borrowing from abroad,
+[increase in $G$](https://umich.box.com/s/wxa9azz0jzk6ozlgejln29acmum14yk1)
+
+
 ## Selected suggested solutions to homeworks
 
 + H1.2: A proportional increase to all prices means the implicit price deflator and CPI are the [same](https://umich.box.com/s/zgqslxkgjlxj82p6a086idm592okocv9). The algebra is on the last page.
