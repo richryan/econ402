@@ -466,13 +466,15 @@ Y_t &= C_t + I_t + G_t \\
 \therefore C_t &= Y_t - I_t - G_t \\
 &= Y_t - s(Y_t - T_t) - G_t = Y_t - s(Y_t - G_t) - G_t \\
 &= Y_t - s(Y_t - \phi Y_t) - \phi Y_t \\
-&= Y_t - s(1-\phi)(Y_t - \phi Y_t) - \phi Y_t.
+&= Y_t - s(1-\phi)Y_t - \phi Y_t \\
+&= (1-\phi)Y_t - s (1-\phi) Y_t \\
+&= (1-s)(1-\phi)Y_t.
 \end{align*}
 $$
 Steady-state consumption is given by
 $$
 \begin{equation}
-C_{\star} = (1-s) A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}}.
+C_{\star} = (1-s) (1-\phi) A \left( \frac{s(1-\phi)}{\delta} \right)^{\frac{\alpha}{1-\alpha}}.
 \end{equation}
 $$
 
@@ -522,8 +524,8 @@ Calculate and display steady-state levels:
 ```{python}
 Kstar = A*(s*(1-phi_ss)/delta)**(1/(1-alpha))
 Ystar = (A**(1-alpha))*Kstar**(alpha)
-Cstar = (1-s)*Ystar
-Istar = s*Ystar
+Cstar = (1-s)(1-phi_ss)*Ystar
+Istar = s*(1-phi_ss)*Ystar
 print("Steady-state capital is", Kstar)
 print("Steady-state output is", Ystar)
 ```
@@ -543,7 +545,7 @@ for ii in range(25, horizon):
     Ksim[ii] = (1-delta)*Ksim[ii-1] + Isim[ii-1]
     Ysim[ii] = A**(1-alpha)*(Ksim[ii])**alpha
     Isim[ii] = s*(1-phi_sim[ii])*Ysim[ii]
-    Csim[ii] = (1-s)*Ysim[ii]
+    Csim[ii] = (1-s)(1-phi_sim[ii])*Ysim[ii]
     rsim[ii] = Cstar/Csim[ii] - 1
 
 ```
