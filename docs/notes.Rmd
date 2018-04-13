@@ -75,7 +75,7 @@ Steady-state $K^{\star}$ with taxes, potential for tax policy to explain cross-c
 
 ## Part III
 
-### IS&ndash;LM
+### 9 IS&ndash;LM
 Investment function, $I(r)$;
 deriving the IS curve;
 how fiscal policy shifts the IS curve;
@@ -86,7 +86,7 @@ IS&ndash;LM as a theory of aggregate demand;
 expansionary monetary policy;
 [expansionary fiscal policy](https://umich.box.com/s/5wu7gnkd0ojn23wgk6e4oc85ofb1my4r)
 
-### IS&ndash;LM continued, Open Economy Macroeconomics
+### 10 IS&ndash;LM continued, Open Economy Macroeconomics
 Updward-sloping short-run aggregate supply,
 adjustment of output via the short-run aggregate supply function,
 the effects of a monetary expansion in the IS&ndash;LM/AD&ndash;AS framework,
@@ -97,6 +97,7 @@ opening trade with an economy featuring low $K$,
 borrowing from abroad,
 [increase in $G$](https://umich.box.com/s/wxa9azz0jzk6ozlgejln29acmum14yk1)
 
+### 11 Mundell&ndash;Fleming 
 
 ## Selected suggested solutions to homeworks
 
