@@ -27,7 +27,7 @@
 
 % Set new counter to start everything off with a "2" for section 2
 \newcounter{rich}
-\setcounter{rich}{2}
+\setcounter{rich}{3}
 \newcounter{ryan}
 \setcounter{ryan}{5}
 \renewcommand{\theryan}{\Alph{ryan}\arabic{rich}}
@@ -95,6 +95,253 @@
 
 \tableofcontents
 
+\section{R\&D in the Solow growth model}
+\label{sec:rd-solow-growth}
+
+In the basic Solow model $A_{t+1} = (1+g_{A})A_{t}$,
+where $g_{A} = 0$ in the simplest case or $g_{A} > 0$,
+assuming that technological progress occurs at an exogenous rate.
+Section \ref{sec:rd-solow-growth} makes technological progress endogenous
+by devoting labor resources to research and development.
+
+The economy is populated by $N_{t}$ people who supply labor inelastically.
+The economy allocates labor to either work in factories or in the R\&D sector.
+Let $n_{t}^{f}$ denote the number of people working in factories and
+let $n_{t}^{\text{R\&D}}$ denote the number of people working in the R\&D sector.
+Then $N_{t} = n_{t}^{f} + n_{t}^{\text{R\&D}}$.
+
+The rest of the economy is standard; viz.,
+the household saves a constant fraction of its income.
+The following system of equations summarizes the dynamics that govern the economy:
+\begin{align}
+\label{eq:1}
+Y_{t} &= A_{t}^{1-\alpha} K_{t}^{\alpha} \left( n_{t}^{f} \right)^{1-\alpha} \\
+\label{eq:2}
+K_{t+1} &= (1-\delta)K_{t} + I_{t} \\
+\label{eq:3}
+I_{t} &= S_{t} = sY_{t} \\
+\label{eq:4}
+n_{t}^{\text{R\&D}} &= zN_{t} \\
+\label{eq:5}
+n_{t}^{f} &= (1-z)N_{t} \\
+\label{eq:6}
+A_{t+1} &= A_{t} \left( 1+\phi n_{t}^{\text{R\&D}} \right), \quad \phi > 0 \\
+\label{eq:7}
+N_{t} &= n_{t}^{f} + n_{t}^{\text{R\&D}}. 
+\end{align}
+We will use the normalization $N_{t} = 1$ and maintain that their is no population growth.
+Equations \eqref{eq:4} and \eqref{eq:5} make it possible to solve the economy---the economy devotes a constant fraction of its labor force to both sectors.\footnote{One can imagine extending the model so that labor allocation across sectors is a forward-looking choice.}
+
+\subsection{Part a) Balanced growth}
+\label{sec:part-a}
+
+Balanced growth is a list of sequences,
+such that quantities are growing at a constant; i.e.,
+$\left\{
+\left\{ K_{t} \right\}_{t=\tau}^{\infty},
+\left\{ Y_{t} \right\}_{t=\tau}^{\infty},
+\left\{ C_{t} \right\}_{t=\tau}^{\infty},
+\left\{ I_{t} \right\}_{t=\tau}^{\infty} \right\}$
+are growing at a constant rate;
+prices,
+$\left\{ \left\{ w_{t} \right\}_{t=\tau}^{\infty}, \left\{ R_{t} \right\}_{t=\tau}^{\infty} \right\}$,
+are growing at constant rate; and
+state variables,
+$\left\{ \left\{ A_{t} \right\}_{t=\tau}^{\infty},
+\left\{ N_{t} \right\}_{t=\tau}^{\infty} \right\}$,
+are growing at a constant rate.
+
+Date $\tau$ is an arbitrary start date.
+Importantly, all variables can grow at different rates---but all the growth rates must be constant.\footnote{See definition 6.3.}
+
+\subsection{Part b) Solving for the balanced growth}
+
+Example 6.6 goes through a more straightforward calculation.
+
+What's the growth rate of capital along the balanced growth path?
+A balanced growth path, from section \ref{sec:part-a}, means
+\begin{equation}
+\label{eq:8}
+\frac{K_{t+1}}{K_{t}} = \frac{K_{t+2}}{K_{t+1}},
+\end{equation}
+which says that the growth rate of capital between period $t$ and $t+1$ is the same as
+the growth rate of capital between period $t+1$ and $t+2$.
+
+Plugging in for $K_{t+1} / K_{t}$ yields
+\begin{align*}
+\frac{K_{t+1}}{K_{t}} &= \frac{(1-\delta)K_{t} + I_{t}}{K_{t}} = \frac{(1-\delta)K_{t} + sY_{t}}{K_{t}},
+\end{align*}
+where the last equality uses the Solow assumption that the economy saves a constant fraction of its output,
+which is given in \eqref{eq:3}.
+Use \eqref{eq:1} in our developing equation:
+\begin{align*}
+\frac{K_{t+1}}{K_{t}} &=
+\frac{(1-\delta)K_{t} + sA_{t}^{1-\alpha}K_{t}^{\alpha} \left( n_{t}^{f} \right)^{1-\alpha}}{K_{t}} \\
+&=
+\frac{(1-\delta)K_{t} + sA_{t}^{1-\alpha}K_{t}^{\alpha} \left( 1-z \right)^{1-\alpha}}{K_{t}},
+\end{align*}
+where the second equality uses \eqref{eq:5} and the fact that $N_{t} = 1$.
+Simplifying this expression yields
+\begin{equation}
+\label{eq:9}
+\frac{K_{t+1}}{K_{t}} =
+(1-\delta) + sA_{t}^{1-\alpha}K_{t}^{\alpha-1} \left( 1-z \right)^{1-\alpha}.
+\end{equation}
+
+The same procedure used to derive \eqref{eq:9} yields a similar expression for $K_{t+2} / K_{t+1}$---just
+iterate the expression in \eqref{eq:9} one period forward.
+Now compute \eqref{eq:8} as
+\begin{align*}
+(1-\delta) + sA_{t}^{1-\alpha}K_{t}^{\alpha-1} \left( 1-z \right)^{1-\alpha} &=
+(1-\delta) + sA_{t+1}^{1-\alpha}K_{t+1}^{\alpha-1} \left( 1-z \right)^{1-\alpha} \\
+\therefore sA_{t}^{1-\alpha}K_{t}^{\alpha-1} \left( 1-z \right)^{1-\alpha} &=
+sA_{t+1}^{1-\alpha}K_{t+1}^{\alpha-1} \left( 1-z \right)^{1-\alpha},
+\end{align*}
+where the second equality cancels the decay rates, $1-\delta$.
+
+Now use the expression for $A_{t+1}$ in \eqref{eq:6}:
+\begin{align*}
+sA_{t}^{1-\alpha}K_{t}^{\alpha-1} \left( 1-z \right)^{1-\alpha} &=
+s \left[ A_{t} \left( 1+\phi n_{t}^{\text{R\&D}} \right) \right]^{1-\alpha}K_{t+1}^{\alpha-1} \left( 1-z \right)^{1-\alpha} \\
+\therefore sA_{t}^{1-\alpha}K_{t}^{\alpha-1} \left( 1-z \right)^{1-\alpha} &=
+s A_{t}^{1-\alpha} \left( 1+\phi z \right)^{1-\alpha}K_{t+1}^{\alpha-1} \left( 1-z \right)^{1-\alpha},
+\end{align*}
+where the last line uses \eqref{eq:4} and the fact that $N_{t} = 1$.
+
+Canceling terms in our developing equation yields
+\begin{align*}
+K_{t}^{\alpha-1} &=
+\left( 1+\phi z \right)^{1-\alpha}K_{t+1}^{\alpha-1} \\
+\therefore \left( \frac{K_{t}}{K_{t+1}} \right)^{\alpha-1} &= \left( 1+\phi z \right)^{1-\alpha} \\
+\therefore \left( \frac{K_{t+1}}{K_{t}} \right)^{1-\alpha} &= \left( 1+\phi z \right)^{1-\alpha} \\
+\therefore \left[ \left( \frac{K_{t+1}}{K_{t}} \right)^{1-\alpha} \right]^{\frac{1}{1-\alpha}} &=
+\left[ \left( 1+\phi z \right)^{1-\alpha} \right]^{\frac{1}{1-\alpha}}.
+\end{align*}
+Which simplifies to the lovely expression
+\begin{equation}
+\label{eq:10}
+\frac{K_{t+1}}{K_{t}} = 1 + \phi z.
+\end{equation}
+
+\subsection{Part c) Changes in $z$}
+
+Looking at \eqref{eq:10}, an increase in $z$ increases the growth rate of capital.
+How does $z$ affect the growth rate of output?
+\begin{align*}
+\frac{Y_{t+1}}{Y_{t}} &=
+\frac{A_{t+1}^{1-\alpha}K_{t+1}^{\alpha} \left( n_{t+1}^{f} \right)^{1-\alpha}}{
+  A_{t}^{1-\alpha}K_{t}^{\alpha} \left( n_{t}^{f} \right)^{1-\alpha}} =
+\frac{A_{t+1}^{1-\alpha}K_{t+1}^{\alpha} \left( 1-z \right)^{1-\alpha}}{
+  A_{t}^{1-\alpha}K_{t}^{\alpha} \left( 1-z \right)^{1-\alpha}} \\
+&= \frac{A_{t+1}^{1-\alpha}K_{t+1}^{\alpha}}{A_{t}^{1-\alpha}K_{t}^{\alpha}} \\
+&= \left( \frac{A_{t+1}}{A_{t}} \right)^{1-\alpha} \left( \frac{K_{t+1}}{K_{t}} \right)^{\alpha},
+\end{align*}
+where the derivation uses \eqref{eq:5} and $N_{t}= 1$.
+
+Now use \eqref{eq:6} and \eqref{eq:10} in our developing equation:
+\begin{align*}
+\frac{Y_{t+1}}{Y_{t}} &=
+\left( \frac{A_{t}\left( 1+\phi z \right)}{A_{t}} \right)^{1-\alpha} \left( 1+\phi z \right)^{\alpha} \\
+&= \left( 1+\phi z \right)^{1-\alpha} \left( 1+\phi z \right)^{\alpha} \\
+&= \left( 1+\phi z \right),
+\end{align*}
+which says that output is growing at the same rate as technology along the balanced growth path.
+Increasing $z$ increases the growth rate of output along the balanced growth path. 
+
+\section{A linear IS--LM model}
+
+This question is about the difference between a flat SRAS curve (like in Mankiw) and
+an upward-sloping SRAS curve (the presentation in class).
+
+The LM curve is given by
+\begin{align}
+\begin{split}
+\label{eq:11}
+M - P &= Y - \phi i \\
+i &= r + \pi^{E},
+\end{split}
+\end{align}
+where $\pi^{E}$ is expected inflation, which is given exogenously.
+The parameter $\phi$ is intereste elasticity of money demand.
+
+The IS curve is given by
+\begin{align}
+\begin{split}
+\label{eq:12}
+Y &= C + I + G \\
+C &= \overline{C} + \text{MPC} Y \\
+I &= \overline{I} - \varepsilon r,
+\end{split}
+\end{align}
+where government spending, $G$, is exogenously given.
+$0 < \text{MPC} < 1$ is the marginal propensity to consume.
+$\varepsilon$ is the interest elasticity of investment demand.
+
+\subsection{Part a) The IS equation}
+
+Combine the equations in \eqref{eq:12} to get an equation explicitly in terms of $Y$ and $r$:
+\begin{equation}
+\label{eq:13}
+Y = C + I + G = \overline{C} + \text{MPC} Y + \overline{I} - \varepsilon r + G,
+\end{equation}
+where is explicitly in terms of $Y$ and $r$; recall that $G$ is exogenous.
+
+Assuming $r$ is unchanged, how does $Y$ depend on $G$?\footnote{Small aside: we derived this relationship in Remark 9.6.
+  The derivation in Remark 9.6 used the implicit function theorem (or the chain rule) because we did not know the explicit form of $C(Y,r)$.
+  Here we do.
+  Which allows us to solve for $Y$ in terms of $G$ \textit{explicitly}.
+  We can then directly differentiate the relationship.}
+Use \eqref{eq:13} to solve for $Y$:
+\begin{align*}
+Y &= \overline{C} + \text{MPC} Y + \overline{I} - \varepsilon r + G \\
+\therefore Y \left( 1+ \text{MPC} \right) &= \overline{C} + \overline{I} - \varepsilon r + G \\
+\therefore Y &= \frac{\overline{C} + \overline{I} - \varepsilon r + G}{1-\text{MPC}}.
+\end{align*}
+How $Y$ depends on $G$ is a straightforward calculation:
+\begin{equation}
+\label{eq:14}
+\frac{d Y}{d G} = \frac{1}{1-\text{MPC}}.
+\end{equation}
+
+Equation \eqref{eq:14} looks right, considering the intuition we have from the Keynesian cross.
+An increase in $G$ directly increases $Y$, one-for-one, in the first round.
+But a higher $Y$ encourages spending through $C(Y,r)$.
+In the second round, $C$ and therefore $Y$ increases by $\text{MPC}$.
+This increases $Y$ again, which spurs an increase in consumption of $\text{MPC}^{2}$.
+This process continues.
+The total change in $Y$ is
+\begin{align*}
+1 + \text{MPC} + \text{MPC}^{2} + \text{MPC}^{3} + \cdots = \frac{1}{1-\text{MPC}}.
+\end{align*}
+
+\subsection{Part b) The LM system and re-evaluating $dY / dG$}
+
+Combine the expressions in \eqref{eq:11}:
+\begin{align*}
+M - P &= Y - \phi i \\
+\therefore M - P &= Y - \phi \left( r + \pi^{E} \right) \\
+\therefore \phi r &= Y - M + P - \phi \pi^{E} \\
+\therefore r &= \frac{1}{\phi} \left( Y - M + P - \phi \pi^{E} \right).
+\end{align*}
+Note: plotting this relationship in $r--Y$ space would give an upward-sloping relationship.
+Good, because that's how we've been drawing the LM curve.
+
+Now we want to use the expression for $r$, coming from the LM block,
+in the IS block:
+\begin{align*}
+Y &= \overline{C} + \text{MPC} Y + \overline{I} + G - \varepsilon r \\
+\therefore Y &=
+\overline{C} + \text{MPC} Y + \overline{I} + G - \frac{\varepsilon}{\phi} \left( Y - M + P - \phi \pi^{E} \right) \\
+\therefore Y \left( 1 - \text{MPC} + \frac{\varepsilon}{\phi} \right) &=
+\overline{C} + \overline{I} + G - \frac{\varepsilon}{\phi} \left(- M + P - \phi \pi^{E} \right) \\
+\therefore Y &= \frac{\overline{C} + \overline{I} + G - \frac{\varepsilon}{\phi} \left(- M + P - \phi \pi^{E} \right)}{1 - \text{MPC} + \frac{\varepsilon}{\phi}}.
+\end{align*}
+
+Now
+\begin{equation}
+\label{eq:15}
+\frac{d Y}{d G} = \frac{1}{1 - \text{MPC} + \frac{\varepsilon}{\phi}}.
+\end{equation}
 
 
 % \bibliography{c:/Users/rwr/bibliography/bibliography}
