@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180413141210" modified="D:20180413141919"/>
+<info created="D:20180413141210" modified="D:20180413152039"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -289,5 +289,8 @@ h
 360.844 604.525 l
 </path>
 <text transformations="translations" pos="366.843 605.047" stroke="black" type="label" width="33.281" height="8.413" depth="4.27" valign="baseline" style="math">\frac{1}{1-MPC}</text>
+<text matrix="1 0 0 1 -4.06932 -4.06932" transformations="translations" pos="346.053 680.06" stroke="black" type="label" width="13.675" height="11.764" depth="0" valign="baseline" size="LARGE" style="math">B</text>
+<text matrix="1 0 0 1 0 -7.46042" transformations="translations" pos="471.863 511.522" stroke="black" type="label" width="16.235" height="14.119" depth="0" valign="baseline" size="huge" style="math">Y</text>
+<text transformations="translations" pos="127.327 773.994" stroke="black" type="label" width="9.679" height="8.896" depth="0" valign="baseline" size="huge" style="math">r</text>
 </page>
 </ipe>
