@@ -1,0 +1,107 @@
+% =====================================================================
+% Program: econ-402-ec2.tex
+% Purpose: Suggested solutions to the second extra credit.
+%
+% E-mail: RichRyan@umich.edu
+% =====================================================================
+\documentclass[12pt]{pracjourn_rwr}
+% \documentclass[12pt]{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{url}
+\urlstyle{same}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{amsxtra}
+\usepackage{natbib}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{alltt}
+\input{ee.sty}
+\usepackage{listings}
+% \usepackage[inline]{showlabels}
+\usepackage{paralist} % inline lists (enumeration)
+\usepackage{mathabx} % widebar
+
+% Set new counter to start everything off with a "2" for section 2
+\newcounter{rich}
+\setcounter{rich}{2}
+\newcounter{ryan}
+\setcounter{ryan}{5}
+\renewcommand{\theryan}{\Alph{ryan}\arabic{rich}}
+
+% Change figure numbering
+\usepackage{chngcntr}
+\counterwithin{figure}{ryan}
+
+% \newtheorem{theorem}{Theorem}[chapter]
+% \newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{theorem}{Theorem}[rich]
+\newtheorem{lemma}{Lemma}[rich]
+
+% \newtheoremstyle{definition}% Name
+% {3pt}% Space above
+% {3pt}% Space below
+% {}% Body font
+% {}% Indent amount
+% {\bfseries}% Theorem head font
+% {:}% Punctuation after theorem head
+% {.5em}% Space after theorem head
+% {}% Theorem head spec (can be left empty, meaning "normal")
+
+% \setcounter{chapter}{2}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[rich]
+\newtheorem{example}{Example}[rich]
+\newtheorem{exercise}{Exercise}[rich]
+\newtheorem{prop}{Proposition}[rich]
+\newtheorem{assumption}{Assumption}[rich]
+\newtheorem{fact}{Fact}[rich]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[ryan]
+% \newtheorem{remark}{Remark}[chapter]
+% \newtheorem{fact}{Fact}[chapter]
+
+% === Change to homework numbering ===
+\renewcommand{\thesection}{E\arabic{rich}.\arabic{section}}
+
+\title{Suggested solution for the third  Extra Credit}
+% \author{Rich Ryan}
+\email{RichRyan@umich.edu}
+%% \TPJrevision{2013}{08}{03} % The editors ask you to update this for each %% revision submitted
+% \TPrevision{3}{1}{2015}
+\license{\texttt{econ-402-ec3.tex}} % May be used if you want a copyright notice at the bottom right of the first page
+\abstract{Time-varying prices of capital.}
+\newinfo\datestart{Date Started}
+\newinfo\daterevised{Date Revised} % See the pracjourn class for how to do this
+\datestart{April 13, 2018}
+\daterevised{April 13, 2018}
+
+
+% === Spacing in the table of contents
+\usepackage{tocloft}
+\renewcommand{\cftsecnumwidth}{3em}
+\renewcommand{\cftsubsecnumwidth}{5em}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+% Set TOC depth
+\setcounter{tocdepth}{2}
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+
+
+% \bibliography{c:/Users/rwr/bibliography/bibliography}
+% \bibliographystyle{c:/Users/rwr/bibliography/bostonfed}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End:
