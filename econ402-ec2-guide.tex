@@ -1,0 +1,152 @@
+% =====================================================================
+% Program: econ-402-ec2.tex
+% Purpose: Suggested solutions to the second extra credit.
+%
+% E-mail: RichRyan@umich.edu
+% =====================================================================
+\documentclass[12pt]{pracjourn_rwr}
+% \documentclass[12pt]{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{url}
+\urlstyle{same}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{amsxtra}
+\usepackage{natbib}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{alltt}
+\input{ee.sty}
+\usepackage{listings}
+% \usepackage[inline]{showlabels}
+\usepackage{paralist} % inline lists (enumeration)
+\usepackage{mathabx} % widebar
+
+% Set new counter to start everything off with a "2" for section 2
+\newcounter{rich}
+\setcounter{rich}{2}
+\newcounter{ryan}
+\setcounter{ryan}{5}
+\renewcommand{\theryan}{\Alph{ryan}\arabic{rich}}
+
+% Change figure numbering
+\usepackage{chngcntr}
+\counterwithin{figure}{ryan}
+
+% \newtheorem{theorem}{Theorem}[chapter]
+% \newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{theorem}{Theorem}[rich]
+\newtheorem{lemma}{Lemma}[rich]
+
+% \newtheoremstyle{definition}% Name
+% {3pt}% Space above
+% {3pt}% Space below
+% {}% Body font
+% {}% Indent amount
+% {\bfseries}% Theorem head font
+% {:}% Punctuation after theorem head
+% {.5em}% Space after theorem head
+% {}% Theorem head spec (can be left empty, meaning "normal")
+
+% \setcounter{chapter}{2}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[rich]
+\newtheorem{example}{Example}[rich]
+\newtheorem{exercise}{Exercise}[rich]
+\newtheorem{prop}{Proposition}[rich]
+\newtheorem{assumption}{Assumption}[rich]
+\newtheorem{fact}{Fact}[rich]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[ryan]
+% \newtheorem{remark}{Remark}[chapter]
+% \newtheorem{fact}{Fact}[chapter]
+
+% === Change to homework numbering ===
+\renewcommand{\thesection}{E\arabic{rich}.\arabic{section}}
+
+\title{Grading Guide for Extra Credit \#2}
+% \author{Rich Ryan}
+% \email{RichRyan@umich.edu}
+%% \TPJrevision{2013}{08}{03} % The editors ask you to update this for each %% revision submitted
+% \TPrevision{3}{1}{2015}
+% \license{\texttt{econ-402-ec2.tex}} % May be used if you want a copyright notice at the bottom right of the first page
+% \abstract{Time-varying prices of capital.}
+% \newinfo\datestart{Date Started}
+% \newinfo\daterevised{Date Revised} % See the pracjourn class for how to do this
+% \datestart{March 7, 2018}
+% \daterevised{March 13, 2018}
+
+
+% === Spacing in the table of contents
+\usepackage{tocloft}
+\renewcommand{\cftsecnumwidth}{3em}
+\renewcommand{\cftsubsecnumwidth}{5em}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+% Set TOC depth
+\setcounter{tocdepth}{2}
+
+
+\begin{document}
+\maketitle
+
+
+There are 30 points to be awarded for EC \#2.
+
+\begin{itemize}
+% === PART A ===
+\item Part a.), 6 points total.
+Attempt = 3.
+Award 3 addition points for the expression
+\begin{align*}
+p_{t} &= \frac{(1-\tau_{t+1}) \text{MPK}_{t+1}}{1+r} + \frac{1-\delta}{1+r} \frac{(1-\tau_{t+2}) \text{MPK}_{t+2}}{1+r}
++ \left( \frac{1-\delta}{1+r} \right)^{2} \frac{(1-\tau_{t+3}) \text{MPK}_{t+3}}{1+r} + \cdots \\
+&= \sum\limits_{j=0}^{\infty} \frac{1}{1+r} \left( \frac{1-\delta}{1+r} \right)^{j} (1-\tau_{t+1+j}) \text{MPK}_{t+1+j}.
+\end{align*}
+
+The following often-encountered close misses are worth 4 points:
+\begin{itemize}
+\item If someone had
+\begin{align*}
+p_{t} = \frac{(1-\tau_{t+1}) \text{MPK}_{t+1} + (1-\delta)p_{t+1}}{1+r}
+\end{align*}
+\emph{and} got part b.) correct (meaning they wrote out correctly the infinite sum with $\text{MPK}_{t+1+j} = m$), then 4 points.
+\item Some people messed up the indexing in the infinite sum.
+Bad indexing was also worth 4 points.
+\end{itemize}
+% === PART B ===
+\item Part b.), 6 points total.
+Attempt = 3.
+Bad indexing was also worth 4 points here.
+% === PART C ===
+\item Part c.), 6 points total. Attempt = 3.
+Award 3 additional points for calculating both prices
+\begin{itemize}
+\item $p^{I} = 6.5$
+\item $p^{II} = 2 + 1/6 = 2.1667$.
+\end{itemize}
+\item Part d.), 12 points total. Attempt = 6.
+Award 3 points each for the following two calculations:
+\begin{itemize}
+\item In part i.), $p^{I} = 8$ and $p^{II} = 2.667$, which are the prices with $\tau = .2$ at all times.
+\item In part iii.), $p^{I}$ increases from $6.5$ to $7.1094$, a \textcolor{red}{$9.38$ percent increase}; and
+$p_{t}^{II}$ increases from $2.1667$ to $2.1909$ a \textcolor{red}{$1.12$ percent increase}.
+
+There is a slight timing issue.
+The latter prices are the time-$t$ or time-$0$ prices.
+If the calculation is done at time $1$, then
+$p^{I}$ increases from $6.5$ to $7.17354$, a \textcolor{red}{$10.36$ percent increase}; and
+$p_{t}^{II}$ increases from $2.1667$ to $2.20057$ a \textcolor{red}{$1.56$ percent increase}.
+Award full points for either timing assumption.
+\end{itemize}
+\end{itemize}
+
+% \bibliography{c:/Users/rwr/bibliography/bibliography}
+% \bibliographystyle{c:/Users/rwr/bibliography/bostonfed}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End:
