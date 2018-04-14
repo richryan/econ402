@@ -100,7 +100,7 @@ borrowing from abroad,
 $\star$ The notes for section 10 were updated 4/14/2018.
 
 ### 11 Mundell&ndash;Fleming 
-Monetary neutrality, $r = r^{\star}$,
+Monetary neutrality, $r = r^{\star}$ in a small open economy,
 the goods and services market and the IS$^{\star}$ curve,
 the nominal exchange rate,
 the money market and the LM$^{\star}$ curve,
