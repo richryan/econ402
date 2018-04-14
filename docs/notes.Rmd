@@ -97,7 +97,22 @@ opening trade with an economy featuring low $K$,
 borrowing from abroad,
 [increase in $G$](https://umich.box.com/s/wxa9azz0jzk6ozlgejln29acmum14yk1)
 
+$\star$ The notes for section 10 were updated 4/14/2018.
+
 ### 11 Mundell&ndash;Fleming 
+Monetary neutrality, $r = r^{\star}$,
+the goods and services market and the IS$^{\star}$ curve,
+the nominal exchange rate,
+the money market and the LM$^{\star}$ curve,
+fixed vs floating exchange rates,
+example: monetary policy and floating exchange rates,
+the monetary transmission mechanism under floating exchange rates,
+example: fiscal expansion under floating exchange rates,
+example: trade policy under floating exchange rates,
+example: fixed exchange rates and fiscal policy,
+example: a monetary expansion under fixed exchange rates,
+devaluation,
+[thanks](https://umich.box.com/s/7dsbz12mbvlq6oqiuj33it0dpf1hlwzu)
 
 ## Selected suggested solutions to homeworks
 
