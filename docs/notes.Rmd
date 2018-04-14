@@ -120,6 +120,7 @@ devaluation,
 + H2: Impatient consumers and the interest rate, the elasticity of intertemporal substitution, and capital taxation and the [user cost](https://umich.box.com/s/gzugioph33wzzt2sydzamvei23roz75q)
 + E1: Extra credit: A cool example of [intertemporal choice](https://umich.box.com/s/k9ogh1w56zarx7rw3itkz4wfdj8n6i9o)
 + E2: Extra credit: Time-varying [prices of capital](https://umich.box.com/s/v1wkuwte4b0psw2jmi9y4ddqoenssvdt)
++ E3: Extra credit: R&D in a basic Solow model and a linear [IS&ndash;LM system](https://umich.box.com/s/9p58ze9k1bzc3gc2eo0a499xxn6zlp9i)
 
 ## Answers to questions people have asked
 

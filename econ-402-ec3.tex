@@ -69,16 +69,20 @@
 \renewcommand{\thesection}{E\arabic{rich}.\arabic{section}}
 
 \title{Suggested solution for the third  Extra Credit}
-% \author{Rich Ryan}
+\author{Rich Ryan}
 \email{RichRyan@umich.edu}
 %% \TPJrevision{2013}{08}{03} % The editors ask you to update this for each %% revision submitted
 % \TPrevision{3}{1}{2015}
 \license{\texttt{econ-402-ec3.tex}} % May be used if you want a copyright notice at the bottom right of the first page
-\abstract{Time-varying prices of capital.}
+\abstract{There are two parts to this note.
+  In tbe first part, R\&D is added to a baseline Solow economy.
+  The rate of growth of capital and output is determined along the balanced growth path of the economy.
+  In the second part, a linear IS--LM system is considered.
+}
 \newinfo\datestart{Date Started}
 \newinfo\daterevised{Date Revised} % See the pracjourn class for how to do this
 \datestart{April 13, 2018}
-\daterevised{April 13, 2018}
+\daterevised{April 14, 2018}
 
 
 % === Spacing in the table of contents
@@ -376,15 +380,15 @@ $d Y / d G$ is decreasing in $\varepsilon$:
 \frac{-1}{\left( 1 - \text{MPC} + \frac{\varepsilon}{\phi} \right)^{2}} \frac{1}{\phi} < 0.
 \end{align*}
 Why is this negative?
-Note the $C = \overline{C} + \text{MPC} \times Y$ and $C$ does not depend on $r$.
-$Y$ only depends on $r$ through $I$ (like in the Mankiw book).
-Looking at \eqref{eq:13},
+Mechanically, looking at \eqref{eq:13},
 $-1 / \varepsilon$ is the slope of the IS curve in figure \ref{fig:is-lm}.
 Increasing $\varepsilon$ makes $-1/\varepsilon$ flatter.
 Imagine rotating IS$_{2}$ around $A$.
 The total effect will cause $Y$ to increase by less.
 
 Why?
+Note the $C = \overline{C} + \text{MPC} \times Y$ and $C$ does not depend on $r$.
+$Y$ only depends on $r$ through $I$ (like in the Mankiw book).
 The shift from IS$_{1}$ to IS$_{2}$ causes $r$ to rise.
 $I$ depends negatively on $r$, a relationship governed by $\varepsilon$.
 The bigger is $\varepsilon$ the more $I$ decreases, pushing down $Y$.
@@ -394,10 +398,11 @@ How does $\phi$ affect $d Y / d G$?
 \frac{\partial}{\partial \phi} \left[ \frac{d Y}{d G} \right] =
 \frac{-1}{\left( 1 - \text{MPC} + \frac{\varepsilon}{\phi} \right)^{2}} \frac{-\epsilon}{\phi^{2}} > 0.
 \end{align*}
-$1 / \phi$ is the slope of the LM curve in figure \ref{fig:is-lm}.
+Mechanically, $1 / \phi$ is the slope of the LM curve in figure \ref{fig:is-lm}.
 Increasing $\phi$ makes the LM curve flatter.
 Figure \ref{fig:is-lm} shows that a flatter LM curve will push out the increase in $Y$.
-The bigger is $\phi$, the less $r$ will respond to the increased pressure on the interest rate,
+Intuitively,
+the bigger is $\phi$, the less $r$ will respond to the increased pressure on the interest rate,
 which causes $I$ to fall by less.
 The result is higher $Y$.
 
