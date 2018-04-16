@@ -70,7 +70,7 @@
 
 \title{Suggested solution for the third  Extra Credit}
 % \author{Rich Ryan}
-% \email{RichRyan@umich.edu}
+\email{RichRyan@umich.edu}
 %% \TPJrevision{2013}{08}{03} % The editors ask you to update this for each %% revision submitted
 % \TPrevision{3}{1}{2015}
 \license{\texttt{econ-402-ec3.tex}} % May be used if you want a copyright notice at the bottom right of the first page
@@ -79,10 +79,10 @@
   The rate of growth of capital and output is determined along the balanced growth path of the economy.
   In the second part, a linear IS--LM system is considered.
 }
-% \newinfo\datestart{Date Started}
-% \newinfo\daterevised{Date Revised} % See the pracjourn class for how to do this
-% \datestart{April 13, 2018}
-% \daterevised{April 14, 2018}
+\newinfo\datestart{Date Started}
+\newinfo\daterevised{Date Revised} % See the pracjourn class for how to do this
+\datestart{April 13, 2018}
+\daterevised{April 15, 2018}
 
 
 % === Spacing in the table of contents
@@ -106,7 +106,8 @@ In the basic Solow model $A_{t+1} = (1+g_{A})A_{t}$,
 where $g_{A} = 0$ in the simplest case or $g_{A} > 0$,
 assuming that technological progress occurs at an exogenous rate.
 Section \ref{sec:rd-solow-growth} makes technological progress endogenous
-by devoting labor resources to research and development.
+by devoting labor resources to research and development,
+which increases the level of technology available in the economy.
 
 The economy is populated by $N_{t}$ people who supply labor inelastically.
 The economy allocates labor to either work in factories or in the R\&D sector.
@@ -133,14 +134,14 @@ A_{t+1} &= A_{t} \left( 1+\phi n_{t}^{\text{R\&D}} \right), \quad \phi > 0 \\
 \label{eq:7}
 N_{t} &= n_{t}^{f} + n_{t}^{\text{R\&D}}. 
 \end{align}
-We will use the normalization $N_{t} = 1$ and maintain that their is no population growth.
+We will use the normalization $N_{t} = 1$, abstracting from population growth.
 Equations \eqref{eq:4} and \eqref{eq:5} make it possible to solve the economy---the economy devotes a constant fraction of its labor force to both sectors.\footnote{One can imagine extending the model so that labor allocation across sectors is a forward-looking choice.}
 
 \subsection{Part a) Balanced growth}
 \label{sec:part-a}
 
 Balanced growth is a list of sequences,
-such that quantities are growing at a constant; i.e.,
+such that quantities are growing at a constant rate; i.e.,
 $\left\{
 \left\{ K_{t} \right\}_{t=\tau}^{\infty},
 \left\{ Y_{t} \right\}_{t=\tau}^{\infty},
@@ -281,7 +282,7 @@ i &= r + \pi^{E},
 \end{split}
 \end{align}
 where $\pi^{E}$ is expected inflation, which is given exogenously.
-The parameter $\phi$ is intereste elasticity of money demand.
+The parameter $\phi$ is interest elasticity of money demand.
 
 The IS curve is given by
 \begin{align}
@@ -305,7 +306,8 @@ Y = C + I + G = \overline{C} + \text{MPC} \times Y + \overline{I} - \varepsilon 
 \end{equation}
 which is explicitly in terms of $Y$ and $r$; recall that $G$ is exogenous.
 
-Assuming $r$ is unchanged, how does $Y$ depend on $G$?\footnote{Small aside: we derived this relationship in Remark 9.6.
+Assuming $r$ is unchanged, how does $Y$ depend on $G$?
+\footnote{Small aside: we derived this relationship in Remark 9.6.
   The derivation in Remark 9.6 used the implicit function theorem (or the chain rule) because we did not know the explicit form of $C(Y,r)$.
   Here we do.
   Which allows us to solve for $Y$ in terms of $G$ \textit{explicitly}.
