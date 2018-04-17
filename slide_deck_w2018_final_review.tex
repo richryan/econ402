@@ -1,19 +1,27 @@
-% Created 2018-04-17 Tue 14:01
-\documentclass[11pt]{article}
-\usepackage{fixltx2e}
-\usepackage{graphicx}
-\usepackage{longtable}
-\usepackage{float}
-\usepackage{wrapfig}
-\usepackage{rotating}
-\usepackage[normalem]{ulem}
-\usepackage{amsmath}
-\usepackage{textcomp}
-\usepackage{marvosym}
-\usepackage{wasysym}
-\usepackage{amssymb}
-\usepackage{color}
-\usepackage{listings}
+% Created 2018-04-17 Tue 14:04
+\documentclass[presentation,dvipsnames]{beamer}
+% \usepackage[dvipsnames]{xcolor}
+% \usepackage{fixltx2e}
+% \usepackage{graphicx}
+% \usepackage{longtable}
+% \usepackage{float}
+% \usepackage{wrapfig}
+% \usepackage{rotating}
+% \usepackage[normalem]{ulem}
+\usepackage{amsmath,amssymb}
+% \usepackage{marvosym}
+% \usepackage{wasysym}
+% \usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}           % to get \pounds to work in math mode
+
+\renewcommand{\pounds}{\text{\textsterling}{ }}
+
+% \usepackage[math]{iwona}
+% \usepackage{listings}
+\usetheme{default}
+\author{}
 \date{April 19 \& 20, 2018}
 \title{W2018 ECON 402 Final Review}
 \hypersetup{
@@ -23,98 +31,214 @@
 \begin{document}
 
 \maketitle
+\begin{frame}{Outline}
 \setcounter{tocdepth}{1}
 \tableofcontents
+\end{frame}
 
 \section{Outline}
 \label{sec-1}
 \section{Important concepts}
 \label{sec-2}
-\subsection{Intertemporal choice}
-\label{sec-2-1}
-\subsection{Consumption Euler equation}
-\label{sec-2-2}
-\subsection{Sums and partial sums}
-\label{sec-2-3}
-\subsection{PIH}
-\label{sec-2-4}
-\subsection{Fundamentals of asset pricing}
-\label{sec-2-5}
-\subsection{Returns to scale}
-\label{sec-2-6}
-\subsection{Inputs are paid their marginal products}
-\label{sec-2-7}
-\subsection{Pricing a unit of capital}
-\label{sec-2-8}
-\subsection{Interpreting the pricing of a unit of capital}
-\label{sec-2-9}
-\begin{enumerate}
-\item Remark 4.6
-\label{sec-2-9-1}
-\item Remark 4.7
-\label{sec-2-9-2}
-\end{enumerate}
+\begin{frame}[label=sec-2-1]{Intertemporal choice}
+\end{frame}
+\begin{frame}[label=sec-2-2]{Consumption Euler equation}
+\end{frame}
+\begin{frame}[label=sec-2-3]{Sums and partial sums}
+\end{frame}
+\begin{frame}[label=sec-2-4]{PIH}
+\end{frame}
+\begin{frame}[label=sec-2-5]{Fundamentals of asset pricing}
+\end{frame}
+\begin{frame}[label=sec-2-6]{Returns to scale}
+\end{frame}
+\begin{frame}[label=sec-2-7]{Inputs are paid their marginal products}
+\end{frame}
+\begin{frame}[label=sec-2-8]{Pricing a unit of capital}
+\end{frame}
+\begin{frame}[label=sec-2-9]{Interpreting the pricing of a unit of capital}
+\begin{block}{Remark 4.6}
+\end{block}
+\begin{block}{Remark 4.7}
+\end{block}
+\end{frame}
 \section{Two-period endowment economies}
 \label{sec-3}
 \section{Solow}
 \label{sec-4}
-\subsection{$K_{\star}$}
-\label{sec-4-1}
-\subsection{Balanced growth}
-\label{sec-4-2}
+\begin{frame}[label=sec-4-1]{$K_{\star}$}
+\end{frame}
+\begin{frame}[label=sec-4-2]{Balanced growth}
+\end{frame}
 \section{IS--LM}
 \label{sec-5}
-\subsection{Increase M}
-\label{sec-5-1}
-\subsection{Increase G}
-\label{sec-5-2}
-\subsection{ZLB}
-\label{sec-5-3}
+\begin{frame}[label=sec-5-1]{Increase $M$: Effects of a monetary expansion}
+
+\end{frame}
+\begin{frame}[label=sec-5-2]{Increase $G$}
+\end{frame}
+\begin{frame}[label=sec-5-3]{ZLB}
+\end{frame}
 \section{Mundell--Fleming}
 \label{sec-6}
-\subsection{Opening trade with a country with low $K$}
-\label{sec-6-1}
-\subsection{Fixed exchange rate}
-\label{sec-6-2}
-\subsection{Floating exchange rate}
-\label{sec-6-3}
+
+\begin{frame}[label=sec-6-1]{Opening trade with a country with low $K$}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mundell--Fleming}
+\begin{itemize}[label={--}]
+\item Small, open economy?
+\item Borrow and lend as much as desired in world financial markets
+\item Small = decisions have negligible effects on prices ($r = r^{\star}$)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mundell--Fleming: IS$^{\star}$}
+Market for goods and services:
+\begin{align*}
+Y = C(Y-T, r^{\star})  + I(r^{\star}) + G + \underbrace{NX(e)}_{-} ,
+\end{align*}
+where $e$ is the nominal exchange rate.
+
+\vspace{1em}
+
+IS$^{\star}$ is downward sloping:
+\begin{align*}
+\frac{de}{dY} = \frac{1-\text{MPC}}{NX_{e}} < 0 \text{ as } 0 < \text{MPC} < 1
+\end{align*}
+\end{frame}
+
+% \begin{frame}
+% \frametitle{Mundell--Fleming: LM$^{\star}$}
+% Supply, $M/P$, equals demand, $L(r,Y)$, in the money market requires
+% \begin{align*}
+% M/P = L(r^{\star},Y)
+% \end{align*}
+% \end{frame}
+
+\begin{frame}
+\frametitle{Mundell--Fleming: LM$^{\star}$}
+% \begin{centering}
+\centering
+\includegraphics[height=0.85\textheight]{rwr_lecture_notes/econ402_w2018_lecture11_mundell_fleming_LM_star.png}
+% \end{centering}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mundell--Fleming: IS$^{\star}$--LM$^{\star}$}
+\centering
+\includegraphics[width=\textwidth]{rwr_lecture_notes/econ402_w2018_lecture11_mundell_fleming_IS_LM_star.png}
+\end{frame}
+
+
+
+% \begin{frame}
+% \frametitle{Mundell--Fleming: $e$}
+% \begin{itemize}[label={--}]
+% \item $e$ is the nominal exchange rate
+% \item $\varepsilon$ is the real exchange rate
+% \item $\varepsilon = \frac{e P}{P^{\star}}$
+% \item $P$ is the domestic price
+% \item $P^{\star}$ is the foreign price
+% \item Prices fixed in IS--LM framework
+% \end{itemize}
+% \end{frame}
+
+\begin{frame}
+\frametitle{Mundell--Fleming: $NX(e)$ depends negatively on $e$}
+\begin{itemize}[label={--}]
+\item $e \uparrow$ means more \pounds per \$
+\item Domestic goods are more expensive as $e \uparrow$
+\item Exports go down
+\item Imports go up
+\item $NX(e) \downarrow$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-6-3]{Mundell--Fleming: Fixed vs floating exchange rates}
+\begin{itemize}[label={--}]
+\item Floating exchange rates: The exchange rate is determined by market forces and responds to economic conditions
+\item Fixed exchange rates: The central bank announces a value for the exchange rate and stands ready to buy and sell their domestic currency to keep the exchanges rate at the announced level
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fixed exchange rate: Fiscal policy}
+\begin{itemize}[label={--}]
+\item Small, open economy
+\item Interest rate = $r^{\star}$
+\item Fixed exchange rates---central bank willing to buy and sell currency to keep $e = e^{\star}$
+\item Fiscal expansion: $G \uparrow$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-6-2]{Fixed exchange rate: Monetary expansion}
+\begin{itemize}[label={--}]
+\item Small, open economy
+\item Interest rate = $r^{\star}$
+\item Fixed exchange rates
+\item Monetary expansion
+\end{itemize}
+\end{frame}
+\begin{frame}[label=sec-6-2]{Fixed exchange rate: Monetary expansion}
+\includegraphics[width=\textwidth]{rwr_lecture_notes/econ402_w2018_lecture11_M_fixed_exchange_LM_curve.png}
+
+$\implies$ LM$^{\star}$ curve shifts to the right
+
+\end{frame}
+\begin{frame}[label=sec-6-2]{Fixed exchange rate: Monetary expansion}
+\includegraphics[]{rwr_lecture_notes/econ402_w2018_lecture11_M_fixed_exchange.png}
+\end{frame}
+\begin{frame}
+\frametitle{Fixed exchange rate: Monetary expansion}
+\begin{itemize}[label={--}]
+\item At $A$, $e = \$ / \pounds$ is too low
+\item Too many dollars; ie, dollars are cheap
+\item The central bank exchanges \pounds for \$, bidding up \pounds
+\item (The central bank runs down it supply of foreign reserves)
+\item Exchanging \pounds for \$ pushes down $M$
+\item The LM curve shifts back to LM$_{1}$ from LM$_{2}$
+\item \textcolor{RubineRed}{There is no effect on $Y$}
+\end{itemize}
+\end{frame}
+
 \section{Facts}
 \label{sec-7}
-\subsection{Current US Budget Issues}
-\label{sec-7-1}
-\subsection{Economic Growth}
-\label{sec-7-2}
-\subsection{Business Cycle Analysis}
-\label{sec-7-3}
-\subsection{Mundell--Fleming}
-\label{sec-7-4}
-\begin{enumerate}
-\item The nominal exchange rate is in units of yen per dollar
-\label{sec-7-4-1}
-\item T/F: The top 0.1\% hold roughly 0.1\% of wealth (F)
-\label{sec-7-4-2}
-\item T/F: The uncovered interest rate parity $\Delta e_{t+1}$
-\label{sec-7-4-3}
-\item T/F: The Taylor rule specifies that the Fed responds more than one-for-one to the interest rate
-\label{sec-7-4-4}
-\item T/F: The Federal Reserve sets a target or a range for the FFR
-\label{sec-7-4-5}
-\item T/F: How long is the average expansion?
-\label{sec-7-4-6}
-\item T/F: Maiden Lane got around sec 14 of the Federal Reserve Act, setting up an LLC
-\label{sec-7-4-7}
-\item T/F: Maiden Lane is the street is the Fed Bank of New York is on?
-\label{sec-7-4-8}
-\item T/F: The Federal Reserve purchased mortgage backed securities as part of the Mortgage Backed Securities (MBS) Purchase Program
-\label{sec-7-4-9}
-\item T/F: The largest part of unconventional monetary policy was MBS Purchase Program
-\label{sec-7-4-10}
-\item T/F: Uncovered carry trade
-\label{sec-7-4-11}
-\item T/F: How do you measure $\alpha$ in the data? Labor share.
-\label{sec-7-4-12}
-\item T/F:
-\label{sec-7-4-13}
-\end{enumerate}
+\begin{frame}[label=sec-7-1]{Current US Budget Issues}
+\end{frame}
+\begin{frame}[label=sec-7-2]{Economic Growth}
+\end{frame}
+\begin{frame}[label=sec-7-3]{Business Cycle Analysis}
+\end{frame}
+\begin{frame}[label=sec-7-4]{Mundell--Fleming}
+\begin{block}{The nominal exchange rate is in units of yen per dollar}
+\end{block}
+\begin{block}{T/F: The top 0.1\% hold roughly 0.1\% of wealth (F)}
+\end{block}
+\begin{block}{T/F: The uncovered interest rate parity $\Delta e_{t+1}$}
+\end{block}
+\begin{block}{T/F: The Taylor rule specifies that the Fed responds more than one-for-one to the interest rate}
+\end{block}
+\begin{block}{T/F: The Federal Reserve sets a target or a range for the FFR}
+\end{block}
+\begin{block}{T/F: How long is the average expansion?}
+\end{block}
+\begin{block}{T/F: Maiden Lane got around sec 14 of the Federal Reserve Act, setting up an LLC}
+\end{block}
+\begin{block}{T/F: Maiden Lane is the street is the Fed Bank of New York is on?}
+\end{block}
+\begin{block}{T/F: The Federal Reserve purchased mortgage backed securities as part of the Mortgage Backed Securities (MBS) Purchase Program}
+\end{block}
+\begin{block}{T/F: The largest part of unconventional monetary policy was MBS Purchase Program}
+\end{block}
+\begin{block}{T/F: Uncovered carry trade}
+\end{block}
+\begin{block}{T/F: How do you measure $\alpha$ in the data? Labor share.}
+\end{block}
+\begin{block}{T/F:}
+\end{block}
+\end{frame}
 % Emacs 24.5.1 (Org mode 8.2.10)
 \end{document}
