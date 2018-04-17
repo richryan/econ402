@@ -31,9 +31,8 @@
 *** Remark 4.6
 *** Remark 4.7
 * Two-period endowment economies
-** With G
 * Solow
-** Kstar
+** $K_{\star}$
 ** Balanced growth
 * IS--LM
 ** Increase M
