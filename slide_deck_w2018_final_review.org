@@ -18,6 +18,18 @@
 #   :PROPERTIES: 
 #   :END:
 * Outline
+* Important concepts
+** Intertemporal choice
+** Consumption Euler equation
+** Sums and partial sums
+** PIH
+** Fundamentals of asset pricing
+** Returns to scale
+** Inputs are paid their marginal products
+** Pricing a unit of capital
+** Interpreting the pricing of a unit of capital
+*** Remark 4.6
+*** Remark 4.7
 * Two-period endowment economies
 ** With G
 * Solow
@@ -25,11 +37,16 @@
 ** Balanced growth
 * IS--LM
 ** Increase M
-*** IS/LM closed economy
-*** 
 ** Increase G
 ** ZLB
+* Mundell--Fleming
+** Opening trade with a country with low $K$
+** Fixed exchange rate
+** Floating exchange rate
 * Facts
+** Current US Budget Issues
+** Economic Growth
+** Business Cycle Analysis
 ** Mundell--Fleming
 *** The nominal exchange rate is in units of yen per dollar
 *** T/F: The top 0.1% hold roughly 0.1% of wealth (F)
