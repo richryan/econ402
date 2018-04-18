@@ -8,7 +8,8 @@
 % \usepackage{wrapfig}
 % \usepackage{rotating}
 % \usepackage[normalem]{ulem}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{prop}{Proposition}
 % \usepackage{marvosym}
 % \usepackage{wasysym}
 % \usepackage{amssymb}
@@ -39,29 +40,199 @@
 \section{Outline}
 \label{sec-1}
 \section{Important concepts}
+
+\subsection{Intertemporal choice}
 \label{sec-2}
-\begin{frame}[label=sec-2-1]{Intertemporal choice}
+
+\begin{frame}[label=sec-2-1]{Intertemporal choice: Environment}
+The agent makes decisions about consumption and saving to maximize utility
+\begin{align*}
+\mathcal{U}(c_{1},c_{2}) = \ln c_{1} + \beta \ln c_{2},
+\end{align*}
+where $\beta$ is the subjective discount factor and choices are made subject to
+\begin{align*}
+c_{1} + s_{1} &= y_{1} \\
+c_{2} + s_{2} &= y_{2} + (1+r_{1})s_{1}.
+\end{align*}
+\begin{itemize}[label={--}]
+\item $s_{2} = 0$ because there is no period 3
+\item Borrow and lend freely ($s_{1}$ can be $<0$, $=0$, or $>0$):
+\begin{align*}
+s_{1} &= \frac{c_{2}-y_{2}}{1+r_{1}} \\
+\therefore c_{1} + \frac{c_{2}}{1+r_{1}} &= y_{1} + \frac{y_{2}}{1+r_{1}}
+\end{align*}
+\item Intertemporal budget constraint or ``unified'' budget constraint
+\end{itemize}
 \end{frame}
-\begin{frame}[label=sec-2-2]{Consumption Euler equation}
+
+\begin{frame}[label=sec-2-1]{Intertemporal choice: The choice part}
+\centerline{\includegraphics[width=\textwidth]{figs/econ402_figure_2_2.PNG}}
 \end{frame}
-\begin{frame}[label=sec-2-3]{Sums and partial sums}
+
+\begin{frame}[label=sec-2-1]{Intertemporal choice: Math behind the choice part}
+\begin{align*}
+\mathcal{U} = \ln \left( y_{1} + \frac{y_{2}}{1+r_{1}} - \frac{c_{2}}{1+r_{1}} \right) +
+\beta \ln c_{2}
+\end{align*}
+First-order condition for $c_{2}$:
+\begin{align*}
+0 &= \frac{1}{c_{1}} \frac{-1}{1+r_{1}} + \beta \frac{1}{c_{2}} \\
+\therefore \frac{1}{c_{1}} &= \beta (1+r) \frac{1}{c_{2}}
+\end{align*}
+In the figure:
+\begin{align*}
+- \frac{1 / c_{1}}{\beta / c_{2}} &= - (1+r_{1}) \\
+\text{MRS} &= \text{price ratio}
+\end{align*}
 \end{frame}
-\begin{frame}[label=sec-2-4]{PIH}
+
+\begin{frame}
+\frametitle{Intertemporal choice: Regions of borrowing and lending}
+\centerline{\includegraphics[width=\textwidth]{figs/econ402_figure_2_3.PNG}}
 \end{frame}
+
+\begin{frame}
+\frametitle{Lenders and the interest rate rises}
+\begin{prop}
+\label{prop:1}
+If an agent is a lender and the interest rate rises,
+then they will remain a lender.
+\end{prop}
+You can always consumer your endowment:
+\centerline{\includegraphics[width=\textwidth]{figs/econ402_figure_2_4.PNG}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lenders and the interest rate rises}
+\begin{prop}
+\label{prop:1}
+If an agent is a lender and the interest rate rises,
+then they will remain a lender.
+\end{prop}
+
+\begin{proof}
+\begin{itemize}[label={--}]
+\item You can always consumer your endowment (gives rotation)
+\item Is it possible that after the increase in the interest rate the agent chooses a point to the right of the endowment?
+\item \emph{Absolutely not}. Revealed preference
+\item They could have afforded all these points initially
+\item Must be to the left of $y_{1} \implies$ remain lender
+\end{itemize}
+\end{proof}
+\end{frame}
+
+\subsection{Consumption Euler equation, generally}
+\begin{frame}[label=sec-2-2]{Consumption Euler equation, generally}
+Infinitely-lived agent chooses streams of consumption to maximize
+\begin{align*}
+\mathcal{U}(c_{0},c_{1},\dots) = \sum\limits_{t=0}^{\infty} \beta^{t} u(c_{t})
+\end{align*}
+subject to the Tom Brady budget constraint:
+\begin{align*}
+\sum\limits_{t=0}^{\infty} \frac{c_{t}}{(1+r)^{t}} = \sum\limits_{t=0}^{\infty} \frac{y_{t}}{(1+r)^{t}} +
+\underbrace{A_{0}}_{\text{D.~Trump Jr.~initial assets}}
+\end{align*}
+\end{frame}
+
+\subsection{Consumption Euler equation}
+\begin{frame}[label=sec-2-2]{Consumption Euler equation, generally}
+\begin{align*}
+\text{MU}(c_{t}) := \frac{\partial \mathcal{U}}{\partial c_{t}} = \beta^{t} u^{\prime}(c_{t})
+\end{align*}
+Tangency condition (think of the two-period case):
+\begin{align*}
+\text{MU}(c_{t}) &= (1+r) \text{MU}(c_{t+1}) \\
+\therefore \beta^{t} u^{\prime}(c_{t}) &= (1+r) \beta^{t+1}u^{\prime}(c_{t+1}) \\
+\therefore u^{\prime}(c_{t}) &= (1+r) \beta u^{\prime}(c_{t+1})
+\end{align*}
+\begin{itemize}[label={--}]
+\item Could be $r_{t}$ but have to deal carefully with the Tom Brady budget constraint
+\item If log preferences:
+\begin{align*}
+\frac{1}{c_{t}} = (1+r)\beta \frac{1}{c_{t+1}}
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-2-2]{Consumption Euler equation, generally}
+\framesubtitle{\dots or more generally, if Professor House wants to be funny}
+\begin{align*}
+u^{\prime}(c_{t}) = \beta (1+r_{1}) \mathbb{E}_{t} \left[ u^{\prime}(c_{t+1}) \right],
+\end{align*}
+where $\mathbb{E}_{t}$ is the expectations sign,
+which takes into account of all information available at time $t$
+(hence the $t$ subscript, if that wasn't abundantly clear)
+\end{frame}
+
+\subsection{Partial sums}
+\begin{frame}[label=sec-2-3]{Sums and partial sums (before we can do PIH)}
+\begin{prop}
+\label{prop:2}
+For $|\alpha| < 1$,
+\begin{align*}
+1 + \alpha + \alpha^{2} + \alpha^{3} + \cdots = \sum\limits_{t=0}^{\infty} \alpha^{t} = \frac{1}{1-\alpha}.
+\end{align*}
+\end{prop}
+\begin{proof}
+We are interested in the sum $S$:
+\begin{align*}
+S &= 1 + \alpha + \alpha^{2} + \alpha^{3} + \cdots \\
+\implies \alpha S &= \alpha + \alpha^{2} + \alpha^{3} + \cdots \\
+\implies S - \alpha S &= (1-\alpha)S = 1.
+\end{align*}
+Thus
+\begin{align*}
+S = \frac{1}{1-\alpha}.
+\end{align*}
+\end{proof}
+\end{frame}
+
+\begin{frame}[label=sec-2-3]{Sums and partial sums (before we can do PIH)}
+\begin{prop}
+\label{prop:2}
+For $|\alpha| < 1$ and $n \in \mathbb{N}$
+\begin{align*}
+\sum\limits_{j=0}^{n} \alpha^{j} = 1+\alpha + \alpha^{2} + \cdots + \alpha^{n} = \frac{1-\alpha^{n+1}}{1-\alpha}.
+\end{align*}
+\end{prop}
+\begin{proof}
+Use the same steps as above.
+\end{proof}
+\end{frame}
+
+\subsection{PIH}
+\begin{frame}[label=sec-2-4]{Perfect consumption smoothing}
+
+\end{frame}
+
+\subsection{Fundamentals of asset pricing}
 \begin{frame}[label=sec-2-5]{Fundamentals of asset pricing}
 \end{frame}
+
+\subsection{Returns to scale}
 \begin{frame}[label=sec-2-6]{Returns to scale}
 \end{frame}
+
+\subsection{Inputs are paid their marginal products}
 \begin{frame}[label=sec-2-7]{Inputs are paid their marginal products}
 \end{frame}
+
+\subsection{Pricing a unit of capital}
 \begin{frame}[label=sec-2-8]{Pricing a unit of capital}
 \end{frame}
+
+\subsection{Interpreting the pricing of a unit of capital}
 \begin{frame}[label=sec-2-9]{Interpreting the pricing of a unit of capital}
+\begin{itemize}
+\item You puchase a unit of capital
+\item You rent out a 
+\end{itemize}
+\end{frame}
+
 \begin{block}{Remark 4.6}
 \end{block}
 \begin{block}{Remark 4.7}
 \end{block}
-\end{frame}
 \section{Two-period endowment economies}
 \label{sec-3}
 \section{Solow}
@@ -83,14 +254,50 @@
 \label{sec-6}
 
 \begin{frame}[label=sec-6-1]{Opening trade with a country with low $K$}
+\begin{itemize}[label={--}]
+\item When $p^{k}_{t} = 1$, $r_{t} = r$: user-cost of capital requires
+\begin{align*}
+r = R - \delta = \text{MPK} - \delta
+\end{align*}
+\item Low $K \implies$ high $\text{MPK}$ $\implies$ high $r$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-6-1]{Opening trade with a country with low $K$}
+Question: \textcolor{RubineRed}{Starting from blanced trade ($NX = 0$),
+what if open trade with a very large country with low level of capital?}
+\begin{itemize}[label={--}]
+\item What happens?
+\item Earn higher rate of return abroad
+\item (This is how Professor House could ask the question---combines Parts I and III)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Opening trade with a country with high $r^{\star}$}
+\centerline{\includegraphics[width=\textwidth]{rwr_lecture_notes/econ402_w2018_lecture10_opening_trade_low_K.png}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Opening trade with a country with high $r^{\star}$: Story}
+\begin{itemize}[label={--}]
+\item In the figure: $S > I$
+\item In a closed economy: $S = I$
+\item How can you save more than you invest? Why isn't your saving contributing to the domestic capital stock?
+\item $NX = S - I > 0$
+\item Don't do domestic projects; send money abroad to earn high rate of return
+\item Trade surplus = net lenders in world (two-country, in this example) financial markets
+\item \textcolor{RubineRed}{Take advantage of high rate of return and lend abroad}
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Mundell--Fleming}
 \begin{itemize}[label={--}]
 \item Small, open economy?
-\item Borrow and lend as much as desired in world financial markets
-\item Small = decisions have negligible effects on prices ($r = r^{\star}$)
+\item Small = decisions have negligible effects on prices
+\item Open = Borrow and lend as much as desired in world financial markets
+\item $r = r^{\star}$
 \end{itemize}
 \end{frame}
 
@@ -148,6 +355,10 @@ IS$^{\star}$ is downward sloping:
 
 \begin{frame}
 \frametitle{Mundell--Fleming: $NX(e)$ depends negatively on $e$}
+Market for goods and services:
+\begin{align*}
+Y = C(Y-T, r^{\star})  + I(r^{\star}) + G + \underbrace{NX(e)}_{-}.
+\end{align*}
 \begin{itemize}[label={--}]
 \item $e \uparrow$ means more \pounds per \$
 \item Domestic goods are more expensive as $e \uparrow$
@@ -178,8 +389,8 @@ IS$^{\star}$ is downward sloping:
 \begin{itemize}[label={--}]
 \item Small, open economy
 \item Interest rate = $r^{\star}$
-\item Fixed exchange rates
-\item Monetary expansion
+\item Fixed exchange rates---central bank willing to buy and sell currency to keep $e = e^{\star}$
+\item Monetary expansion, $M \uparrow$
 \end{itemize}
 \end{frame}
 \begin{frame}[label=sec-6-2]{Fixed exchange rate: Monetary expansion}
