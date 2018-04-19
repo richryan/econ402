@@ -33,13 +33,26 @@
 
 \maketitle
 \begin{frame}{Outline}
-\setcounter{tocdepth}{1}
+% \setcounter{tocdepth}{2}
 \tableofcontents
+% \tableofcontents[ 
+%     currentsubsection, 
+%     % hideothersubsections, 
+%     sectionstyle=show/hide, 
+%     subsectionstyle=show/shaded, 
+%     ] 
 \end{frame}
 
-\section{Outline}
-\label{sec-1}
 \section{Important concepts}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[currentsection]
+% currentsubsection,
+% hideothersubsections,
+% sectionstyle=show/hide,
+% subsectionstyle=show]
+\end{frame}
 
 \subsection{Intertemporal choice}
 \label{sec-2}
@@ -134,7 +147,6 @@ subject to the Tom Brady budget constraint:
 \end{align*}
 \end{frame}
 
-\subsection{Consumption Euler equation}
 \begin{frame}[label=sec-2-2]{Consumption Euler equation, generally}
 \begin{align*}
 \text{MU}(c_{t}) := \frac{\partial \mathcal{U}}{\partial c_{t}} = \beta^{t} u^{\prime}(c_{t})
@@ -164,7 +176,6 @@ which takes into account of all information available at time $t$
 (hence the $t$ subscript, if that wasn't abundantly clear)
 \end{frame}
 
-\subsection{Partial sums}
 \begin{frame}[label=sec-2-3]{Sums and partial sums (before we can do PIH)}
 \begin{prop}
 \label{prop:2}
@@ -251,47 +262,698 @@ Strong motive to smooth consumption.
 
 \begin{frame}
 \frametitle{Strong motive to smooth consumption}
-Ben Bernankie: That can't be good:
+Ben Bernanke: That can't be good:
 \centerline{\includegraphics[width=\textwidth]{figs/econ402_FRED_real_personal_consumption_expenditures.png}}
 \end{frame}
 
-\subsection{Fundamentals of asset pricing}
-\begin{frame}[label=sec-2-5]{Fundamentals of asset pricing}
+\begin{frame}
+\frametitle{Transitory change in income}
+\framesubtitle{The barkeep and the zoo owner (???)}
+Consider the income stream hit by a \textcolor{Plum}{transitory} shock
+\begin{align*}
+\left\{ y_{t} \right\}_{t=0}^{\infty} = \left\{ y_{0},y_{1},y_{2}+\spadesuit,y_{3},y_{4},\dots \right\}.
+\end{align*}
+
+Then
+\begin{align*}
+c = \frac{r}{1+r} \left[ A_{0} + \sum\limits_{t=0}^{\infty} \frac{y_{t}}{(1+r)^{t}} + \frac{\spadesuit}{(1+r)^{2}} \right]
+\end{align*}
+and
+\begin{align*}
+\frac{\partial c}{\partial \spadesuit} = \frac{1}{1+r} \frac{1}{(1+r)^{2}} \approx r
+\end{align*}
 \end{frame}
 
-\subsection{Returns to scale}
-\begin{frame}[label=sec-2-6]{Returns to scale}
+\begin{frame}
+\frametitle{Permanent change in income}
+\framesubtitle{The barkeep and the zoo owner again (???)}
+Consider the income stream hit by a \textcolor{Plum}{permanent}
+\begin{align*}
+\left\{ y_{t} \right\}_{t=0}^{\infty} = \left\{ y_{0} + \clubsuit,y_{1}+\clubsuit,y_{2}+\clubsuit,y_{3}+\clubsuit,y_{4}+
+\clubsuit,\dots \right\}.
+\end{align*}
+
+Then
+\begin{align*}
+c &= \frac{r}{1+r} \left[ A_{0} + \sum\limits_{t=0}^{\infty} \frac{y_{t}+\clubsuit}{(1+r)^{t}} \right] \\
+&= \frac{r}{1+r} \left[ A_{0} + \sum\limits_{t=0}^{\infty} \frac{y_{t}}{(1+r)^{t}}  + \clubsuit \frac{1+r}{r}\right]
+\end{align*}
+and
+\begin{align*}
+\frac{\partial c}{\partial \clubsuit} = 1
+\end{align*}
+
+$\implies$ Smooth out consumption (for log preferences)
 \end{frame}
 
-\subsection{Inputs are paid their marginal products}
-\begin{frame}[label=sec-2-7]{Inputs are paid their marginal products}
+\begin{frame}
+\frametitle{PIH}
+Temporary change in income:
+\begin{align*}
+\frac{\partial c}{\partial y} = \text{MPC} \approx r
+\end{align*}
+
+Permanent change in income:
+\begin{align*}
+\frac{\partial c}{\partial y} = \text{MPC} = 1
+\end{align*}
 \end{frame}
 
-\subsection{Pricing a unit of capital}
-\begin{frame}[label=sec-2-8]{Pricing a unit of capital}
+\begin{frame}
+\frametitle{Milton Friedman}
+Aggregate vs individual-level data:
+\centerline{\includegraphics[width=\textwidth]{rwr_lecture_notes/econ402_w2018_class5_milton_friedman.png}}
+
+$\implies$ fluctuations at individual-level are averaged out in aggregate
 \end{frame}
 
-\subsection{Interpreting the pricing of a unit of capital}
-\begin{frame}[label=sec-2-9]{Interpreting the pricing of a unit of capital}
-\begin{itemize}
-\item You puchase a unit of capital
-\item You rent out a 
+\subsection{Choice under uncertainty}
+
+\begin{frame}
+\frametitle{Choice under uncertainty}
+\frametitle{Taking stock of the long problem on Midterm Exam 1}
+The setup is a two-period endowment economy with uncertainty:
+\centerline{\includegraphics[width=\textwidth]{rwr_lecture_notes/econ402_w2018_class5_uncertainty_unfolding.png}}
+\begin{itemize}[label={--}]
+\item Everyone gets the same endowment ($\implies$ everyone gets the same allocation)
+\item Agents make saving choices before the uncertainty is resolved
 \end{itemize}
 \end{frame}
 
-\begin{block}{Remark 4.6}
-\end{block}
-\begin{block}{Remark 4.7}
-\end{block}
+\begin{frame}
+\frametitle{Choice under uncertainty: Consumption Euler equation}
+Consumption Euler equation:
+\begin{align*}
+\text{MU}(c_{1}) &= (1+r_{1}) \mathbb{E} \left[ \text{MU}(c_{2}) \right] \\
+\therefore \frac{1}{c_{1}} &= (1+r_{1}) \mathbb{E} \left[ \beta \frac{1}{c_{2}} \right]
+\end{align*}
+
+Find that
+\begin{align*}
+1+r_{1} = \frac{1-\varepsilon^{2}}{\beta}
+\end{align*}
+\textcolor{RubineRed}{The interest rate is decreasing in $\varepsilon$}
+
+\vspace{1em}
+
+Why?
+\end{frame}
+
+\begin{frame}
+\frametitle{Choice under uncertainty: Small $\varepsilon$}
+\centerline{\includegraphics[width=\textwidth]{rwr_lecture_notes/econ402_w2018_class5_small_epsilon.png}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Choice under uncertainty: Large $\varepsilon$}
+\centerline{\includegraphics[width=\textwidth]{rwr_lecture_notes/econ402_w2018_class5_large_epsilon.png}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Choice under uncertainty: Story}
+\begin{itemize}[label={--}]
+\item Remember this is one of those endowment economies with $S_{1} = 0$
+\item Agents \emph{trying} to save more with bigger $\varepsilon$ (using story from the figure)
+\item How do you prevent agents from saving?
+\item Lower $r_{1}$
+\item $r_{1}$ must go down to prevent saving
+\item (Nefarious Professor House: profit function is convex)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Profit function is convex}
+\centerline{\includegraphics[width=\textwidth]{../econ605/figs/profit-convex.eps}}
+\end{frame}
+
+\subsection{Fundamentals of asset pricing}
+
+\begin{frame}
+\frametitle{Fundamentals of asset pricing: \texttt{Lecture 9 Handouts}}
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] &=
+\frac{1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{
+  \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]} \\
+\mathbb{E}_{t} \left[ R_{t+1} \right] - \frac{1}{\mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]} &=
+\frac{- \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{
+  \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]} \\
+\mathbb{E}_{t} \left[ R_{t+1} \right] - (1+r_{t}^{f}) &= \frac{- \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{
+  \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]},
+\end{align*}
+which is an expression from \texttt{Lecture 9 Handouts}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fundamentals of asset pricing: \texttt{Lecture 9 Handouts}}
+\centerline{\includegraphics[]{figs/dr_evil.jpg}}
+\end{frame}
+
+\begin{frame}[label=sec-4-5]{Interpreting asset prices in an endowment economy}
+Same as:
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] = R^{f}_{t} \left( 1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] \right)
+\end{align*}
+
+\begin{itemize}[label={--}]
+\item The expected return on any asset is the riskless return times an adjustment factor for the covariance of the return with the SDF
+\item Sps consumption is growing [$u^{\prime}(c_{t+1})$ falling] and the asset returns are high (neg cov)
+\item Valuable assets pay off in bad states (car insurace) and this isn't that
+\item Drives down demand (price), making the return higher
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Remember:}
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{fig_utility_vs_marginal_utility.eps}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{fig_utility_vs_marginal_utility_2.eps}
+\end{minipage}
+\end{figure}
+\begin{itemize}[label={--}]
+\item When consumption is high, marginal utility is low; and
+\item when consumption is low, marginal utility is high
+\item Assets have value when they pay off in high-MU states
+\item E.g.: car/fire insurance
+\end{itemize}
+\end{frame}
+
+% \begin{frame}
+% \frametitle{Exotic dimensions}
+
+% What are the units of
+% \begin{align*}
+% \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})}?
+% \end{align*}
+% \begin{itemize}[label={--}]
+% \item Let $\left[ \cdot \right]$ be the symbol for units
+% \item $\left[ u^{\prime} \right] \approx \left[ \frac{\Delta \text{utils}}{\Delta c} \right] = \frac{\text{utils}}{\text{bananas}}$
+% \item $\beta = \frac{\text{utils}_{t}}{\text{utils}_{t+1}}$
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Exotic dimensions}
+% Therefore
+% \begin{align*}
+% \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] &= \frac{\beta \frac{\text{utils}_{t+1}}{\text{ba}_{t+1}}}{\frac{\text{utils}_{t}}{\text{ba$_{t}$}}} \\
+% &= \frac{\frac{\text{utils}_{t}}{\text{ba}_{t+1}}}{\frac{\text{utils}_{t}}{\text{ba$_{t}$}}} \\
+% &= \frac{\text{ba$_{t}$}}{\text{ba}_{t+1}},
+% \end{align*}
+% in other words: The stochastic discount factor converts bananas from the future into today's bananas---so you can add bananas to bananas.
+% \end{frame}
+
+\begin{frame}[label=sec-4-2]{Returns are inversely related to prices}
+Euler equation: % with price and dividend in terms of banans:
+\begin{align*}
+p_{t} = \beta \mathbb{E} \left[ \frac{u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} (y_{t+1}+p_{t+1}) \right].
+\end{align*}
+Asset-pricing equation:
+\begin{align*}
+1 = \mathbb{E} \left[ R_{t+1} \frac{\beta u^{\prime}(c_{t+1})}{c^{\prime}(c_{t})} \right],
+\end{align*}
+where $R_{t+1} = (y_{t+1} + p_{t+1})/p_{t}$.
+\alert{Alert}: The return $R_{t+1}$ is inversely related to the price, $p_{t}$.
+
+\vspace{1em}
+
+\textcolor{RubineRed}{Story about prices might be easier to interpret!}
+\end{frame}
+
+\begin{frame}[label=sec-4-3]{Asset prices in an endowment economy}
+Expanding the expectation: 
+\begin{align*}
+1 = \mathbb{E} \left[ R_{t+1} \right] \mathbb{E} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] + \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right].
+\end{align*}
+Solving for $R_{t+1}$ yields
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] = \frac{1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{ \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}
+\end{align*}
+\end{frame}
+
+\begin{frame}[label=sec-4-4]{Asset prices in an endowment economy}
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] &= \frac{1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]}{ \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]} \\
+&= R^{f}_{t} \left( 1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] \right)
+\end{align*}
+where
+\begin{align*}
+R^{f}_{t} = \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]^{-1} 
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{The riskfree rate of return}
+This is the risk-free rate of return in the endowment economy:
+\begin{align*}
+R^{f}_{t} &= \mathbb{E}_{t} \left[ \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right]^{-1} \\
+\iff 1 &= \mathbb{E}_{t} \left[ R^{f}_{t} \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] \\
+&= \mathbb{E}_{t} \left[ \frac{1 + 0}{p_{t}} \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right].
+\end{align*}
+In other words, the asset pays off $1$ the following period and that's it---no $p_{t+1}$ because there is nothing to sell.
+The $R^{f}_{t}$ can come out of the expectation because there is no mystery about $p_{t+1}$ as there is \emph{no} $p_{t+1}$.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Remember:}
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{fig_utility_vs_marginal_utility.eps}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{fig_utility_vs_marginal_utility_2.eps}
+\end{minipage}
+\end{figure}
+\begin{itemize}[label={--}]
+\item When consumption is high, marginal utility is low; and
+\item when consumption is low, marginal utility is high
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-4-6]{Interpreting asset prices in an endowment economy\dots{} \\ \dots{}again}
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] = R^{f}_{t} \left( 1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] \right)
+\end{align*}
+
+\begin{itemize}[label={--}]
+\item When the covariance term is positive and positive, the asset pays off in high marginal-utility states, which is desirable
+\item Drives up the price and down the return
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Production}
+\begin{frame}[label=sec-2-6]{Returns to scale}
+A production function is homogeneous of degree $r$ if
+\begin{align*}
+f(aK,aN) = a^{r} f(K,N),
+\end{align*}
+for $a \in \mathbb{R}_{++}$, $K,N \in \mathbb{R}_{+}$.
+
+A homogeneous production function exhibits
+\begin{itemize}[label={--}]
+\item increasing returns to scale if $r > $
+\item decreasing returns to scale if $r < 1$
+\item constant returns to scale if $r = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-2-6]{Returns to scale: Cobb--Douglas}
+A Cobb--Douglas production function $F(K,N) = AK^{a}N^{b}$ is homoegenous of degree $a + b$:
+\begin{align*}
+F(\lambda K, \lambda N) &= A \left( \lambda K \right)^{a} \left( \lambda N \right)^{b} \\
+&= \lambda^{a+b} \left\{ AK^{a}N^{b} \right\} \\
+&= \lambda^{a+b} F(K,N)
+\end{align*}
+\end{frame}
+
+\begin{frame}[label=sec-2-6]{Returns to scale: Additive}
+Let $F(K,N) = K^{.5} + N^{.5}$. What are the returns to scale?
+
+\begin{align*}
+F(\lambda K, \lambda N) &= \left( \lambda K \right)^{.5} + \left( \lambda N \right)^{.5} \\
+&= \lambda^{.5} \left[ K^{.5} + N^{.5} \right] \\
+&= \lambda^{.5} F(K,N)
+\end{align*}
+
+$\implies$ doubling inputs \emph{does not} double production $\implies$ decreasing returns
+\end{frame}
+
+\begin{frame}[label=sec-2-6]{Returns to scale: Gin and tonic production}
+Let $F(K,N) = \min \left\{ \lambda K, \lambda N \right\}$. I.e.,
+\begin{itemize}[label={--}]
+\item 8 parts gin
+\item 1 part tonic
+\end{itemize}
+(for when I'm done with the review session)
+
+\begin{align*}
+F(\lambda K, \lambda N) &= \min \left\{ \lambda K, \lambda N \right\} \\
+&= \lambda \min \left\{ K,N \right\}
+\end{align*}
+
+$\implies$ 16 parts gin + 2 parts water = 2 g\&t's $\implies$ constant returns
+\end{frame}
+
+\begin{frame}[label=sec-2-7]{Inputs are paid their marginal products}
+Production side of an economy:
+\begin{itemize}[label={--}]
+\item Time is discrete and indexed by $t=0,1,\dots$
+\item The final-good firm at any point in time
+\begin{itemize}[label={--}]
+\item Hires labor supplied by household members at rate $w_{t}$ per period
+\item Rents capital at rate $R_{t}$ per period 
+\end{itemize}
+\end{itemize}
+
+Firms solve
+\begin{align*}
+\max_{K,N} F(K,N) - R_{t}K - w_{t}N.
+\end{align*}
+\end{frame}
+
+\begin{frame}[label=sec-2-7]{Inputs are paid their marginal products: \\ First-order conditions}
+Firms' first-order conditions:
+\begin{align*}
+R_{t} &= F_{K}(K_{t},N_{t}) =: \text{MPK}_{t} \\
+w_{t} &= F_{N}(K_{t},N_{t}) =: \text{MPN}_{t}
+\end{align*}
+
+\textcolor{RubineRed}{Fun fact}: If production is parameterized as Cobb--Douglas,
+then these firms make \emph{no profits} in equilibrium.
+\end{frame}
+
+\subsection{User cost of capital}
+\begin{frame}[label=sec-2-8]{Pricing a unit of capital: Capital-leasing firms}
+Ponder: How much to pay for a unit of capital?
+\begin{align*}
+p_{t}^{K} &= \frac{R_{t+1}}{1+r} + \frac{(1-\delta)R_{t+2}}{(1+r)^{2}} +
+\frac{(1-\delta)^{2}R_{t+3}}{(1+r)^{3}} \\
+&= \frac{R_{t+1}}{1+r} + \frac{1-\delta}{1+r} \left[
+\underbrace{\frac{R_{t+2}}{1+r} + \frac{(1-\delta)R_{t+3}}{(1+r)^{2}} + \cdots}_{p_{t+1}^{K}}
+\right] \\
+&= \frac{R_{t+1} + (1-\delta)p_{t+1}^{K}}{1+r}.
+\end{align*}
+
+$R_{t}$ is being paid by the firms renting capital, so
+\begin{align*}
+p_{t}^{K} = \frac{\text{MPK}_{t+1} + (1-\delta)p_{t+1}^{K}}{1+r}
+\end{align*}
+\end{frame}
+
+\begin{frame}[label=sec-2-9]{Interpreting the pricing of a unit of capital}
+\begin{align*}
+p_{t}^{K} = \frac{\text{MPK}_{t+1} + (1-\delta)p_{t+1}^{K}}{1+r}
+\end{align*}
+
+Interpretation: You buy a unit of capital,
+it comes online the following period (so discount future), and
+you get to rent the unit of capital out---which then depreciates and then you get to sell the unit of capital.
+
+\vspace{1em}
+
+The derivation makes clear: Buying and holding the unit of capital provides no return over buying and selling.
+\end{frame}
+
+\begin{frame}[label=sec-2-9]{Interpreting the pricing of a unit of capital: \\ Story 2}
+\begin{align*}
+(1+r)p_{t}^{K} = \text{MPK}_{t+1} + (1-\delta)p_{t+1}^{K}
+\end{align*}
+Interpretation: Indifferent between the two strategies
+\begin{itemize}[label={--}]
+\item Invest $p_{t}^{K}$ and get $(1+r)p_{t}^{K}$ the following period
+\item Buy a unit of capital and get
+\begin{align*}
+\text{MPK}_{t+1} + (1-\delta)p_{t+1}^{K}
+\end{align*}
+the following period
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-2-9]{No $t$'s and the user cost of capital}
+\begin{align*}
+(1+r)p^{K} &= \text{MPK} + (1-\delta)p^{K} \\
+\therefore (r+\delta) p^{K} &= \text{MPK} = R
+\end{align*}
+and if $p^{K} = 1$ (like in the Solow model)
+\begin{align*}
+r = R - \delta
+\end{align*}
+i.e., $r$ is the marginal product less the depreciation
+\end{frame}
+
 \section{Two-period endowment economies}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[currentsection]
+% currentsubsection,
+% hideothersubsections,
+% sectionstyle=show/hide,
+% subsectionstyle=show]
+\end{frame}
+
+\begin{frame}
+\frametitle{Economic environment}
+\begin{itemize}[label={--}]
+\item Time is discrete and indexed by $t=1,2$
+\item The economy is populated by agents that make choices about consumption and saving and a government
+\item Agents are endowed with labor income each period that is either spent on the consumption good or saved
+\item The government faces an exogenous sequence of expenditures $\left\{ G_{1},G_{2} \right\}$
+\item The expenditure levels can be motivated in a variety of ways
+\item As \textcolor{Plum}{Pharaoh House} put it once: These are the pyramid-building requirements
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Material-balance condition}
+\begin{itemize}[label={--}]
+\item No production technology is available to the economy
+\item $Y_{t} = C_{t} + I_{t} + G_{t} = C_{t} + G_{t} \text{ for } t=1,2$
+\item Capital letters denote aggregate quantities
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The government}
+\begin{itemize}[label={--}]
+\item The government faces the exogenous pyramid-building requirements $\left\{ G_{1},G_{2} \right\}$
+\item The government finances these expenditures by
+\begin{itemize}[label={--}]
+\item Levying lump-sum taxes $\left\{ T_{1},T_{2} \right\}$ and
+\item Issuing debt $\left\{ B_{1},B_{2} \right\}$
+\end{itemize}
+\item I will use the convention that $B_{t} > 0$ is debt and $B_{t} < 0$ is government saving
+\item The government faces borrowing cost $r_{1}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Government budget constraint}
+The government's flow budget constraints are
+\begin{align*}
+G_{1} &\leq T_{1} + B_{1} \\
+G_{2} &\leq T_{2} + B_{2} - (1-r_{1})B_{1}
+\end{align*}
+\begin{itemize}[label={--}]
+\item The government is not going to waste money, so the equations hold with equality
+\item The government cannot also hold debt at the end, so $B_{2} = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unified government constraint}
+\begin{align*}
+G_{1} &= T_{1} + B_{1} \\
+\therefore B_{1} &= G_{1} - T_{1} \\
+\therefore G_{2} &= T_{2} - (1-r_{1}) \left( G_{1} - T_{1} \right),
+\end{align*}
+Thus
+\begin{align*}
+G_{1} + \frac{G_{2}}{1+r_{1}} = T_{1} + \frac{T_{2}}{1+r_{1}}
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Agents' consumption and saving choices: Budget constraint}
+\begin{itemize}[label={--}]
+\item Agents are endowed each period with labor income $\left\{ y_{1},y_{2} \right\}$
+\item Face the sequence of flow budget constraints
+\begin{align*}
+c_{1} + s_{1} &= y_{1} - T_{1} \\
+c_{2} + s_{2} &= y_{2} - T_{2} + (1+r_{1})s_{1}
+\end{align*}
+\item In period $1$, after-tax income is divided between consumption and saving
+\item In period $2$, after-tax income plus any saving is divided between consumption and saving
+\item $s_{2} = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Agents' consumption and saving choices: Budget constraint}
+Unified budget constraint:
+\begin{align*}
+s_{1} &= y_{1} - T_{1} - c_{1} \\
+\therefore c_{2} + s_{2} &= y_{2} - T_{2} + (1+r_{1})s_{1} \\
+&= y_{2} - T_{2} + (1+r_{1}) \left( y_{1} - T_{1} - c_{1} \right) \\
+\therefore \frac{c_{2}}{1+r_{1}} &= \frac{y_{2} - T_{2}}{1+r_{1}} + y_{1} - T_{1} - c_{1},
+\end{align*}
+Thus
+\begin{align*}
+c_{1} + \frac{c_{2}}{1+r_{1}} = y_{1} + \frac{y_{2}}{1+r_{1}} - \left( T_{1} + \frac{T_{2}}{1+r_{1}} \right)
+\end{align*}
+\begin{itemize}[label={--}]
+\item Fast and loose with demographics
+\item $T_{1}$ is aggregate transfers
+\item $c_{1}$ is individual-level consumption
+\item Set $N = 1$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Plotting budget sets}
+Re-arrange:
+\begin{align*}
+C_{2} &= (1+r_{1})\left[ Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( T_{1} + \frac{T_{2}}{1+r_{1}} \right) \right] - (1+r_{1})C_{1} \\
+&= (1+r_{1})\left[ Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( G_{1} + \frac{G_{2}}{1+r_{1}} \right) \right] - (1+r_{1})C_{1}
+\end{align*}
+The government is just taking the endowment\dots
+\end{frame}
+
+\begin{frame}
+\frametitle{Plotting budget sets}
+\centerline{\includegraphics[width=0.85\textwidth]{figs/fig_econ402_2_period_gov_C_choice.eps}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Consumption and saving choices}
+The representative agent has standard preferences over streams of consumption:
+\begin{align*}
+\mathcal{U}(C_{1},C_{2}) = \ln C_{1} + \beta \ln C_{2}.
+\end{align*}
+Agents maximize $\mathcal{U}$ subject the the intertemporal budget constraint 
+
+\vspace{1em}
+
+The consumption Euler equation is
+\begin{align*}
+\frac{1}{c_{1}} &= \beta (1+r_{1}) \frac{1}{c_{2}} \\
+\therefore \frac{c_{2}}{1+r_{1}} &= \beta c_{1}.
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Consumption function}
+Euler equation combined with the intertemporal budget constraint yields
+\begin{align*}
+C_{1}(r;Y,G) = \frac{1}{1+\beta} \left[ Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( G_{1} + \frac{G_{2}}{1+r_{1}} \right) \right]
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Balancing material}
+\begin{itemize}[label={--}]
+\item The bond-market-clearing condition requires $B_{t} = S_{t}$
+\item Government-issued debt equals saving
+\item In a closed economy, aggregate saving is $0$
+\item So
+\begin{align*}
+0 &= \underbrace{S_{t}}_{\text{private saving}} \underbrace{- B_{t}}_{\text{public saving}} \\
+\therefore S_{t} &= B_{t}.
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{When $B_{1} = 0$}
+\begin{itemize}[label={--}]
+\item When $B_{1} = 0$ the government finances consumption through lump-sum transfers
+\item Then $G_{1} = T_{1}$ and $G_{2} = T_{2}$
+\item Recall there is a representative agent
+\begin{align*}
+S_{1} &= Y_{1} - T_{1} - C_{1} \\
+&= Y_{1} - G_{1} - C_{1}
+\end{align*}
+\item And using $C_{1}$
+\begin{align*}
+S_{1} &= Y_{1} - G_{1} - \frac{1}{1+\beta} \left[ Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( G_{1} + \frac{G_{2}}{1+r_{1}} \right) \right] \\
+&= \frac{\beta}{1+\beta}Y_{1} - \frac{\beta}{1+\beta} G_{1} - \frac{Y_{2}}{(1+\beta)(1+r_{1})} + \frac{G_{2}}{(1+\beta)(1+r_{1})}
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Solving for $r_1$}
+Re-arranging:
+\begin{align*}
+1+r_{1} = \frac{Y_{2}-G_{2}}{\beta \left( Y_{1}-G_{1} \right) - (1+\beta)S_{1}}
+\end{align*}
+Plot the relationship\dots
+\end{frame}
+
+\begin{frame}
+\frametitle{Determining $r_{1}$ in pictures}
+\centerline{\includegraphics[width=\textwidth]{figs/fig_econ402_2_period_gov_interest_rate.eps}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Story: $G_{1}$ increase}
+What happens when $G_{1}$ increases?
+\begin{itemize}[label={--}]
+\item This is an endowment economy, so $Y_{1}$ is fixed
+\item And $C_{1} = Y_{1} - G_{1}$ goes down---consumption is ``crowded out'' (one-for-one in the case where $B_{1} = 0$)
+\item The agent is poorer
+\item They want to smooth out consumption and pull some forward from period $2$
+\item In order to maintain aggregate saving equal to $0$, the interest rate must rise to discourage too much smoothing
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Story: $G_{2}$ increase}
+What happens when $G_{2}$ increases?
+\begin{itemize}[label={--}]
+\item The agent knows they will be poorer in the future, which entices them to save
+\item For any level of the interest rate, the agent saves more---this is depicted in figure
+\item In order to maintain zero aggregate saving, the interest rate must rise to discourage this effect
+\end{itemize}
+\end{frame}
+
 \label{sec-3}
 \section{Solow}
-\label{sec-4}
-\begin{frame}[label=sec-4-1]{$K_{\star}$}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[currentsection]
+% currentsubsection,
+% hideothersubsections,
+% sectionstyle=show/hide,
+% subsectionstyle=show]
 \end{frame}
-\begin{frame}[label=sec-4-2]{Balanced growth}
+
+\begin{frame}
+\frametitle{There are two types of questions that can be asked}
+
+\begin{enumerate}[label=(\roman*)]
+\item\label{item:3} Solve for $K^{\star}$
+\begin{itemize}[label={--}]
+\item You did this on Midterm Exam II
+\end{itemize}
+\item Growth rate of $K$, $Y$, $C$, $I$ along the balanced growth path
+\begin{itemize}[label={--}]
+\item Balanced growth path: $\frac{K_{t+1}}{K_{t}} = \frac{K_{t+2}}{K_{t+1}}$
+\item You did this on EC3 (it can't get harder than that)
+\end{itemize}
+\end{enumerate}
+
+% \begin{enumerate}
+% \item\label{item:1} 
+% \item\label{item:2} 
+
+% \end{enumerate}
 \end{frame}
+
 \section{IS--LM}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[currentsection]
+% currentsubsection,
+% hideothersubsections,
+% sectionstyle=show/hide,
+% subsectionstyle=show]
+\end{frame}
+
+\subsection{IS--LM in normal times}
 \label{sec-5}
 \begin{frame}[label=sec-5-1]{Increase $M$: Effects of a monetary expansion}
 
@@ -300,8 +962,56 @@ Ben Bernankie: That can't be good:
 \end{frame}
 \begin{frame}[label=sec-5-3]{ZLB}
 \end{frame}
+
+\subsection{IS--LM and a liquidity trap}
+
+\subsection{Ben Bernanke: Open-mouth operations}
+
+
+\begin{frame}
+\frametitle{Ben Bernanke and the Sirens}
+\centerline{\includegraphics[width=\textwidth]{figs/Seductive-Sirens-of-Greek-Mythology.jpg}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bernanke's open-mouth operations}
+\begin{itemize}[label={--}]
+\item Ben Bernanke: ``No matter what, keep interest rates low''
+\item $\implies \pi^{e}$ increase
+\item No matter what: war,
+discover oil (or gold for that matter),
+Patriots win yet another Super Bowl (House goes nuts and buys Tom Brady jerseys to wear every day)
+\item Promise to keep interest rates at 0
+\item (Imagine you buy a bond expecting low interest rates and then Bernanke reneges, raising interest rates)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Open-mouth operations}
+\begin{align*}
+Y &= C(Y,r) + I(r) + G \\
+&= C(Y, i - \pi^{e}) + I(i-\pi^{e}) + G
+\end{align*}
+\begin{itemize}[label={--}]
+\item $\pi^{e} \uparrow$ like decreasing $r$
+\item $I_{r} < 0$ and $C_{r} < 0$
+\item $I$ and $C$ inrease when $\pi^{e} \uparrow$
+\item Shifts out IS curve
+\end{itemize}
+\end{frame}
+
+
 \section{Mundell--Fleming}
 \label{sec-6}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[currentsection]
+% currentsubsection,
+% hideothersubsections,
+% sectionstyle=show/hide,
+% subsectionstyle=show]
+\end{frame}
 
 \begin{frame}[label=sec-6-1]{Opening trade with a country with low $K$}
 \begin{itemize}[label={--}]
@@ -465,41 +1175,43 @@ $\implies$ LM$^{\star}$ curve shifts to the right
 \end{itemize}
 \end{frame}
 
-\section{Facts}
-\label{sec-7}
-\begin{frame}[label=sec-7-1]{Current US Budget Issues}
-\end{frame}
-\begin{frame}[label=sec-7-2]{Economic Growth}
-\end{frame}
-\begin{frame}[label=sec-7-3]{Business Cycle Analysis}
-\end{frame}
-\begin{frame}[label=sec-7-4]{Mundell--Fleming}
-\begin{block}{The nominal exchange rate is in units of yen per dollar}
-\end{block}
-\begin{block}{T/F: The top 0.1\% hold roughly 0.1\% of wealth (F)}
-\end{block}
-\begin{block}{T/F: The uncovered interest rate parity $\Delta e_{t+1}$}
-\end{block}
-\begin{block}{T/F: The Taylor rule specifies that the Fed responds more than one-for-one to the interest rate}
-\end{block}
-\begin{block}{T/F: The Federal Reserve sets a target or a range for the FFR}
-\end{block}
-\begin{block}{T/F: How long is the average expansion?}
-\end{block}
-\begin{block}{T/F: Maiden Lane got around sec 14 of the Federal Reserve Act, setting up an LLC}
-\end{block}
-\begin{block}{T/F: Maiden Lane is the street is the Fed Bank of New York is on?}
-\end{block}
-\begin{block}{T/F: The Federal Reserve purchased mortgage backed securities as part of the Mortgage Backed Securities (MBS) Purchase Program}
-\end{block}
-\begin{block}{T/F: The largest part of unconventional monetary policy was MBS Purchase Program}
-\end{block}
-\begin{block}{T/F: Uncovered carry trade}
-\end{block}
-\begin{block}{T/F: How do you measure $\alpha$ in the data? Labor share.}
-\end{block}
-\begin{block}{T/F:}
-\end{block}
-\end{frame}
+% \section{Facts}
+% \label{sec-7}
+% \begin{frame}[label=sec-7-1]{Current US Budget Issues}
+% \end{frame}
+% \begin{frame}[label=sec-7-2]{Economic Growth}
+% \end{frame}
+% \begin{frame}[label=sec-7-3]{Business Cycle Analysis}
+% \end{frame}
+% \begin{frame}[label=sec-7-4]{Mundell--Fleming}
+% \begin{block}{The nominal exchange rate is in units of yen per dollar}
+% \end{block}
+% \begin{block}{T/F: The top 0.1\% hold roughly 0.1\% of wealth (F)}
+% \end{block}
+% \begin{block}{T/F: The uncovered interest rate parity $\Delta e_{t+1}$}
+% \end{block}
+% \begin{block}{T/F: The Taylor rule specifies that the Fed responds more than one-for-one to the interest rate}
+% \end{block}
+% \begin{block}{T/F: The Federal Reserve sets a target or a range for the FFR}
+% \end{block}
+% \begin{block}{T/F: How long is the average expansion?}
+% \end{block}
+% \begin{block}{T/F: Maiden Lane got around sec 14 of the Federal Reserve Act, setting up an LLC}
+% \end{block}
+% \begin{block}{T/F: Maiden Lane is the street is the Fed Bank of New York is on?}
+% \end{block}
+% \begin{block}{T/F: The Federal Reserve purchased mortgage backed securities as part of the Mortgage Backed Securities (MBS) Purchase Program}
+% \end{block}
+% \begin{block}{T/F: The largest part of unconventional monetary policy was MBS Purchase Program}
+% \end{block}
+% \begin{block}{T/F: Uncovered carry trade}
+% \end{block}
+% \begin{block}{T/F: How do you measure $\alpha$ in the data? Labor share.}
+% \end{block}
+% \begin{block}{T/F:}
+% \end{block}
+% \end{frame}
+
+
 % Emacs 24.5.1 (Org mode 8.2.10)
 \end{document}
