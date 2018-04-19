@@ -1,0 +1,290 @@
+% =====================================================================
+% Program: econ402-2-period-gov.tex
+% Purpose: Two-period endowment economy with government.
+%
+% E-mail: RichRyan@umich.edu
+% =====================================================================
+\documentclass[12pt]{pracjourn_rwr}
+% \documentclass[12pt]{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{url}
+\urlstyle{same}
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{amsxtra}
+\usepackage{natbib}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{alltt}
+\input{ee.sty}
+\usepackage{listings}
+% \usepackage[inline]{showlabels}
+\usepackage{paralist} % inline lists (enumeration)
+\usepackage{mathabx} % widebar
+
+% Change "References" to "Reference"
+\renewcommand\refname{Reference}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\title{Two-period endowment economies with government}
+% \author{Rich Ryan}
+\email{RichRyan@umich.edu}
+%% \TPJrevision{2013}{08}{03} % The editors ask you to update this for each %% revision submitted
+% \TPrevision{3}{1}{2015}
+\license{\texttt{econ-402-2-period-gov.tex}} % May be used if you want a copyright notice at the bottom right of the first page
+\abstract{Government expenditure is added to a two-period endowment economy.
+Examples of crowindg in and out are given.}
+\newinfo\datestart{Date Started}
+\newinfo\daterevised{Date Revised} % See the pracjourn class for how to do this
+\datestart{March 17, 2018}
+\daterevised{March 19, 2018}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Economic environment and the material-balance condition}
+
+Time is discrete and indexed by $t=1,2$.
+The economy is populated by agents that make choices about consumption and saving and a government.
+Agents are endowed with labor income each period that is either spent on the consumption good or saved.
+The government faces an exogenous sequence of expenditures $\left\{ G_{1},G_{2} \right\}$.
+The expenditure levels can be motivated in a variety of ways.
+As Pharaoh House put it once: These are the pyramid-building requirements.
+
+No production technology is available to the economy.
+The material-balance condition therefore requires
+\begin{equation}
+\label{eq:1}
+Y_{t} = C_{t} + I_{t} + G_{t} = C_{t} + G_{t} \text{ for } t=1,2;
+\end{equation}
+where capital letters denote aggregate quantities.
+% Because this is a closed economy proposition 2.4 requires that $S_{t} 0$ for $t=1,2$.
+
+The economic environment is an extension of the economic environment considered in H2.2,
+available \url{https://richryan.github.io/econ402/notes.html}.
+
+\section{The government}
+
+The government faces the exogenous pyramid-building requirements $\left\{ G_{1},G_{2} \right\}$.
+The government finances these expenditures by levying lump-sum taxes $\left\{ T_{1},T_{2} \right\}$ and
+issuing debt $\left\{ B_{1},B_{2} \right\}$.
+I will use the convention that $B_{t} > 0$ is debt and $B_{t} < 0$ is government saving.
+The government faces borrowing cost $r_{1}$.
+
+The government's flow budget constraints are
+\begin{align}
+\label{eq:2}
+G_{1} &\leq T_{1} + B_{1} \\
+\label{eq:3}
+G_{2} &\leq T_{2} + B_{2} - (1-r_{1})B_{1}.
+\end{align}
+Equation \eqref{eq:2} says that government consumption in period $1$ is less than or equal to revenue raised through lump-sum taxes plus any debt issued.
+Equation \eqref{eq:3} says that government consumption in period $2$ is less than or equal to lump-sum taxes raised in the second period less any debt payments the government is required to make.
+
+\begin{remark}
+\label{remark:1}
+The government is not going to waste money, so equations \eqref{eq:2} and \eqref{eq:3} will hold with equality.
+The government cannot also hold debt at the end, so $B_{2} = 0$.
+\end{remark}
+
+Using remark \ref{remark:1}, then,
+eliminating $B_{1}$ from equations \eqref{eq:2} and \eqref{eq:3} leads to the government's intertemporal budget constraint
+\begin{align*}
+G_{1} &= T_{1} + B_{1} \\
+\therefore B_{1} &= G_{1} - T_{1} \\
+\therefore G_{2} &= T_{2} - (1-r_{1}) \left( G_{1} - T_{1} \right),
+\end{align*}
+where the last line uses \eqref{eq:3}.
+Thus
+\begin{equation}
+\label{eq:4}
+G_{1} + \frac{G_{2}}{1+r_{1}} = T_{1} + \frac{T_{2}}{1+r_{1}}.
+\end{equation}
+Euqation \eqref{eq:4} requires that the present discounted value of government consumption equal
+the present discounted value revenue raised through lump-sum transers.
+
+\section{Agents' consumption and saving choices}
+
+\subsection{Budget constraint}
+Agents are endowed each period with labor income $\left\{ y_{1},y_{2} \right\}$.
+They divide this income between consumption and saving.
+They face the sequence of flow budget constraints
+\begin{align}
+\label{eq:5}
+c_{1} + s_{1} &= y_{1} - T_{1} \\
+\label{eq:6}
+c_{2} + s_{2} &= y_{2} - T_{2} + (1+r_{1})s_{1}.
+\end{align}
+Equation \eqref{eq:5} says that in period $1$ after-tax income is divided between consumption and saving.
+Equation \eqref{eq:6} says that in period $2$ after-tax income plus any saving is divided between consumption and saving.
+
+Remark \ref{remark:1} applies for the household as well.
+There is no sense in saving in the second period, so $s_{2} = 0$.
+Combining equations \eqref{eq:5} and \eqref{eq:6} leads to the lifetime budget constraint.
+Starting with equation \eqref{eq:5}
+\begin{align*}
+s_{1} &= y_{1} - T_{1} - c_{1} \\
+\therefore c_{2} + s_{2} &= y_{2} - T_{2} + (1+r_{1})s_{1} \\
+&= y_{2} - T_{2} + (1+r_{1}) \left( y_{1} - T_{1} - c_{1} \right) \\
+\therefore \frac{c_{2}}{1+r_{1}} &= \frac{y_{2} - T_{2}}{1+r_{1}} + y_{1} - T_{1} - c_{1},
+\end{align*}
+where the last line uses $s_{2} = 0$.
+This equation can be re-arranged to read
+\begin{equation}
+\label{eq:7}
+c_{1} + \frac{c_{2}}{1+r_{1}} = y_{1} + \frac{y_{2}}{1+r_{1}} - \left( T_{1} + \frac{T_{2}}{1+r_{1}} \right).
+\end{equation}
+Equation \eqref{eq:7} is the unified budget constraint.
+
+\begin{remark}
+\label{remark:2}
+I've already been a little fast and loose with the demographics.
+$T_{1}$ is aggregate transfers,
+so I've implicitly been assuming there is a single representative consumer.
+It would be a straightforward extension to have $N$ consumers of different types like we did in H2.2.
+But going forward, I'll make the representative-consumer framework explicit by using capital letters,
+which denote aggregate quantities.
+
+By the way,
+$Y_{t}$ is simply the period-$t$ endowment---just like the economies we studied in the notes in sections 1, 2, and 3 and in
+H2.2.
+\end{remark}
+
+Equation \eqref{eq:7} can be re-arranged to plot:
+\begin{align*}
+C_{2} &= (1+r_{1})\left[ Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( T_{1} + \frac{T_{2}}{1+r_{1}} \right) \right] - (1+r_{1})C_{1} \\
+&= (1+r_{1})\left[ Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( G_{1} + \frac{G_{2}}{1+r_{1}} \right) \right] - (1+r_{1})C_{1},
+\end{align*}
+where the second line uses \eqref{eq:4}.
+The agent's intertemporal budget constraint is depicted in figure \ref{fig:C-choice}.
+
+\begin{figure}[htbp]
+% \centerline{\includegraphics[0.85\textwidth]{figs/fig_econ402_2_period_gov_C_choice.eps}}
+\centerline{\includegraphics[width=0.85\textwidth]{figs/fig_econ402_2_period_gov_C_choice.eps}}
+\caption[]{\label{fig:C-choice} Intertemporal budget constraint faced by the representative agent.}
+\end{figure}
+
+\subsection{Consumption and saving choices}
+
+The representative agent has standard preferences over streams of consumption:
+\begin{align*}
+\mathcal{U}(C_{1},C_{2}) = \ln C_{1} + \beta \ln C_{2}.
+\end{align*}
+Agents maximize $\mathcal{U}$ subject the the intertemporal budget constraint \eqref{eq:7}.
+
+The consumption Euler equation is
+\begin{align*}
+\frac{1}{c_{1}} &= \beta (1+r_{1}) \frac{1}{c_{2}} \\
+\therefore \frac{c_{2}}{1+r_{1}} &= \beta c_{1}.
+\end{align*}
+The latter combined with the intertemporal budget constraint in \eqref{eq:7} yields
+\begin{align*}
+C_{1} + \frac{C_{2}}{1+r_{1}} &= Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( G_{1} + \frac{G_{2}}{1+r_{1}} \right) \\
+\therefore (1+\beta)C_{1} &= Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( G_{1} + \frac{G_{2}}{1+r_{1}} \right),
+\end{align*}
+or
+\begin{equation}
+\label{eq:8}
+C_{1}(r;Y,G) = \frac{1}{1+\beta} \left[ Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( G_{1} + \frac{G_{2}}{1+r_{1}} \right) \right].
+\end{equation}
+
+
+\section{Determining the interest rate through national accounting}
+
+\subsection{Balancing material}
+The material-balance condition requires
+\begin{align*}
+Y_{t} = C_{t} + G_{t}.
+\end{align*}
+There is, however, a saving technology available to agents.
+The bond-market-clearing condition requires
+\begin{equation}
+\label{eq:9}
+B_{t} = S_{t};
+\end{equation}
+that is, government-issued debt must equal saving.
+The debt is bought by the household.
+
+We know aggregate saving is zero (from proposition 2.4).
+There are now two components:
+\begin{align*}
+0 &= \underbrace{S_{t}}_{\text{private saving}} \underbrace{- B_{t}}_{\text{public saving}} \\
+\therefore S_{t} &= B_{t}.
+\end{align*}
+(Recall that negative debt is government saving.)
+
+\subsection{When $B_{1} =0$}
+
+When $B_{1} = 0$ the government finances consumption through lump-sum transfers.
+Looking at \eqref{eq:2} and \eqref{eq:3}, $G_{1} = T_{1}$ and $G_{2} = T_{2}$.
+
+When this is the case, we're back to case where $S_{1} = 0$,
+which pins down the interest rate.
+
+Using equation \eqref{eq:8} (recall that there is a representative agent),
+\begin{align*}
+S_{1} &= Y_{1} - T_{1} - C_{1} \\
+&= Y_{1} - G_{1} - C_{1},
+\end{align*}
+where the last line uses $B_{1} = 0$ and thus
+\begin{align*}
+S_{1} &= Y_{1} - G_{1} - \frac{1}{1+\beta} \left[ Y_{1} + \frac{Y_{2}}{1+r_{1}} - \left( G_{1} + \frac{G_{2}}{1+r_{1}} \right) \right] \\
+&= \frac{\beta}{1+\beta}Y_{1} - \frac{\beta}{1+\beta} G_{1} - \frac{Y_{2}}{(1+\beta)(1+r_{1})} + \frac{G_{2}}{(1+\beta)(1+r_{1})}.
+\end{align*}
+Re-arraning yields
+\begin{align*}
+\frac{Y_{2}-G_{2}}{(1+\beta)(1+r_{1})} &= \frac{\beta}{1+\beta} \left( Y_{1}-G_{1} \right) - S_{1} \\
+\therefore Y_{2}-G_{2} &= (1+r_{1}) (1+\beta) \left( \frac{\beta}{1+\beta} \left( Y_{1}-G_{1} \right) - S_{1} \right) \\
+&= (1+r_{1}) \left[ \beta \left( Y_{1}-G_{1} \right) - (1+\beta)S_{1} \right]
+\end{align*}
+Thus
+\begin{equation}
+\label{eq:10}
+1+r_{1} = \frac{Y_{2}-G_{2}}{\beta \left( Y_{1}-G_{1} \right) - (1+\beta)S_{1}}
+\end{equation}
+Figure \ref{fig:interest-rate} depicts the relationship in equation \eqref{eq:10}.
+
+What happens when $G_{1}$ increases?
+Mechanically, the effect can be read off of equation \eqref{eq:10}:
+equilibrium $r_{1}$ increases.
+Why?
+This is an endowment economy, so $Y_{1}$ is fixed.
+And $C_{1} = Y_{1} - G_{1}$ goes down---consumption is ``crowded out'' (one-for-one in the case where $B_{1} = 0$).
+The agent is poorer.
+They want to smooth out consumption and pull some forward from period $2$.
+In order to maintain aggregate saving equal to $0$, the interest rate must rise to discourage too much smoothing.
+
+What happens when $G_{2}$ increases?
+The agent knows they will be poorer in the future,
+which entices them to save.
+For any level of the interest rate, the agent saves more---this is depicted in figure \ref{fig:interest-rate}.
+In order to maintain zero aggregate saving, the interest rate must fall to discourage this effect.
+(Because here $C_{1} = Y_{1} - G_{1}$, consumption isn't ``crowded in'' exactly;
+but if $B_{1} > 0$, then you could see how consumption would be ``crowded in.''
+This explains some of the red bullet points in \texttt{Lecture 10\_handouts}.)
+
+\begin{remark}
+\label{remark:3}
+This isn't really Ricardian equivalence---it's mechanical.
+\end{remark}
+
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[]{figs/fig_econ402_2_period_gov_interest_rate.eps}}
+\caption[]{\label{fig:interest-rate} Determination of the interest rate.}
+\end{figure}
+
+\bibliography{c:/Users/rwr/bibliography/bibliography}
+\bibliographystyle{c:/Users/rwr/bibliography/bostonfed}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End:
