@@ -202,7 +202,57 @@ Use the same steps as above.
 
 \subsection{PIH}
 \begin{frame}[label=sec-2-4]{Perfect consumption smoothing}
+\framesubtitle{With $\beta (1+r) = 1$}
+From
+\begin{align*}
+\frac{1}{c_{t}} &= \beta (1+r) \frac{1}{c_{t+1}} \\
+\implies \frac{c_{t+1}}{c_{t}} &= \beta (1+r) \\
+&= 1.
+\end{align*}
+Therefore
+\begin{align*}
+c_{t+1} = c_{t} = c.
+\end{align*}
+\end{frame}
 
+\begin{frame}
+\frametitle{Use $c_{t+1} = c_{t} = c$ in the lifetime budget constraint}
+Use our geometric-series result:
+\begin{align*}
+\sum\limits_{t=0}^{\infty} \frac{c_{t}}{(1+r)^{t}} &=
+\sum\limits_{t=0}^{\infty} \frac{y_{t}}{(1+r)^{t}} + A_{0} \\
+\therefore \sum\limits_{t=0}^{\infty} \frac{c}{(1+r)^{t}} &=
+\sum\limits_{t=0}^{\infty} \frac{y_{t}}{(1+r)^{t}} + A_{0} \\
+\therefore \frac{c}{1- \frac{1}{1+r}} &=
+\sum\limits_{t=0}^{\infty} \frac{y_{t}}{(1+r)^{t}} + A_{0} \\
+\therefore \frac{c}{\frac{r}{1+r}} &=
+\sum\limits_{t=0}^{\infty} \frac{y_{t}}{(1+r)^{t}} + A_{0}.
+\end{align*}
+Thus
+\begin{align*}
+c = \frac{r}{1+r} \left[ \sum\limits_{t=0}^{\infty} \frac{y_{t}}{(1+r)^{t}} + A_{0} \right].
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Perfect consumption smoothing}
+\begin{align*}
+c = \frac{r}{1+r} \left[ \sum\limits_{t=0}^{\infty} \frac{y_{t}}{(1+r)^{t}} + A_{0} \right]
+\end{align*}
+If $y_{t} = y$, then
+\begin{align*}
+c &= \frac{r}{1+r} \left[ \sum\limits_{t=0}^{\infty} \frac{y}{(1+r)^{t}} + A_{0} \right] \\
+&= \frac{r}{1+r} \left[ \frac{y}{\frac{r}{1+r}} + A_{0} \right] \\
+&= y + \frac{r}{1+r} A_{0}.
+\end{align*}
+
+Strong motive to smooth consumption.
+\end{frame}
+
+\begin{frame}
+\frametitle{Strong motive to smooth consumption}
+Ben Bernankie: That can't be good:
+\centerline{\includegraphics[width=\textwidth]{figs/econ402_FRED_real_personal_consumption_expenditures.png}}
 \end{frame}
 
 \subsection{Fundamentals of asset pricing}
