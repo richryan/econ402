@@ -22,14 +22,21 @@
 % \usepackage[math]{iwona}
 % \usepackage{listings}
 \usetheme{default}
-\author{}
-\date{April 19 \& 20, 2018}
+\author{RichRyan@umich.edu}
+\date{April 20, 2018}
 \title{W2018 ECON 402 Final Review}
 \hypersetup{
   pdfkeywords={},
   pdfsubject={},
   pdfcreator={Emacs 24.5.1 (Org mode 8.2.10)}}
 \begin{document}
+
+\begin{frame}
+These slides are distributed in the hope that they will be useful,
+but without any warranty;
+without even the implied warranty of correctness or fitness for doing well on the ECON 402 Final Exam.
+Professor House has not seen or sanctioned the slides.
+\end{frame}
 
 \maketitle
 \begin{frame}{Outline}
@@ -377,14 +384,13 @@ Why?
 \item How do you prevent agents from saving?
 \item Lower $r_{1}$
 \item $r_{1}$ must go down to prevent saving
-\item (Nefarious Professor House: profit function is convex)
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Profit function is convex}
-\centerline{\includegraphics[width=\textwidth]{../econ605/figs/profit-convex.eps}}
-\end{frame}
+% \begin{frame}
+% \frametitle{Profit function is convex}
+% \centerline{\includegraphics[width=\textwidth]{../econ605/figs/profit-convex.eps}}
+% \end{frame}
 
 \subsection{Fundamentals of asset pricing}
 
@@ -552,6 +558,35 @@ the asset pays off in high marginal-utility states, which is desirable
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Asset pricing: Midterm Exam II}
+\centerline{\includegraphics[width=0.9\textwidth]{figs/econ402_w2018_midterm2.png}}
+\begin{align*}
+\mathbb{E}_{t} \left[ R_{t+1} \right] = R^{f}_{t} \left( 1 - \mathbb{C} \text{ov} \left[ R_{t+1}, \frac{\beta u^{\prime}(c_{t+1})}{u^{\prime}(c_{t})} \right] \right)
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Asset pricing: Midterm Exam II}
+\begin{itemize}
+\item Asset $A$:
+\begin{itemize}[label={--}]
+\item Asset $A$ pays off when consumption is low
+\item That is a desirable asset
+\item $\implies$ price is high
+\item $\implies$ return is low $<$ risk-free rate
+\end{itemize}
+\item Asset $B$:
+\begin{itemize}[label={--}]
+\item Asset $B$ pays off when consumption is high
+\item That is not a desirable asset
+\item $\implies$ price is low
+\item $\implies$ return is high $>$ risk-free rate
+\end{itemize}
+\item Use transitive property to compare $A$ and $B$ to risk-free rate
+\end{itemize}
+\end{frame}
+
 \subsection{Production}
 \begin{frame}[label=sec-2-6]{Returns to scale}
 A production function is homogeneous of degree $r$ if
@@ -590,7 +625,7 @@ $\implies$ doubling inputs \emph{does not} double production $\implies$ decreasi
 \end{frame}
 
 \begin{frame}[label=sec-2-6]{Returns to scale: Leontief production}
-Let $F(K,N) = \min \left\{ \lambda K, \lambda N \right\}$. I.e.,
+Let $F(K,N) = \min \left\{ K, N \right\}$. I.e.,
 \begin{itemize}[label={--}]
 \item one left shoe
 \item one right shoe

@@ -114,6 +114,11 @@ example: a monetary expansion under fixed exchange rates,
 devaluation,
 [thanks](https://umich.box.com/s/7dsbz12mbvlq6oqiuj33it0dpf1hlwzu)
 
+## Slide deck for final review
+
+Here is the slide deck presented in the review session on 4/20,
+which corrected a few typos and added a few slides on the [second midterm](https://umich.box.com/s/hue9d7wsuo5tnttuah21f58tzg4y864r)
+
 ## Selected suggested solutions to homeworks
 
 + H1.2: A proportional increase to all prices means the implicit price deflator and CPI are the [same](https://umich.box.com/s/zgqslxkgjlxj82p6a086idm592okocv9). The algebra is on the last page.
