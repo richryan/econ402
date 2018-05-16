@@ -73,7 +73,6 @@ On the off chance that someone is super interested in R,
 just let me know and we'll get you going.
 
 I had no problem installing a working copy of R from the website for The R Project for Statistical Computing,
-`r fa_r_project(colour = "#384CB7")`,
 which you can navigate to [here](https://www.r-project.org/).
 Perhaps the easiest way to interact with R code is through RStudio.
 You can get a copy of RStudio [here](https://www.rstudio.com/).
@@ -125,7 +124,7 @@ This is the "headline" index;
 the "core" index is `CPILFESL`,
 which is less food and energy prices.
 
-## Including Plots: Macroeconomic time-series data are `r emo::ji("fire")` 
+## Including Plots: Macroeconomic time-series data
 
 Plotting the data is easy. 
 For example:

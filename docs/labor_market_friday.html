@@ -366,7 +366,7 @@ last_lvl &lt;-<span class="st"> </span>ur<span class="op">$</span>price[[<span c
 <div id="getting-r-up-and-running" class="section level2">
 <h2>Getting R up and running</h2>
 <p>An introduction to R is beyond the scope of this presentation. On the off chance that someone is super interested in R, just let me know and we’ll get you going.</p>
-<p>I had no problem installing a working copy of R from the website for The R Project for Statistical Computing, , which you can navigate to <a href="https://www.r-project.org/">here</a>. Perhaps the easiest way to interact with R code is through RStudio. You can get a copy of RStudio <a href="https://www.rstudio.com/">here</a>. Again, I had no problems installing R and using RStudio.</p>
+<p>I had no problem installing a working copy of R from the website for The R Project for Statistical Computing, which you can navigate to <a href="https://www.r-project.org/">here</a>. Perhaps the easiest way to interact with R code is through RStudio. You can get a copy of RStudio <a href="https://www.rstudio.com/">here</a>. Again, I had no problems installing R and using RStudio.</p>
 <p>Once in RStudio you can use the “Session” dropdown menu to set the working directory, which should be where you save the code that you write to go along with this handout. More on this below.</p>
 <p>You can install packages using <code>install.packages</code>.</p>
 <p>A site that has been mentioned on <a href="https://www.r-bloggers.com/">R-bloggers</a>, an aggregator of R blogs, that may be useful in getting R up and running is found <a href="http://stat545.com/index.html">here</a>.</p>
@@ -406,8 +406,8 @@ last_lvl &lt;-<span class="st"> </span>ur<span class="op">$</span>price[[<span c
 <p>Note that the data start in 1948m1.</p>
 <p>To get different series, go to FRED and search for whatever series you want. For example, I typed in “inflation”, which generated several series. Then I picked “Consumer Price Index for All Urban Consumers: All Items”. Clicking on that series reveals the mnemonic <code>CPIAUCSL</code>. Replacing <code>UNRATE</code> with <code>CPIAUCSL</code> will download the CPI price index. This is the “headline” index; the “core” index is <code>CPILFESL</code>, which is less food and energy prices.</p>
 </div>
-<div id="including-plots-macroeconomic-time-series-data-are" class="section level2">
-<h2>Including Plots: Macroeconomic time-series data are <U+0001F525></h2>
+<div id="including-plots-macroeconomic-time-series-data" class="section level2">
+<h2>Including Plots: Macroeconomic time-series data</h2>
 <p>Plotting the data is easy. For example:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> ur) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> price)) <span class="op">+</span>
