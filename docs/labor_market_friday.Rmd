@@ -103,8 +103,6 @@ library(emo)
 
 ## Retrieving data from FRED
 
-`r emo::ji("smile")`
-
 Here's R code that retrives data from the FRED database.
 It gets the series `UNRATE`.
 
