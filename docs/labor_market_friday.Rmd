@@ -24,6 +24,7 @@ knitr::opts_chunk$set(
 library(tidyquant)
 library(ggplot2)
 library(ggthemes)
+library(icon)
 
 ur <- tq_get("UNRATE", get = "economic.data", from = "2010-01-01")
 ur <- ur %>% 
@@ -72,6 +73,7 @@ On the off chance that someone is super interested in R,
 just let me know and we'll get you going.
 
 I had no problem installing a working copy of R from the website for The R Project for Statistical Computing,
+`r fa_r_project(colour = "#384CB7")`,
 which you can navigate to [here](https://www.r-project.org/).
 Perhaps the easiest way to interact with R code is through RStudio.
 You can get a copy of RStudio [here](https://www.rstudio.com/).
