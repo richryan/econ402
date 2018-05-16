@@ -24,7 +24,6 @@ knitr::opts_chunk$set(
 library(tidyquant)
 library(ggplot2)
 library(ggthemes)
-library(icon)
 
 ur <- tq_get("UNRATE", get = "economic.data", from = "2010-01-01")
 ur <- ur %>% 
